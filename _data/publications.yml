@@ -10,7 +10,7 @@ main:
     image: ./assets/img/CaLMFlow.png
     notes: Preprint
 
-   - title: Intelligence at the Edge of Chaos
+  - title: Intelligence at the Edge of Chaos
     authors: Shiyang Zhang, Aakash Patel, Syed Rizvi, Nianchen Liu, <u>Sizhuang He</u>, Amin Karbasi, Emanuele Zappala, and David van Dijk
     # conference_short: asas
     conference: arXiv 2410.02536, 2024
