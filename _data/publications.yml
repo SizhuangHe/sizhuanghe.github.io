@@ -8,7 +8,7 @@ main:
     # code: https://github.com/MrGiovanni/ContinualLearning
     bibtex: ./assets/bibs/calmflow.txt
     image: ./assets/img/CaLMFlow.png
-    notes: Preprint
+    notes: Preprint, presented as a poster at 15th Annual ML Symposium, NYAS, NYC 2024
 
   - title: Intelligence at the Edge of Chaos
     authors: Shiyang Zhang, Aakash Patel, Syed Rizvi, Nianchen Liu, <u>Sizhuang He</u>, Amin Karbasi, Emanuele Zappala, and David van Dijk
