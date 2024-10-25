@@ -1,0 +1,9 @@
+@misc{zappala2023operatorlearningmeetsnumerical,
+      title={Operator Learning Meets Numerical Analysis: Improving Neural Networks through Iterative Methods}, 
+      author={Emanuele Zappala and Daniel Levine and Sizhuang He and Syed Rizvi and Sacha Levy and David van Dijk},
+      year={2023},
+      eprint={2310.01618},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2310.01618}, 
+}
