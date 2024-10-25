@@ -14,6 +14,7 @@ Previously, I completed my Bachelor's degree at [University of Michigan, Ann Arb
 - **Operator Learning:** Modeling Continuous Spatiotemporal Dynamics, Integral Equations
 - **Computational Biology:** Single-cell Transcriptomics Data Analysis
 
+
 <!-- ## News
 
 - **[Feb. 2020]** Our paper about incremental learning is accepted to CVPR 2020.
