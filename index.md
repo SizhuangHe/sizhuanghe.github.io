@@ -10,8 +10,6 @@ Previously, I completed my Bachelor's degree at [University of Michigan, Ann Arb
 
 I am interested in <u>Generative Modeling</u>, <u>Operator Learning</u> and their applications in <u>Computational Biology</u>.
 
-## Publications
-
 ## Research Interests
 
 - **Generative Modeling:** Flow Matching, Diffusion, Discrete Diffusion

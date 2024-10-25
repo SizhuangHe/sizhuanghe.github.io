@@ -1,0 +1,9 @@
+@misc{he2024calmflowvolterraflowmatching,
+      title={CaLMFlow: Volterra Flow Matching using Causal Language Models}, 
+      author={Sizhuang He and Daniel Levine and Ivan Vrkic and Marco Francesco Bressana and David Zhang and Syed Asad Rizvi and Yangtian Zhang and Emanuele Zappala and David van Dijk},
+      year={2024},
+      eprint={2410.05292},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2410.05292}, 
+}
