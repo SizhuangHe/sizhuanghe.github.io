@@ -1,0 +1,9 @@
+@misc{zhang2024intelligenceedgechaos,
+      title={Intelligence at the Edge of Chaos}, 
+      author={Shiyang Zhang and Aakash Patel and Syed A Rizvi and Nianchen Liu and Sizhuang He and Amin Karbasi and Emanuele Zappala and David van Dijk},
+      year={2024},
+      eprint={2410.02536},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2410.02536}, 
+}

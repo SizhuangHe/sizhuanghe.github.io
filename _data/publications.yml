@@ -1,13 +1,23 @@
 main:
 
   - title: CaLMFlow Volterra Flow Matching using Causal Language Models
-    authors: <u>Sizhuang He<sup>*</sup></u>, Daniel Levine<sup>*</sup>, Ivan Vrkic, Marco Bressana, David Zhang, Syed Rizvi, Yangtian Zhang, Emanuele Zappala, David van Dijk
+    authors: <u>Sizhuang He<sup>*</sup></u>, Daniel Levine<sup>*</sup>, Ivan Vrkic, Marco Bressana, David Zhang, Syed Rizvi, Yangtian Zhang, Emanuele Zappala, and David van Dijk
     # conference_short: asas
-    # conference: International Conference on Medical Image Computing and Computer-Assisted Intervention <strong>(MICCAI)</strong>, 2023.
-    pdf: https://arxiv.org/abs/2410.05292
+    conference: arXiv 2410.05292, 2024
+    pdf: https://arxiv.org/pdf/2410.05292
     # code: https://github.com/MrGiovanni/ContinualLearning
     bibtex: ./assets/bibs/calmflow.txt
-    image: ./assets/img/teaser_example_2.png
+    image: ./assets/img/CaLMFlow.png
+    notes: Preprint
+
+   - title: Intelligence at the Edge of Chaos
+    authors: Shiyang Zhang, Aakash Patel, Syed Rizvi, Nianchen Liu, <u>Sizhuang He</u>, Amin Karbasi, Emanuele Zappala, and David van Dijk
+    # conference_short: asas
+    conference: arXiv 2410.02536, 2024
+    pdf: https://arxiv.org/pdf/2410.02536
+    # code: https://github.com/MrGiovanni/ContinualLearning
+    bibtex: ./assets/bibs/complexity.txt
+    image: ./assets/img/complexity.png
     notes: Preprint
 
   # - title: "Mnemonics Training: Multi-Class Incremental Learning without Forgetting"
