@@ -18,7 +18,7 @@ main:
     # code: https://github.com/MrGiovanni/ContinualLearning
     bibtex: ./assets/bibs/complexity.txt
     image: ./assets/img/complexity.png
-    notes: Preprint
+    notes: Preprint, presented as a poster at 15th Annual ML Symposium, NYAS, NYC 2024
 
   - title: Operator Learning Meets Numerical Analysis&#58; Improving Neural Networks through Iterative Methods
     authors: Emanuele Zappala, Daniel Levine, <u>Sizhuang He</u>, Syed Rizvi, Sacha L&eacute;vy, and David van Dijk
