@@ -6,7 +6,7 @@ main:
     # conference: International Conference on Medical Image Computing and Computer-Assisted Intervention <strong>(MICCAI)</strong>, 2023.
     pdf: https://arxiv.org/abs/2410.05292
     # code: https://github.com/MrGiovanni/ContinualLearning
-    bibtex: ./assets/bibs/calmflow.txt
+    # bibtex: ./assets/bibs/calmflow.txt
     image: ./assets/img/teaser_example_2.png
     notes: Preprint
 
