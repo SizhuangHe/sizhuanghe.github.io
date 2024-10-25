@@ -25,4 +25,4 @@ I am interested in <u>Generative Modeling</u>, <u>Operator Learning</u> and thei
 
 {% include_relative _includes/publications.md %}
 
-{% include_relative _includes/services.md %}
+<!-- {% include_relative _includes/services.md %} -->
