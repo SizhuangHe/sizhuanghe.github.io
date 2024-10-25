@@ -1,6 +1,6 @@
 main:
 
-  - title: CaLMFlow Volterra Flow Matching using Causal Language Models
+  - title: CaLMFlow&#58; Volterra Flow Matching using Causal Language Models
     authors: <u>Sizhuang He<sup>*</sup></u>, Daniel Levine<sup>*</sup>, Ivan Vrkic, Marco Bressana, David Zhang, Syed Rizvi, Yangtian Zhang, Emanuele Zappala, and David van Dijk
     # conference_short: asas
     conference: arXiv 2410.05292, 2024

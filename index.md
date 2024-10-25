@@ -8,8 +8,6 @@ I'm a first-year Computer Science Ph.D. student at [Yale University](https://www
 
 Previously, I completed my Bachelor's degree at [University of Michigan, Ann Arbor](https://umich.edu/), majoring in [Honors Mathematics](https://lsa.umich.edu/math) and minoring in [Computer Science](https://cse.engin.umich.edu/).
 
-I am interested in <u>Generative Modeling</u>, <u>Operator Learning</u> and their applications in <u>Computational Biology</u>.
-
 ## Research Interests
 
 - **Generative Modeling:** Flow Matching, Diffusion, Discrete Diffusion
