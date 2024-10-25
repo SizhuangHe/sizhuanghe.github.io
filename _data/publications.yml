@@ -2,11 +2,11 @@ main:
 
   - title: CaLMFlow: Volterra Flow Matching using Causal Language Models
     authors: <u>Sizhuang He<sup>*</sup></u>, Daniel Levine<sup>*</sup>, Ivan Vrkic, Marco Bressana, David Zhang, Syed Rizvi, Yangtian Zhang, Emanuele Zappala, David van Dijk
-    # conference_short: 
-    # conference: International Conference on Medical Image Computing and Computer-Assisted Intervention <strong>(MICCAI)</strong>, 2023.
+    conference_short: asas
+    conference: International Conference on Medical Image Computing and Computer-Assisted Intervention <strong>(MICCAI)</strong>, 2023.
     pdf: https://arxiv.org/abs/2410.05292
-    # code: https://github.com/MrGiovanni/ContinualLearning
-    # bibtex: ./assets/bibs/calmflow.txt
+    code: https://github.com/MrGiovanni/ContinualLearning
+    bibtex: ./assets/bibs/calmflow.txt
     image: ./assets/img/teaser_example_2.png
     notes: Preprint
 
