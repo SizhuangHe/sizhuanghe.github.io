@@ -15,12 +15,9 @@ Previously, I completed my Bachelor's degree at [University of Michigan, Ann Arb
 - **Computational Biology:** Single-cell Transcriptomics Data Analysis
 
 
-<!-- ## News
+## News
 
-- **[Feb. 2020]** Our paper about incremental learning is accepted to CVPR 2020.
-- **[Feb. 2020]** We will host the ACM Multimedia Asia 2020 conference in Singapore!
-- **[Sept. 2019]** Our paper about few-shot learning is accepted to NeurIPS 2019.
-- **[Mar. 2019]** Our paper about few-shot learning is accepted to CVPR 2019. -->
+- **[Jan 2025]** Our paper Intelligence at the Edge of Chaos is accepted to ICLR 2025.
 
 {% include_relative _includes/publications.md %}
 
