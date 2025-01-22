@@ -14,7 +14,7 @@ main:
   - title: Intelligence at the Edge of Chaos
     authors: Shiyang Zhang, Aakash Patel, Syed Rizvi, Nianchen Liu, <u>Sizhuang He</u>, Amin Karbasi, Emanuele Zappala, and David van Dijk
     # conference_short: asas
-    conference: arXiv&#58; 2410.02536, 2024
+    conference: ICLR 2025
     pdf: https://arxiv.org/pdf/2410.02536
     # code: https://github.com/MrGiovanni/ContinualLearning
     bibtex: ./assets/bibs/complexity.txt
