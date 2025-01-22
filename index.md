@@ -15,7 +15,7 @@ Previously, I completed my Bachelor's degree at [University of Michigan, Ann Arb
 - **Computational Biology:** Single-cell Transcriptomics Data Analysis
 
 
-## News
+## :confetti_ball: News
 
 - **[Jan 2025]** Our paper Intelligence at the Edge of Chaos is accepted to ICLR 2025.
 
