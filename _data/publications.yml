@@ -1,5 +1,16 @@
 main:
 
+  - title: Non-Markovian Discrete Diffusion with Causal Language Models
+    authors: Yangtian Zhang <sup>*</sup>, <u>Sizhuang He<sup>*</sup></u>, Daniel Levine, Lawrence Zhao, Syed Rizvi, Emanuele Zappala, Rex Ying,and David van Dijk
+    # conference_short: asas
+    # conference: 
+    # pdf: 
+    # code: https://github.com/MrGiovanni/ContinualLearning
+    # bibtex: ./assets/bibs/calmflow.txt
+    image: ./assets/img/caddi.pdf
+    # poster: ./assets/posters/CaLMFlow_NYAS_Poster.pdf
+    notes: Preprint
+
   - title: COAST&#58; Intelligent Time-Adaptive Neural Operators
     authors: Zhikai Wu, Shiyang Zhang, <u>Sizhuang He</u>, Sifan Wang, Min Zhu, Anran Jiao, Lu Lu, and David van Dijk
     # conference_short: asas
@@ -7,7 +18,7 @@ main:
     # pdf: 
     # code: https://github.com/MrGiovanni/ContinualLearning
     # bibtex: ./assets/bibs/calmflow.txt
-    # image: ./assets/img/CaLMFlow.png
+    image: ./assets/img/coast.pdf
     # poster: ./assets/posters/CaLMFlow_NYAS_Poster.pdf
     notes: Preprint
 
