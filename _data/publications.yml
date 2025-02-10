@@ -7,7 +7,7 @@ main:
     # pdf: 
     # code: https://github.com/MrGiovanni/ContinualLearning
     # bibtex: ./assets/bibs/calmflow.txt
-    image: ./assets/img/caddi.pdf
+    image: ./assets/img/caddi.png
     # poster: ./assets/posters/CaLMFlow_NYAS_Poster.pdf
     notes: Preprint
 
@@ -18,7 +18,7 @@ main:
     # pdf: 
     # code: https://github.com/MrGiovanni/ContinualLearning
     # bibtex: ./assets/bibs/calmflow.txt
-    image: ./assets/img/coast.pdf
+    image: ./assets/img/coast.png
     # poster: ./assets/posters/CaLMFlow_NYAS_Poster.pdf
     notes: Preprint
 

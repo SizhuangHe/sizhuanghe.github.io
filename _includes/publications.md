@@ -1,4 +1,5 @@
-<h2 id="publications" style="margin: 2px 0px -15px;">Publications and Preprints (* denotes equal contribution, last updated: Feb 2025)</h2>
+<h2 id="publications" style="margin: 2px 0px -15px;">Publications and Preprints</h2>
+<p style="font-size: 0.9em; margin-top: 5px; margin-bottom: -10px;"><i>(* denotes equal contribution, last updated: Feb 2025)</i></p>
 
 <div class="publications">
 <ol class="bibliography">
