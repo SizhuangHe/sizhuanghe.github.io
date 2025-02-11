@@ -20,7 +20,7 @@
   <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
       <div class="title"><a href="{{ link.pdf }}">{{ link.title }}</a></div>
       {% if link.date %}
-      <div>{{ link.date }}</div>
+      <i>{{ link.date }}</i>
       {% endif %}
       <div class="author">{{ link.authors }}</div>
       <div class="periodical"><em>{{ link.conference }}</em>
