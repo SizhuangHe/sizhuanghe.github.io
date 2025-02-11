@@ -36,12 +36,12 @@ main:
   - title: Intelligence at the Edge of Chaos
     authors: Shiyang Zhang, Aakash Patel, Syed Rizvi, Nianchen Liu, <u>Sizhuang He</u>, Amin Karbasi, Emanuele Zappala, and David van Dijk
     # conference_short: asas
-    conference: ICLR 2025
+    conference: ICLR 2025 (Poster)
     pdf: https://arxiv.org/pdf/2410.02536
     # code: https://github.com/MrGiovanni/ContinualLearning
     bibtex: ./assets/bibs/complexity.txt
     image: ./assets/img/complexity.png
-    notes: Accepted to ICLR 2025
+    notes: Accepted to ICLR 2025 as a poster
 
   - title: Operator Learning Meets Numerical Analysis&#58; Improving Neural Networks through Iterative Methods
     authors: Emanuele Zappala, Daniel Levine, <u>Sizhuang He</u>, Syed Rizvi, Sacha L&eacute;vy, and David van Dijk
