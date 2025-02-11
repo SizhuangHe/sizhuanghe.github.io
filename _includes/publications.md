@@ -15,6 +15,9 @@
     <abbr class="badge">{{ link.conference_short }}</abbr>
     {% endif %}
     {% endif %}
+    {% if link.date %}
+    <i>{{ link.date }}</i>
+    {% endif %}
   </div>
   <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
       <div class="title"><a href="{{ link.pdf }}">{{ link.title }}</a></div>

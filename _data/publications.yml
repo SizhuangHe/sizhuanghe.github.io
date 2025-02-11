@@ -2,6 +2,7 @@ main:
 
   - title: Non-Markovian Discrete Diffusion with Causal Language Models
     authors: Yangtian Zhang <sup>*</sup>, <u>Sizhuang He<sup>*</sup></u>, Daniel Levine, Lawrence Zhao, Syed Rizvi, Emanuele Zappala, Rex Ying, and David van Dijk
+    date: Feb 2025
     # conference_short: asas
     # conference: 
     # pdf: 
