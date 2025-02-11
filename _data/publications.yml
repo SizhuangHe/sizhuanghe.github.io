@@ -2,7 +2,7 @@ main:
 
   - title: Non-Markovian Discrete Diffusion with Causal Language Models
     authors: Yangtian Zhang <sup>*</sup>, <u>Sizhuang He<sup>*</sup></u>, Daniel Levine, Lawrence Zhao, Syed Rizvi, Emanuele Zappala, Rex Ying, and David van Dijk
-    date: Feb 2025
+    date: Jan 2025
     # conference_short: asas
     # conference: 
     # pdf: 
@@ -14,6 +14,7 @@ main:
 
   - title: COAST&#58; Intelligent Time-Adaptive Neural Operators
     authors: Zhikai Wu, Shiyang Zhang, <u>Sizhuang He</u>, Sifan Wang, Min Zhu, Anran Jiao, Lu Lu, and David van Dijk
+    date: Jan 2025
     # conference_short: asas
     # conference: 
     # pdf: 
@@ -25,6 +26,7 @@ main:
 
   - title: CaLMFlow&#58; Flow Matching using Causal Language Models
     authors: <u>Sizhuang He<sup>*</sup></u>, Daniel Levine<sup>*</sup>, Ivan Vrkic, Marco Bressana, David Zhang, Syed Rizvi, Yangtian Zhang, Emanuele Zappala, and David van Dijk
+    date: Oct 2024
     # conference_short: asas
     conference: arXiv&#58; 2410.05292, 2024
     pdf: https://arxiv.org/pdf/2410.05292
@@ -36,6 +38,7 @@ main:
 
   - title: Intelligence at the Edge of Chaos
     authors: Shiyang Zhang, Aakash Patel, Syed Rizvi, Nianchen Liu, <u>Sizhuang He</u>, Amin Karbasi, Emanuele Zappala, and David van Dijk
+    date: Oct 2024
     conference_short: ICLR
     conference: ICLR 2025 (Poster)
     pdf: https://arxiv.org/pdf/2410.02536
@@ -46,6 +49,7 @@ main:
 
   - title: Operator Learning Meets Numerical Analysis&#58; Improving Neural Networks through Iterative Methods
     authors: Emanuele Zappala, Daniel Levine, <u>Sizhuang He</u>, Syed Rizvi, Sacha L&eacute;vy, and David van Dijk
+    date: Oct 2023
     # conference_short: asas
     conference: arXiv&#58; 2310.01618, 2023
     pdf: https://arxiv.org/pdf/2310.01618
