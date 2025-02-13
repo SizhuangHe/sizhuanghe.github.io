@@ -3,7 +3,7 @@ main:
   - title: Non-Markovian Discrete Diffusion with Causal Language Models
     authors: Yangtian Zhang <sup>*</sup>, <b><u>Sizhuang He<sup>*</sup></u></b>, Daniel Levine, Lawrence Zhao, Syed Rizvi, Emanuele Zappala, Rex Ying, and David van Dijk
     date: Jan 2025
-    # conference_short: asas
+    conference_short: ArXiv
     # conference: 
     # pdf: 
     # code: https://github.com/MrGiovanni/ContinualLearning
@@ -15,9 +15,9 @@ main:
   - title: COAST&#58; Intelligent Time-Adaptive Neural Operators
     authors: Zhikai Wu, Shiyang Zhang, <b><u>Sizhuang He</u></b>, Sifan Wang, Min Zhu, Anran Jiao, Lu Lu, and David van Dijk
     date: Jan 2025
-    # conference_short: asas
+    conference_short: ArXiv
     conference: arXiv&#58; 2502.08574, 2025
-    pdf: https://arxiv.org/abs/2502.08574
+    pdf: https://arxiv.org/pdf/2502.08574
     # code: https://github.com/MrGiovanni/ContinualLearning
     # bibtex: ./assets/bibs/calmflow.txt
     image: ./assets/img/coast.png
@@ -27,7 +27,7 @@ main:
   - title: CaLMFlow&#58; Flow Matching using Causal Language Models
     authors: <b><u>Sizhuang He<sup>*</sup></u></b>, Daniel Levine<sup>*</sup>, Ivan Vrkic, Marco Bressana, David Zhang, Syed Rizvi, Yangtian Zhang, Emanuele Zappala, and David van Dijk
     date: Oct 2024
-    # conference_short: asas
+    conference_short: ArXiv
     conference: arXiv&#58; 2410.05292, 2024
     pdf: https://arxiv.org/pdf/2410.05292
     # code: https://github.com/MrGiovanni/ContinualLearning
@@ -50,7 +50,7 @@ main:
   - title: Operator Learning Meets Numerical Analysis&#58; Improving Neural Networks through Iterative Methods
     authors: Emanuele Zappala, Daniel Levine, <b><u>Sizhuang He</u></b>, Syed Rizvi, Sacha L&eacute;vy, and David van Dijk
     date: Oct 2023
-    # conference_short: asas
+    conference_short: ArXiv
     conference: arXiv&#58; 2310.01618, 2023
     pdf: https://arxiv.org/pdf/2310.01618
     # code: https://github.com/MrGiovanni/ContinualLearning
