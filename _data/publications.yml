@@ -16,8 +16,8 @@ main:
     authors: Zhikai Wu, Shiyang Zhang, <b><u>Sizhuang He</u></b>, Sifan Wang, Min Zhu, Anran Jiao, Lu Lu, and David van Dijk
     date: Jan 2025
     # conference_short: asas
-    # conference: 
-    # pdf: 
+    conference: arXiv&#58; 2502.08574, 2025
+    pdf: https://arxiv.org/abs/2502.08574
     # code: https://github.com/MrGiovanni/ContinualLearning
     # bibtex: ./assets/bibs/calmflow.txt
     image: ./assets/img/coast.png
