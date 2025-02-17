@@ -1,0 +1,9 @@
+@misc{zhang2025nonmarkoviandiscretediffusioncausal,
+      title={Non-Markovian Discrete Diffusion with Causal Language Models}, 
+      author={Yangtian Zhang and Sizhuang He and Daniel Levine and Lawrence Zhao and David Zhang and Syed A Rizvi and Emanuele Zappala and Rex Ying and David van Dijk},
+      year={2025},
+      eprint={2502.09767},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2502.09767}, 
+}
