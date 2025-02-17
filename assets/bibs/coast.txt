@@ -1,0 +1,9 @@
+@misc{wu2025coastintelligenttimeadaptiveneural,
+      title={COAST: Intelligent Time-Adaptive Neural Operators}, 
+      author={Zhikai Wu and Shiyang Zhang and Sizhuang He and Sifan Wang and Min Zhu and Anran Jiao and Lu Lu and David van Dijk},
+      year={2025},
+      eprint={2502.08574},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2502.08574}, 
+}

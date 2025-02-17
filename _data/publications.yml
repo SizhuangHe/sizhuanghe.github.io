@@ -19,7 +19,7 @@ main:
     conference: arXiv&#58; 2502.08574, 2025
     pdf: https://arxiv.org/pdf/2502.08574
     # code: https://github.com/MrGiovanni/ContinualLearning
-    # bibtex: ./assets/bibs/calmflow.txt
+    bibtex: ./assets/bibs/coast.txt
     image: ./assets/img/coast.png
     # poster: ./assets/posters/CaLMFlow_NYAS_Poster.pdf
     notes: Preprint
