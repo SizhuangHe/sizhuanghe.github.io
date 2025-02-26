@@ -18,7 +18,7 @@ Previously, I completed my Bachelor's degree at [University of Michigan, Ann Arb
 ## News
 
 - **[Jan 2025]** I received the Fan Family Fellowship of Yale University.
-- **[Jan 2025]** Our paper Intelligence at the Edge of Chaos is accepted to ICLR 2025.
+- **[Jan 2025]** Our paper *Intelligence at the Edge of Chaos* is accepted to ICLR 2025.
 
 {% include_relative _includes/publications.md %}
 
