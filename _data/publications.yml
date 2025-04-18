@@ -1,6 +1,6 @@
 main:
   - title: Scaling Large Language Models for Next-Generation Single-Cell Analysis
-    authors: Syed Asad Rizvi<sup>*</sup>, Daniel Levine<sup>*</sup>, Aakash Patel<sup>*</sup>, Shiyang Zhang<sup>*</sup>, Eric Wang<sup>*</sup>, <b><u>Sizhuang He</u></b>, David Zhang, Cerise Tang, Zhuoyang Lyu, Rayyan Darji, Marlene Li, Emily Sun, David Jeong, Lawrence Zhao, Jennifer Kwan, David Braun, Brian Hafler, Jeffrey Ishizuka, Rahul Dhodapkar, Hattie Chung, Shekoofeh Azizi, Bryan Perozzi, and David van Dijk
+    authors: Syed Rizvi<sup>*</sup>, Daniel Levine<sup>*</sup>, Aakash Patel<sup>*</sup>, Shiyang Zhang<sup>*</sup>, Eric Wang<sup>*</sup>, <b><u>Sizhuang He</u></b>, David Zhang, Cerise Tang, Zhuoyang Lyu, Rayyan Darji, Marlene Li, Emily Sun, David Jeong, Lawrence Zhao, Jennifer Kwan, David Braun, Brian Hafler, Jeffrey Ishizuka, Rahul Dhodapkar, Hattie Chung, Shekoofeh Azizi, Bryan Perozzi, and David van Dijk
     date: Apr 2025
     conference_short: bioRxiv
     conference: bioRxiv
@@ -49,7 +49,7 @@ main:
     notes: Preprint, presented as a poster at 15th Annual ML Symposium, NYAS, NYC 2024
 
   - title: Intelligence at the Edge of Chaos
-    authors: Shiyang Zhang, Aakash Patel, Syed Rizvi, Nianchen Liu, <b><u>Sizhuang He</u></b>, Amin Karbasi, Emanuele Zappala, and David van Dijk
+    authors: Shiyang Zhang<sup>*</sup>, Aakash Patel<sup>*</sup>, Syed Rizvi, Nianchen Liu, <b><u>Sizhuang He</u></b>, Amin Karbasi, Emanuele Zappala, and David van Dijk
     date: Oct 2024
     conference_short: ICLR
     conference: ICLR 2025 (Poster)
