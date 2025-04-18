@@ -13,7 +13,7 @@
     <img src="{{ link.image }}" class="teaser img-fluid z-depth-1" style="width=100;height=40%">
     {% if link.conference_short %} 
     <!-- <abbr class="badge">{{ link.conference_short }}</abbr> -->
-    {% if link.conference_short == 'ArXiv' %}
+    {% if link.conference_short == 'ArXiv' or link.conference_short == 'bioRxiv' %}
     <abbr class="badge badge-arxiv">{{ link.conference_short }}</abbr>
     {% else %}
     <abbr class="badge">{{ link.conference_short }}</abbr>
