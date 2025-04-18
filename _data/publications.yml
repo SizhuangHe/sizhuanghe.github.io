@@ -1,4 +1,16 @@
 main:
+  - title: Scaling Large Language Models for Next-Generation Single-Cell Analysis
+    authors: Syed Asad Rizvi<sup>*</sup>, Daniel Levine<sup>*</sup>, Aakash Patel<sup>*</sup>, Shiyang Zhang<sup>*</sup>, Eric Wang<sup>*</sup>, <b><u>Sizhuang He</u></b>, David Zhang, Cerise Tang, Zhuoyang Lyu, Rayyan Darji, Marlene Li, Emily Sun, David Jeong, Lawrence Zhao, Jennifer Kwan, David Braun, Brian Hafler, Jeffrey Ishizuka, Rahul Dhodapkar, Hattie Chung, Shekoofeh Azizi, Bryan Perozzi, and David van Dijk
+    date: Apr 2025
+    conference_short: bioRxiv
+    conference: bioRxiv
+    pdf: https://www.biorxiv.org/content/10.1101/2025.04.14.648850v1.full.pdf
+    # code: https://github.com/MrGiovanni/ContinualLearning
+    bibtex: ./assets/bibs/c2s2.txt
+    image: ./assets/img/c2s2.png
+    # poster: ./assets/posters/CaLMFlow_NYAS_Poster.pdf
+    blog: https://research.google/blog/teaching-machines-the-language-of-biology-scaling-large-language-models-for-next-generation-single-cell-analysis/
+    notes: Preprint
 
   - title: Non-Markovian Discrete Diffusion with Causal Language Models
     authors: Yangtian Zhang <sup>*</sup>, <b><u>Sizhuang He<sup>*</sup></u></b>, Daniel Levine, Lawrence Zhao, Syed Rizvi, Emanuele Zappala, Rex Ying, and David van Dijk
