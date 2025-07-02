@@ -22,4 +22,4 @@ Previously, I completed my Bachelor's degree at [University of Michigan, Ann Arb
 
 {% include_relative _includes/publications.md %}
 
-<!-- {% include_relative _includes/services.md %} -->
+{% include_relative _includes/services.md %}
