@@ -17,6 +17,7 @@ Previously, I completed my Bachelor's degree at [University of Michigan, Ann Arb
 
 ## News
 
+- **[Jul 2025]** Our paper *COAST: Intelligent Time-Adaptive Neural Operators* is accepted to AI4MATH Workshop at ICML 2025.
 - **[Jan 2025]** I received the Fan Family Fellowship of Yale University.
 - **[Jan 2025]** Our paper *Intelligence at the Edge of Chaos* is accepted to ICLR 2025.
 
