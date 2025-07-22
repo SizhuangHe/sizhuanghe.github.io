@@ -34,7 +34,7 @@ main:
     bibtex: ./assets/bibs/coast.txt
     image: ./assets/img/coast.png
     # poster: ./assets/posters/CaLMFlow_NYAS_Poster.pdf
-    notes: Accepted to AI4MATH Workshop at ICML 2025 as a poster
+    # notes: Accepted to AI4MATH Workshop at ICML 2025 as a poster
 
   - title: CaLMFlow&#58; Flow Matching using Causal Language Models
     authors: <b><u>Sizhuang He<sup>*</sup></u></b>, Daniel Levine<sup>*</sup>, Ivan Vrkic, Marco Bressana, David Zhang, Syed Rizvi, Yangtian Zhang, Emanuele Zappala, and David van Dijk
@@ -57,7 +57,7 @@ main:
     # code: https://github.com/MrGiovanni/ContinualLearning
     bibtex: ./assets/bibs/complexity.txt
     image: ./assets/img/complexity.png
-    notes: Accepted to ICLR 2025 as a poster
+    # notes: Accepted to ICLR 2025 as a poster
 
   - title: Operator Learning Meets Numerical Analysis&#58; Improving Neural Networks through Iterative Methods
     authors: Emanuele Zappala, Daniel Levine, <b><u>Sizhuang He</u></b>, Syed Rizvi, Sacha L&eacute;vy, and David van Dijk
