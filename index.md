@@ -4,7 +4,7 @@ layout: homepage
 
 ## About Me
 
-I'm a first-year [Computer Science Ph.D. student](https://cpsc.yale.edu/people/sizhuang-he) at [Yale University](https://www.yale.edu/), advised by Dr. [David van Dijk](https://www.vandijklab.org/). 
+I'm a second-year [Computer Science Ph.D. student](https://cpsc.yale.edu/people/sizhuang-he) at [Yale University](https://www.yale.edu/), advised by Dr. [David van Dijk](https://www.vandijklab.org/). 
 
 Previously, I completed my Bachelor's degree at [University of Michigan, Ann Arbor](https://umich.edu/), majoring in [Honors Mathematics](https://lsa.umich.edu/math) and minoring in [Computer Science](https://cse.engin.umich.edu/).
 
