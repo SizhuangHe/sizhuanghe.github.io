@@ -1,5 +1,5 @@
 <h2 id="publications" style="margin: 2px 0px -15px;">Publications and Preprints</h2>
-<p style="font-size: 0.9em; margin-top: 15px; margin-bottom: -10px;"><i>(*: Equal Contribution; In Chronological Order; Last Updated: Feb 2025)</i></p>
+<p style="font-size: 0.9em; margin-top: 15px; margin-bottom: -10px;"><i>(*: Equal Contribution; In Chronological Order; Last Updated: Apr 2025)</i></p>
 
 <div class="publications">
 <ol class="bibliography">
