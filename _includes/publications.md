@@ -1,56 +1,84 @@
 <h2 id="publications" style="margin: 2px 0px -15px;">Publications and Preprints</h2>
-<p style="font-size: 0.9em; margin-top: 15px; margin-bottom: -10px;"><i>(*: Equal Contribution; In Chronological Order; Last Updated: Apr 2025)</i></p>
+<p style="font-size: 0.9em; margin-top: 15px; margin-bottom: -10px;"><i>(*: Equal Contribution; Organized by Year; Last Updated: Apr 2025)</i></p>
 
 <div class="publications">
-<ol class="bibliography">
 
-{% for link in site.data.publications.main %}
+{% comment %} Get unique years and sort them {% endcomment %}
+{% assign years = '' | split: ',' %}
+{% for pub in site.data.publications.main %}
+  {% assign year = pub.date | split: ' ' | last %}
+  {% unless years contains year %}
+    {% assign years = years | push: year %}
+  {% endunless %}
+{% endfor %}
+{% assign years = years | sort | reverse %}
 
-<li>
+{% for year in years %}
+  <div class="year-section">
+    <h3 class="year-header" style="font-size: 1.1em; margin: 25px 0 15px 0; font-weight: normal; border-bottom: 1px solid #eee; padding-bottom: 5px;">{{ year }}</h3>
+    <ol class="bibliography">
+    {% for link in site.data.publications.main %}
+      {% assign pub_year = link.date | split: ' ' | last %}
+      {% if pub_year == year %}
+
+<li style="margin-bottom: 1em;">
 <div class="pub-row">
-  <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
-    {% if link.image %} 
-    <img src="{{ link.image }}" class="teaser img-fluid z-depth-1" style="width=100;height=40%">
-    {% if link.conference_short %} 
-    <!-- <abbr class="badge">{{ link.conference_short }}</abbr> -->
-    {% if link.conference_short == 'ArXiv' or link.conference_short == 'bioRxiv' %}
-    <abbr class="badge badge-arxiv">{{ link.conference_short }}</abbr>
-    {% else %}
-    <abbr class="badge">{{ link.conference_short }}</abbr>
-    {% endif %}
-    {% endif %}
-    {% endif %}
-    
-  </div>
-  <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
+  <div class="col-sm-12" style="position: relative;padding-right: 15px;padding-left: 15px;">
       <div class="title"><a href="{{ link.pdf }}">{{ link.title }}</a></div>
-      {% if link.date %}
-      <i>{{ link.date }}</i>
-      {% endif %}
-      <div class="author">{{ link.authors }}</div>
-      <div class="periodical"><em>{{ link.conference }}</em>
+      <div class="author" style="font-size: 0.9em; margin-top: 2px;">
+        {% assign author_parts = link.authors | split: ', ' %}
+        {% assign truncated_authors = '' %}
+        {% assign author_count = 0 %}
+        {% assign found_sizhuang = false %}
+        {% assign should_truncate = false %}
+        
+        {% for author in author_parts %}
+          {% assign author_count = author_count | plus: 1 %}
+          
+          {% if truncated_authors == '' %}
+            {% assign truncated_authors = author %}
+          {% else %}
+            {% assign truncated_authors = truncated_authors | append: ', ' | append: author %}
+          {% endif %}
+          
+          {% if author contains 'Sizhuang He' %}
+            {% assign found_sizhuang = true %}
+          {% endif %}
+          
+          {% comment %} Only truncate after finding Sizhuang He and having at least 5 authors {% endcomment %}
+          {% if found_sizhuang == true and author_count >= 5 and author_parts.size > author_count %}
+            {% assign should_truncate = true %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+        
+        {% if should_truncate and author_parts.size > author_count %}
+          <span class="author-truncated">{{ truncated_authors }}</span>
+          <span class="author-toggle" onclick="toggleAuthors(this)" style="color: #888888; cursor: pointer; text-decoration: underline dashed; margin-left: 5px;">and {{ author_parts.size | minus: author_count }} more authors</span>
+          <span class="author-full" style="display: none;">{{ link.authors }}</span>
+        {% else %}
+          {{ link.authors }}
+        {% endif %}
       </div>
-    <div class="links">
+      <div class="periodical" style="margin-top: 2px;"><em>{{ link.conference }}</em>{% if link.date %} • {{ link.date }}{% endif %}{% if link.notes %} • <strong><i style="color:#e74d3c">{{ link.notes }}</i></strong>{% endif %}</div>
+    <div class="links" style="margin-top: 5px;">
       {% if link.pdf %} 
-      <a href="{{ link.pdf }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+      <a href="{{ link.pdf }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:11px;">PDF</a>
       {% endif %}
       {% if link.blog %} 
-      <a href="{{ link.blog }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Blog</a>
+      <a href="{{ link.blog }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:11px;">Blog</a>
       {% endif %}
       {% if link.code %} 
-      <a href="{{ link.code }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+      <a href="{{ link.code }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:11px;">Code</a>
       {% endif %}
       {% if link.page %} 
-      <a href="{{ link.page }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Project Page</a>
+      <a href="{{ link.page }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:11px;">Project Page</a>
       {% endif %}
       {% if link.bibtex %} 
-      <a href="{{ link.bibtex }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">BibTex</a>
+      <a href="{{ link.bibtex }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:11px;">BibTex</a>
       {% endif %}
       {% if link.poster %} 
-      <a href="{{ link.poster }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Poster</a>
-      {% endif %}
-      {% if link.notes %} 
-      <strong> <i style="color:#e74d3c">{{ link.notes }}</i></strong>
+      <a href="{{ link.poster }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:11px;">Poster</a>
       {% endif %}
       {% if link.others %} 
       {{ link.others }}
@@ -59,9 +87,11 @@
   </div>
 </div>
 </li>
-<br>
 
+      {% endif %}
+    {% endfor %}
+    </ol>
+  </div>
 {% endfor %}
 
-</ol>
 </div>

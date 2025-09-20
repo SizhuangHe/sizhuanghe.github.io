@@ -1,5 +1,6 @@
 main:
   - title: Scaling Large Language Models for Next-Generation Single-Cell Analysis
+    alt_title: "Cell2Sentence"
     authors: Syed Rizvi<sup>*</sup>, Daniel Levine<sup>*</sup>, Aakash Patel<sup>*</sup>, Shiyang Zhang<sup>*</sup>, Eric Wang<sup>*</sup>, <b><u>Sizhuang He</u></b>, David Zhang, Cerise Tang, Zhuoyang Lyu, Rayyan Darji, Marlene Li, Emily Sun, David Jeong, Lawrence Zhao, Jennifer Kwan, David Braun, Brian Hafler, Jeffrey Ishizuka, Rahul Dhodapkar, Hattie Chung, Shekoofeh Azizi, Bryan Perozzi, and David van Dijk
     date: Apr 2025
     conference_short: bioRxiv
@@ -11,8 +12,11 @@ main:
     # poster: ./assets/posters/CaLMFlow_NYAS_Poster.pdf
     blog: https://research.google/blog/teaching-machines-the-language-of-biology-scaling-large-language-models-for-next-generation-single-cell-analysis/
     notes: Preprint
+    selected: true
+    abstract: "C2S-Scale scales this framework to 27 billion parameters trained on a billion-token multimodal corpus—achieving state-of-the-art predictive and generative performance for complex, multicellular analyses."
 
   - title: Non-Markovian Discrete Diffusion with Causal Language Models
+    alt_title: "CaDDI"
     authors: Yangtian Zhang <sup>*</sup>, <b><u>Sizhuang He<sup>*</sup></u></b>, Daniel Levine, Lawrence Zhao, Syed Rizvi, Emanuele Zappala, Rex Ying, and David van Dijk
     date: Jan 2025
     conference_short: NeurIPS
@@ -22,7 +26,9 @@ main:
     bibtex: ./assets/bibs/caddi.txt
     image: ./assets/img/caddi.png
     # poster: ./assets/posters/CaLMFlow_NYAS_Poster.pdf
-    # notes: 
+    # notes:
+    selected: true
+    abstract: "We introduce a novel approach to discrete diffusion models that conditions on the entire generative trajectory, thereby lifting the Markov constraint and allowing the model to revisit and improve past states. CaDDi treats standard causal language models as a special case and permits the direct reuse of pretrained LLM weights with no architectural changes." 
 
   - title: COAST&#58; Intelligent Time-Adaptive Neural Operators
     authors: Zhikai Wu, Shiyang Zhang, <b><u>Sizhuang He</u></b>, Sifan Wang, Min Zhu, Anran Jiao, Lu Lu, and David van Dijk
@@ -37,18 +43,22 @@ main:
     # notes: Accepted to AI4MATH Workshop at ICML 2025 as a poster
 
   - title: CaLMFlow&#58; Flow Matching using Causal Language Models
+    alt_title: "CaLMFlow"
     authors: <b><u>Sizhuang He<sup>*</sup></u></b>, Daniel Levine<sup>*</sup>, Ivan Vrkic, Marco Bressana, David Zhang, Syed Rizvi, Yangtian Zhang, Emanuele Zappala, and David van Dijk
     date: Oct 2024
     conference_short: ArXiv
-    conference: arXiv&#58; 2410.05292, 2024
+    conference: arXiv
     pdf: https://arxiv.org/pdf/2410.05292
     # code: https://github.com/MrGiovanni/ContinualLearning
     bibtex: ./assets/bibs/calmflow.txt
     image: ./assets/img/CaLMFlow.png
     poster: ./assets/posters/CaLMFlow_NYAS_Poster.pdf
     notes: Preprint
+    selected: true
+    abstract: "We present Volterra Flow Matching, a novel generative modeling framework that reformulates ODE-based flow matching frameworks with Volterra Integral Equations, hence avoiding a core challenge in ODE-based methods, known as stiffness. We show the connection between Volterra Integral Equations and causal transformers, the backbone of modern Large Language Models and hence demonstrates that causal language models can be naturally extended to generative modeling over continuous data domains through the lens of Volterra Flow Matching."
 
   - title: Intelligence at the Edge of Chaos
+    alt_title: "Intelligence at the Edge of Chaos"
     authors: Shiyang Zhang<sup>*</sup>, Aakash Patel<sup>*</sup>, Syed Rizvi, Nianchen Liu, <b><u>Sizhuang He</u></b>, Amin Karbasi, Emanuele Zappala, and David van Dijk
     date: Oct 2024
     conference_short: ICLR
@@ -58,12 +68,14 @@ main:
     bibtex: ./assets/bibs/complexity.txt
     image: ./assets/img/complexity.png
     # notes: Accepted to ICLR 2025 as a poster
+    selected: true
+    abstract: "By training LLMs on elementary cellular automata rules of varying complexity, we pinpoint a “sweet spot” of data complexity that maximizes downstream predictive and reasoning abilities. Our findings suggest that exposing models to appropriately complex patterns is key to unlocking emergent intelligence."
 
   - title: Operator Learning Meets Numerical Analysis&#58; Improving Neural Networks through Iterative Methods
     authors: Emanuele Zappala, Daniel Levine, <b><u>Sizhuang He</u></b>, Syed Rizvi, Sacha L&eacute;vy, and David van Dijk
     date: Oct 2023
     conference_short: ArXiv
-    conference: arXiv&#58; 2310.01618, 2023
+    conference: arXiv
     pdf: https://arxiv.org/pdf/2310.01618
     # code: https://github.com/MrGiovanni/ContinualLearning
     bibtex: ./assets/bibs/iterative_methods.txt

@@ -40,7 +40,7 @@
       <header>
         
         {% if site.avatar %}
-        <a class="image avatar"><img src="{{ site.avatar }}" alt="avatar" /></a>
+        <a class="image avatar"><img id="random-avatar" src="{{ site.avatar }}" alt="avatar" /></a>
         {% endif %}
 
         <h1>{{ site.title }}</h1>
@@ -109,6 +109,47 @@
       </footer>
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+    <script>
+      function toggleAuthors(element) {
+        const truncated = element.previousElementSibling;
+        const full = element.nextElementSibling;
+        
+        // Show full author list
+        truncated.style.display = 'none';
+        element.style.display = 'none';
+        full.style.display = 'inline';
+        
+        // Add collapse button directly to the full author span
+        const collapseButton = document.createElement('span');
+        collapseButton.className = 'author-collapse';
+        collapseButton.style.color = '#888888';
+        collapseButton.style.cursor = 'pointer';
+        collapseButton.style.textDecoration = 'underline dashed';
+        collapseButton.style.marginLeft = '5px';
+        collapseButton.innerHTML = 'show less';
+        collapseButton.onclick = function() { collapseAuthors(this); };
+        
+        full.appendChild(document.createTextNode(' '));
+        full.appendChild(collapseButton);
+      }
+      
+      function collapseAuthors(element) {
+        const fullSpan = element.parentElement;
+        const authorDiv = fullSpan.parentElement;
+        const truncated = authorDiv.querySelector('.author-truncated');
+        const toggle = authorDiv.querySelector('.author-toggle');
+        
+        // Remove the collapse button
+        element.remove();
+        
+        // Hide full author list
+        fullSpan.style.display = 'none';
+        
+        // Show truncated version and toggle button
+        truncated.style.display = 'inline';
+        toggle.style.display = 'inline';
+      }
+    </script>
     {% if site.google_analytics %}
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -119,5 +160,23 @@
       ga('send', 'pageview');
     </script>
     {% endif %}
+    
+    <!-- Random Avatar Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const avatarImages = [
+          './assets/img/avatars/brooklyn_bridge.png',
+          './assets/img/avatars/kitty.png'
+        ];
+        
+        const randomIndex = Math.floor(Math.random() * avatarImages.length);
+        const randomAvatar = avatarImages[randomIndex];
+        
+        const avatarElement = document.getElementById('random-avatar');
+        if (avatarElement) {
+          avatarElement.src = randomAvatar;
+        }
+      });
+    </script>
   </body>
 </html>
