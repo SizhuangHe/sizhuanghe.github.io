@@ -18,7 +18,7 @@ main:
 
   - title: Non-Markovian Discrete Diffusion with Causal Language Models
     alt_title: "CaDDI"
-    authors: Yangtian Zhang <sup>*</sup>, <b><u>Sizhuang He<sup>*</sup></u></b>, Daniel Levine, Lawrence Zhao, Syed Rizvi, Emanuele Zappala, Rex Ying, and David van Dijk
+    authors: Yangtian Zhang <sup>*</sup>, <b><u>Sizhuang He<sup>*</sup></u></b>, Daniel Levine, Lawrence Zhao, David Zhang, Syed Rizvi, Emanuele Zappala, Rex Ying, and David van Dijk
     date: Jan 2025
     conference_short: NeurIPS
     conference: NeurIPS 2025 (Poster)
