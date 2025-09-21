@@ -36,6 +36,7 @@
 
   </head>
   <body>
+
     <div class="wrapper">
       <header>
         
@@ -56,6 +57,7 @@
         {% if site.email %}
         <email>{{ site.email }}</email>
         {% endif %}
+
 
         <br>
         <br>
@@ -149,6 +151,7 @@
         truncated.style.display = 'inline';
         toggle.style.display = 'inline';
       }
+
     </script>
     {% if site.google_analytics %}
     <script>
@@ -162,6 +165,7 @@
     {% endif %}
     
     <style>
+
       /* BibTeX inline container styles */
       .bibtex-container {
         box-shadow: 0 1px 3px rgba(0,0,0,0.1);
@@ -173,10 +177,10 @@
       }
       
       @media (prefers-color-scheme: dark) {
-        .bibtex-container {
-          background-color: #2d3748 !important;
-          border-left-color: #4299e1 !important;
-        }
+         .bibtex-container {
+           background-color: #2d3748 !important;
+           border-left-color: #c2cedc !important;
+         }
         
         .bibtex-container strong {
           color: #e2e8f0 !important;
@@ -196,11 +200,11 @@
           background-color: #718096 !important;
         }
         
-        /* Abstract container dark mode */
-        .abstract-container {
-          background-color: #2d3748 !important;
-          border-left-color: #48bb78 !important;
-        }
+           /* Abstract container dark mode */
+           .abstract-container {
+             background-color: #2d3748 !important;
+             border-left-color: #e6d6d9 !important;
+           }
         
         .abstract-container div {
           color: #e2e8f0 !important;
@@ -216,10 +220,21 @@
           background-color: #718096 !important;
         }
         
-        /* Dark mode syntax highlighting */
-        .bibtex-container .bibtex-code span[style*="color: #6f42c1"] {
-          color: #ff79c6 !important; /* Purple for @article */
+        /* Selected publications dark mode */
+        .abstract[style*="color: #666"] {
+          color: #ffffff !important;
         }
+        
+        /* Author toggle links in dark mode - lighter gray */
+        .author-toggle {
+          color: #bbbbbb !important;
+        }
+           
+           
+           /* Dark mode syntax highlighting */
+           .bibtex-container .bibtex-code span[style*="color: #6f42c1"] {
+             color: #ff79c6 !important; /* Purple for @article */
+           }
         
         .bibtex-container .bibtex-code span[style*="color: #e36209"] {
           color: #50fa7b !important; /* Green for field names */
@@ -369,3 +384,5 @@
     </script>
   </body>
 </html>
+
+

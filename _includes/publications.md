@@ -1,5 +1,5 @@
-<h2 id="publications" style="margin: 2px 0px -15px;">Publications and Preprints</h2>
-<p style="font-size: 0.9em; margin-top: 15px; margin-bottom: -10px;"><i>(*: Equal Contribution; Organized by Year; Last Updated: Apr 2025)</i></p>
+<h2 id="publications" style="margin: 2px 0px -15px;">Complete Publication List</h2>
+<p style="font-size: 0.9em; margin-top: 15px; margin-bottom: -10px;"><i>(*: Equal Contribution; Last Updated: Sep 2025)</i></p>
 
 <div class="publications">
 
@@ -60,7 +60,7 @@
           {{ link.authors }}
         {% endif %}
       </div>
-      <div class="periodical" style="margin-top: 2px;"><em>{{ link.conference }}</em>{% if link.date %} • {{ link.date }}{% endif %}{% if link.notes %} • <strong><i style="color:#e74d3c">{{ link.notes }}</i></strong>{% endif %}</div>
+      <div class="periodical" style="margin-top: 2px;"><em>{{ link.conference }}</em></div>
     <div class="links" style="margin-top: 5px;">
       {% if link.full_abstract %} 
       <a href="javascript:void(0)" onclick="toggleAbstract('abstract-{{ forloop.index }}')" class="btn btn-sm z-depth-0" role="button" style="font-size:11px;">Abstract</a>
@@ -89,7 +89,7 @@
     </div>
     <!-- BibTeX formatted display -->
     {% if link.bibtex %}
-    <div id="bibtex-{{ forloop.index }}" class="bibtex-container" style="display: none; margin-top: 10px; padding: 15px; background-color: #f8f9fa; border-left: 3px solid #007bff; border-radius: 4px; position: relative; width: 700px; max-width: 80%;">
+    <div id="bibtex-{{ forloop.index }}" class="bibtex-container" style="display: none; margin-top: 10px; padding: 15px; background-color: #f8f9fa; border-left: 3px solid #003d82; border-radius: 4px; position: relative; width: 700px; max-width: 80%;">
       <button onclick="copyBibtexContent('bibtex-content-{{ forloop.index }}')" style="position: absolute; top: 8px; right: 8px; padding: 6px; border: 1px solid #ced4da; background: #fff; border-radius: 4px; cursor: pointer; color: #495057; display: flex; align-items: center; justify-content: center; z-index: 10;" title="Copy BibTeX">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
@@ -101,7 +101,7 @@
     {% endif %}
     <!-- Abstract display -->
     {% if link.full_abstract %}
-    <div id="abstract-{{ forloop.index }}" class="abstract-container" style="display: none; margin-top: 10px; padding: 15px; background-color: #f8f9fa; border-left: 3px solid #28a745; border-radius: 4px; width: 700px; max-width: 80%;">
+    <div id="abstract-{{ forloop.index }}" class="abstract-container" style="display: none; margin-top: 10px; padding: 15px; background-color: #f8f9fa; border-left: 3px solid #724e52; border-radius: 4px; width: 700px; max-width: 80%;">
       <div id="abstract-content-{{ forloop.index }}" style="margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; line-height: 1.6; color: #495057; text-align: justify;">{{ link.full_abstract }}</div>
     </div>
     {% endif %}

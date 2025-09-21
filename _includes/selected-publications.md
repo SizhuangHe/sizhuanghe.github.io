@@ -19,9 +19,9 @@
     {% endif %}
   </div>
   <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
-      <div class="title" style="font-size: 1.3em; font-weight: 600;"><a href="{{ link.pdf }}">{% if link.alt_title %}{{ link.alt_title }}{% else %}{{ link.title }}{% endif %}</a></div>
+      <div class="title" style="font-size: 1.3em; font-weight: 600;"><a href="{{ link.pdf }}" style="color: var(--global-theme-color); text-decoration: none;">{% if link.alt_title %}{{ link.alt_title }}{% else %}{{ link.title }}{% endif %}</a></div>
       {% if link.summary %}
-      <div class="abstract" style="margin-top: 10px; font-size: 1.05em; line-height: 1.5; color: #666; font-style: italic;">{{ link.summary }}{% if link.blog %} Read more about this work in our <a href="{{ link.blog }}" target="_blank" style="color: #2c5aa0; text-decoration: none;">Google Research blog post</a>.{% endif %} — <a href="{{ link.pdf }}" target="_blank" style="color: #2c5aa0; font-weight: bold; text-decoration: none;">{{ link.conference }}</a></div>
+      <div class="abstract" style="margin-top: 10px; font-size: 1.05em; line-height: 1.5; color: #666; font-style: italic;">{{ link.summary }}{% if link.blog %} Read more about this work in our <a href="{{ link.blog }}" target="_blank" style="color: var(--global-theme-color); text-decoration: none;">Google Research blog post</a>.{% endif %} — <a href="{{ link.pdf }}" target="_blank" style="color: var(--global-theme-color); font-weight: bold; text-decoration: none;">{{ link.conference }}</a></div>
       {% endif %}
     <div class="links">
       {% if link.code %} 
@@ -35,9 +35,9 @@
   {% else %}
   <!-- Even publications: Text left, image right -->
   <div class="col-sm-9" style="position: relative;padding-right: 20px;padding-left: 15px;">
-      <div class="title" style="font-size: 1.3em; font-weight: 600;"><a href="{{ link.pdf }}">{% if link.alt_title %}{{ link.alt_title }}{% else %}{{ link.title }}{% endif %}</a></div>
+      <div class="title" style="font-size: 1.3em; font-weight: 600;"><a href="{{ link.pdf }}" style="color: var(--global-theme-color); text-decoration: none;">{% if link.alt_title %}{{ link.alt_title }}{% else %}{{ link.title }}{% endif %}</a></div>
       {% if link.summary %}
-      <div class="abstract" style="margin-top: 10px; font-size: 1.05em; line-height: 1.5; color: #666; font-style: italic;">{{ link.summary }}{% if link.blog %} Read more about this work in our <a href="{{ link.blog }}" target="_blank" style="color: #2c5aa0; text-decoration: none;">Google Research blog post</a>.{% endif %} — <a href="{{ link.pdf }}" target="_blank" style="color: #2c5aa0; font-weight: bold; text-decoration: none;">{{ link.conference }}</a></div>
+      <div class="abstract" style="margin-top: 10px; font-size: 1.05em; line-height: 1.5; color: #666; font-style: italic;">{{ link.summary }}{% if link.blog %} Read more about this work in our <a href="{{ link.blog }}" target="_blank" style="color: var(--global-theme-color); text-decoration: none;">Google Research blog post</a>.{% endif %} — <a href="{{ link.pdf }}" target="_blank" style="color: var(--global-theme-color); font-weight: bold; text-decoration: none;">{{ link.conference }}</a></div>
       {% endif %}
     <div class="links">
       {% if link.code %} 

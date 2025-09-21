@@ -13,6 +13,7 @@ Previously, I completed my Bachelor's degree at [University of Michigan, Ann Arb
 - **Generative Modeling:** Flow Matching, Diffusion, Discrete Diffusion
 - **Operator Learning:** Modeling Continuous Spatiotemporal Dynamics, Integral Equations
 - **Computational Biology:** Single-cell Transcriptomics Data Analysis
+- **LLMs and Agentic AI:** Autonomous Systems for Biological Discovery
 
 
 ## News
