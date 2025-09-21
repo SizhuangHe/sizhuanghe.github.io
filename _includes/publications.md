@@ -75,7 +75,7 @@
       <a href="{{ link.page }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:11px;">Project Page</a>
       {% endif %}
       {% if link.bibtex %} 
-      <a href="{{ link.bibtex }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:11px;">BibTex</a>
+      <a href="javascript:void(0)" onclick="toggleBibtex('bibtex-{{ forloop.index }}', '{{ link.bibtex }}')" class="btn btn-sm z-depth-0" role="button" style="font-size:11px;">BibTex</a>
       {% endif %}
       {% if link.poster %} 
       <a href="{{ link.poster }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:11px;">Poster</a>
@@ -84,6 +84,18 @@
       {{ link.others }}
       {% endif %}
     </div>
+    <!-- BibTeX formatted display -->
+    {% if link.bibtex %}
+    <div id="bibtex-{{ forloop.index }}" class="bibtex-container" style="display: none; margin-top: 10px; padding: 15px; background-color: #f8f9fa; border-left: 3px solid #007bff; border-radius: 4px; position: relative;">
+      <button onclick="copyBibtexContent('bibtex-content-{{ forloop.index }}')" style="position: absolute; top: 8px; right: 8px; padding: 6px; border: 1px solid #ced4da; background: #fff; border-radius: 4px; cursor: pointer; color: #495057; display: flex; align-items: center; justify-content: center; z-index: 10;" title="Copy BibTeX">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
+      <pre id="bibtex-content-{{ forloop.index }}" class="bibtex-code" style="margin: 0; font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace; font-size: 11px; line-height: 1.5; white-space: pre-wrap; word-wrap: break-word; background-color: transparent; border: none; padding: 0; overflow-x: auto; color: #24292e;"></pre>
+    </div>
+    {% endif %}
   </div>
 </div>
 </li>

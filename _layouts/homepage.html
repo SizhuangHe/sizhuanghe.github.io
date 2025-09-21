@@ -161,6 +161,60 @@
     </script>
     {% endif %}
     
+    <style>
+      /* BibTeX inline container styles */
+      .bibtex-container {
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      }
+      
+      .bibtex-code {
+        font-feature-settings: "liga" 0;
+        tab-size: 2;
+      }
+      
+      @media (prefers-color-scheme: dark) {
+        .bibtex-container {
+          background-color: #2d3748 !important;
+          border-left-color: #4299e1 !important;
+        }
+        
+        .bibtex-container strong {
+          color: #e2e8f0 !important;
+        }
+        
+        .bibtex-container pre {
+          color: #e2e8f0 !important;
+        }
+        
+        .bibtex-container button {
+          background-color: #4a5568 !important;
+          color: #e2e8f0 !important;
+          border-color: #718096 !important;
+        }
+        
+        .bibtex-container button:hover {
+          background-color: #718096 !important;
+        }
+        
+        /* Dark mode syntax highlighting */
+        .bibtex-container .bibtex-code span[style*="color: #6f42c1"] {
+          color: #ff79c6 !important; /* Purple for @article */
+        }
+        
+        .bibtex-container .bibtex-code span[style*="color: #e36209"] {
+          color: #50fa7b !important; /* Green for field names */
+        }
+        
+        .bibtex-container .bibtex-code span[style*="color: #032f62"] {
+          color: #f1fa8c !important; /* Yellow for values */
+        }
+        
+        .bibtex-container .bibtex-code span[style*="color: #24292e"] {
+          color: #e2e8f0 !important; /* Light gray for punctuation */
+        }
+      }
+    </style>
+    
     <!-- Random Avatar Script -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
@@ -177,6 +231,110 @@
           avatarElement.src = randomAvatar;
         }
       });
+      
+      // BibTeX Inline Functions
+      window.toggleBibtex = function(containerId, bibtexUrl) {
+        const container = document.getElementById(containerId);
+        const preElement = document.getElementById('bibtex-content-' + containerId.split('-')[1]);
+        
+        if (container.style.display === 'none' || container.style.display === '') {
+          // Show the text box and load content if not already loaded
+          if (preElement.textContent === '') {
+            fetch(bibtexUrl)
+              .then(response => response.text())
+              .then(bibtexContent => {
+                // Clean the BibTeX content (remove abstract)
+                const cleanedBibtex = cleanBibtexContent(bibtexContent);
+                // Apply syntax highlighting
+                preElement.innerHTML = highlightBibtex(cleanedBibtex);
+              })
+              .catch(error => {
+                console.error('Error loading BibTeX:', error);
+                preElement.textContent = 'Error loading BibTeX content.';
+              });
+          }
+          container.style.display = 'block';
+        } else {
+          // Hide the display
+          container.style.display = 'none';
+        }
+      };
+      
+      window.copyBibtexContent = function(preElementId) {
+        const preElement = document.getElementById(preElementId);
+        const textContent = preElement.textContent || preElement.innerText;
+        
+        // Create a temporary textarea to copy the plain text
+        const tempTextArea = document.createElement('textarea');
+        tempTextArea.value = textContent;
+        document.body.appendChild(tempTextArea);
+        tempTextArea.select();
+        tempTextArea.setSelectionRange(0, 99999);
+        
+        try {
+          document.execCommand('copy');
+          document.body.removeChild(tempTextArea);
+          
+          // Provide visual feedback by changing the icon temporarily
+          const copyButton = event.target.closest('button');
+          const svg = copyButton.querySelector('svg');
+          const originalHTML = svg.innerHTML;
+          
+          // Change to checkmark icon
+          svg.innerHTML = '<path d="M20 6L9 17l-5-5"></path>';
+          copyButton.style.color = '#28a745';
+          
+          setTimeout(() => {
+            svg.innerHTML = originalHTML;
+            copyButton.style.color = '#495057';
+          }, 2000);
+        } catch (err) {
+          console.error('Failed to copy: ', err);
+          if (document.body.contains(tempTextArea)) {
+            document.body.removeChild(tempTextArea);
+          }
+        }
+      };
+      
+      // Function to apply syntax highlighting to BibTeX
+      function highlightBibtex(bibtexContent) {
+        // Escape HTML first to prevent conflicts
+        let highlighted = bibtexContent
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;');
+        
+        // Apply syntax highlighting
+        highlighted = highlighted
+          // Highlight entry type and key (e.g., @article{key,)
+          .replace(/(@\w+)(\{)([^,\s\}]+)(,?)/g, '<span style="color: #6f42c1;">$1</span><span style="color: #24292e;">$2</span><span style="color: #032f62;">$3</span><span style="color: #24292e;">$4</span>')
+          // Highlight field names (e.g., title =, author =)
+          .replace(/^(\s+)(\w+)(\s*=\s*)/gm, '$1<span style="color: #e36209;">$2</span><span style="color: #24292e;">$3</span>')
+          // Highlight field values in braces - handle nested braces properly
+          .replace(/(\{)([^{}]*(?:\{[^{}]*\}[^{}]*)*)(\})/g, function(match, openBrace, content, closeBrace) {
+            return '<span style="color: #24292e;">' + openBrace + '</span><span style="color: #032f62;">' + content + '</span><span style="color: #24292e;">' + closeBrace + '</span>';
+          })
+          // Highlight closing brace of entry
+          .replace(/^(\s*)(\})(\s*)$/gm, '$1<span style="color: #24292e;">$2</span>$3');
+          
+        return highlighted;
+      }
+      
+      // Function to clean BibTeX content by removing abstract field
+      function cleanBibtexContent(bibtexContent) {
+        // Remove abstract field and its content
+        // This regex matches the abstract field including multi-line content
+        const abstractRegex = /,?\s*abstract\s*=\s*\{[^{}]*(?:\{[^{}]*\}[^{}]*)*\}/gi;
+        let cleaned = bibtexContent.replace(abstractRegex, '');
+        
+        // Clean up any double commas that might result from removing abstract
+        cleaned = cleaned.replace(/,\s*,/g, ',');
+        
+        // Clean up comma before closing brace
+        cleaned = cleaned.replace(/,(\s*\})/g, '$1');
+        
+        return cleaned.trim();
+      }
     </script>
   </body>
 </html>
