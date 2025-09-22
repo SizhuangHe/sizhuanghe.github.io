@@ -1,9 +1,10 @@
-@misc{zhang2024intelligenceedgechaos,
-      title={Intelligence at the Edge of Chaos}, 
-      author={Shiyang Zhang and Aakash Patel and Syed A Rizvi and Nianchen Liu and Sizhuang He and Amin Karbasi and Emanuele Zappala and David van Dijk},
-      year={2024},
-      eprint={2410.02536},
-      archivePrefix={arXiv},
-      primaryClass={cs.AI},
-      url={https://arxiv.org/abs/2410.02536}, 
+@inproceedings{ICLR2025_d791394d,
+ author = {Zhang, Shiyang and Patel, Aakash and Rizvi, Syed and Liu, Nianchen and He, Sizhuang and Karbasi, Amin and Zappala, Emanuele and van Dijk, David},
+ booktitle = {International Conference on Representation Learning},
+ editor = {Y. Yue and A. Garg and N. Peng and F. Sha and R. Yu},
+ pages = {86576--86592},
+ title = {Intelligence at the Edge of Chaos},
+ url = {https://proceedings.iclr.cc/paper_files/paper/2025/file/d791394d32c428aecc7a5b101fb47799-Paper-Conference.pdf},
+ volume = {2025},
+ year = {2025}
 }
