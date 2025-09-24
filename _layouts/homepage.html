@@ -116,23 +116,59 @@
         const truncated = element.previousElementSibling;
         const full = element.nextElementSibling;
         
-        // Show full author list
+        // Store original texts and HTML if not already stored
+        if (!full.dataset.originalText) {
+          full.dataset.originalText = full.textContent;
+          full.dataset.originalHtml = full.innerHTML;
+          full.dataset.truncatedText = truncated.textContent;
+          full.dataset.truncatedHtml = truncated.innerHTML;
+        }
+        
+        // Hide truncated version and toggle button
         truncated.style.display = 'none';
         element.style.display = 'none';
+        
+        // Get the stored original texts
+        const fullText = full.dataset.originalText;
+        const truncatedText = full.dataset.truncatedText;
+        
+        // Find the additional text (what's hidden)
+        const additionalText = fullText.replace(truncatedText, '');
+        
+        // Show the full span with only the truncated HTML initially
+        full.innerHTML = full.dataset.truncatedHtml;
         full.style.display = 'inline';
+        full.classList.add('expanded');
         
-        // Add collapse button directly to the full author span
-        const collapseButton = document.createElement('span');
-        collapseButton.className = 'author-collapse';
-        collapseButton.style.color = '#888888';
-        collapseButton.style.cursor = 'pointer';
-        collapseButton.style.textDecoration = 'underline dashed';
-        collapseButton.style.marginLeft = '5px';
-        collapseButton.innerHTML = 'show less';
-        collapseButton.onclick = function() { collapseAuthors(this); };
+        // Create a span for the additional text that will be animated
+        const animatedSpan = document.createElement('span');
+        full.appendChild(animatedSpan);
         
-        full.appendChild(document.createTextNode(' '));
-        full.appendChild(collapseButton);
+        // Animate character by character for only the additional text
+        let charIndex = 0;
+        const animateChar = () => {
+          if (charIndex < additionalText.length) {
+            animatedSpan.textContent += additionalText[charIndex];
+            charIndex++;
+            setTimeout(animateChar, 5); // 5ms between characters
+          } else {
+            // Add collapse button after animation is complete
+            const collapseButton = document.createElement('span');
+            collapseButton.className = 'author-collapse';
+            collapseButton.style.color = '#888888';
+            collapseButton.style.cursor = 'pointer';
+            collapseButton.style.textDecoration = 'underline dashed';
+            collapseButton.style.marginLeft = '5px';
+            collapseButton.innerHTML = 'show less';
+            collapseButton.onclick = function() { collapseAuthors(this); };
+            
+            full.appendChild(document.createTextNode(' '));
+            full.appendChild(collapseButton);
+          }
+        };
+        
+        // Start the animation
+        setTimeout(animateChar, 100);
       }
       
       function collapseAuthors(element) {
@@ -141,15 +177,42 @@
         const truncated = authorDiv.querySelector('.author-truncated');
         const toggle = authorDiv.querySelector('.author-toggle');
         
-        // Remove the collapse button
-        element.remove();
+        // Remove the collapse button and space
+        element.previousSibling.remove(); // Remove space
+        element.remove(); // Remove button
         
-        // Hide full author list
-        fullSpan.style.display = 'none';
+        // Get the stored texts
+        const truncatedText = fullSpan.dataset.truncatedText;
+        const fullText = fullSpan.dataset.originalText;
         
-        // Show truncated version and toggle button
-        truncated.style.display = 'inline';
-        toggle.style.display = 'inline';
+        // Find the additional text that needs to be removed
+        const additionalText = fullText.replace(truncatedText, '');
+        
+        // Find the animated span (last child before the button was removed)
+        const animatedSpan = fullSpan.lastElementChild || fullSpan.lastChild;
+        
+        // Reverse animation - remove characters one by one from the animated span
+        let charIndex = additionalText.length;
+        const removeChar = () => {
+          if (charIndex > 0) {
+            charIndex--;
+            if (animatedSpan && animatedSpan.nodeType === Node.TEXT_NODE) {
+              animatedSpan.textContent = additionalText.substring(0, charIndex);
+            } else if (animatedSpan) {
+              animatedSpan.textContent = additionalText.substring(0, charIndex);
+            }
+            setTimeout(removeChar, 5); // 5ms between character removal
+          } else {
+            // After reverse animation, hide full and show truncated
+            fullSpan.style.display = 'none';
+            fullSpan.classList.remove('expanded');
+            truncated.style.display = 'inline';
+            toggle.style.display = 'inline';
+          }
+        };
+        
+        // Start the reverse animation
+        removeChar();
       }
 
       // Tag filtering functionality
@@ -309,6 +372,19 @@
       
       .filter-content.expanded {
         max-height: 200px;
+        opacity: 1;
+      }
+      
+      /* Author expansion animation */
+      .author-full {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+      
+      .author-full.expanded {
+        max-height: 100px;
         opacity: 1;
       }
       
