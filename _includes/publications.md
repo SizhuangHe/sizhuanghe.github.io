@@ -1,6 +1,32 @@
 <h2 id="publications" style="margin: 2px 0px -15px;">Complete Publication List</h2>
 <p style="font-size: 0.9em; margin-top: 15px; margin-bottom: -10px;"><i>(*: Equal Contribution; Last Updated: Sep 2025)</i></p>
 
+<!-- Tag Filtering System -->
+<div class="tag-filters">
+  <div class="filter-header" onclick="toggleFilterBox()" style="cursor: pointer; margin-bottom: 8px; font-weight: 600; color: #495057;">
+    <span>Filter by Research Area</span>
+  </div>
+  <div id="filter-content" class="filter-content" style="margin-left: 20px;">
+    {% assign all_tags = '' | split: ',' %}
+    {% for link in site.data.publications.main %}
+      {% if link.tags %}
+        {% for tag in link.tags %}
+          {% unless all_tags contains tag %}
+            {% assign all_tags = all_tags | push: tag %}
+          {% endunless %}
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+    {% assign all_tags = all_tags | sort %}
+    
+  {% for tag in all_tags %}
+    <span class="tag-filter" onclick="toggleTagFilter('{{ tag }}', this)"><b>#</b> {{ tag }}</span>
+  {% endfor %}
+    <button class="clear-filters" onclick="clearAllFilters()">Clear All</button>
+    <div id="filter-count" class="filter-count"></div>
+  </div>
+</div>
+
 <div class="publications">
 
 {% comment %} Get unique years and sort them {% endcomment %}
@@ -21,10 +47,10 @@
       {% assign pub_year = link.date | split: ' ' | last %}
       {% if pub_year == year %}
 
-<li style="margin-bottom: 1em;">
+<li class="publication-item" style="margin-bottom: 1em;" data-tags='{{ link.tags | jsonify }}'>
 <div class="pub-row">
   <div class="col-sm-12" style="position: relative;padding-right: 15px;padding-left: 15px;">
-      <div class="title"><a href="{{ link.pdf }}">{{ link.title }}</a></div>
+      <div class="title" style="font-weight: 600; color: #043361;">{{ link.title }}</div>
       <div class="author" style="font-size: 0.9em; margin-top: 2px;">
         {% assign author_parts = link.authors | split: ', ' %}
         {% assign truncated_authors = '' %}
@@ -87,6 +113,13 @@
       {{ link.others }}
       {% endif %}
     </div>
+      {% if link.tags %}
+      <div class="publication-tags" style="margin-top: 5px;">
+        {% for tag in link.tags %}
+          <span class="pub-tag" onclick="toggleTagFromPublication('{{ tag }}', this)"><b>#</b> {{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
     <!-- BibTeX formatted display -->
     {% if link.bibtex %}
     <div id="bibtex-{{ forloop.index }}" class="bibtex-container" style="display: none; margin-top: 10px; padding: 15px; background-color: #f8f9fa; border-left: 3px solid #003d82; border-radius: 4px; position: relative; width: 700px; max-width: 80%;">

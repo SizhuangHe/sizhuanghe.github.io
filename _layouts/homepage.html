@@ -152,6 +152,111 @@
         toggle.style.display = 'inline';
       }
 
+      // Tag filtering functionality
+      let activeFilters = new Set();
+
+      function toggleTagFilter(tag, element) {
+        if (activeFilters.has(tag)) {
+          activeFilters.delete(tag);
+          element.classList.remove('active');
+        } else {
+          activeFilters.add(tag);
+          element.classList.add('active');
+        }
+        
+        filterPublications();
+      }
+
+      function clearAllFilters() {
+        activeFilters.clear();
+        document.querySelectorAll('.tag-filter').forEach(el => el.classList.remove('active'));
+        filterPublications();
+      }
+
+      function filterPublications() {
+        const publications = document.querySelectorAll('.publication-item');
+        
+        publications.forEach(pub => {
+          if (activeFilters.size === 0) {
+            pub.style.display = '';
+          } else {
+            const pubTags = JSON.parse(pub.getAttribute('data-tags') || '[]');
+            const hasMatchingTag = pubTags.some(tag => activeFilters.has(tag));
+            pub.style.display = hasMatchingTag ? '' : 'none';
+          }
+          
+          // Highlight matching tags on individual publications
+          const pubTagElements = pub.querySelectorAll('.pub-tag');
+          pubTagElements.forEach(tagElement => {
+            const tagText = tagElement.textContent.replace('# ', ''); // Remove "# " for comparison
+            if (activeFilters.has(tagText)) {
+              tagElement.classList.add('highlighted');
+            } else {
+              tagElement.classList.remove('highlighted');
+            }
+          });
+        });
+
+        // Hide year sections with no visible publications
+        const yearSections = document.querySelectorAll('.year-section');
+        yearSections.forEach(yearSection => {
+          const visiblePubsInYear = yearSection.querySelectorAll('.publication-item').length;
+          const hiddenPubsInYear = yearSection.querySelectorAll('.publication-item[style*="display: none"]').length;
+          
+          if (visiblePubsInYear === hiddenPubsInYear) {
+            yearSection.style.display = 'none';
+          } else {
+            yearSection.style.display = '';
+          }
+        });
+
+        // Update filter count
+        const visibleCount = Array.from(publications).filter(pub => pub.style.display !== 'none').length;
+        const countElement = document.getElementById('filter-count');
+        if (countElement) {
+          if (activeFilters.size === 0) {
+            countElement.textContent = '';
+          } else {
+            countElement.textContent = `Showing ${visibleCount} of ${publications.length} publications`;
+          }
+        }
+      }
+
+      // Publication tag click functionality
+      function toggleTagFromPublication(tag, element) {
+        // Find the corresponding filter tag and activate it
+        const filterTags = document.querySelectorAll('.tag-filter');
+        let filterTag = null;
+        
+        filterTags.forEach(ft => {
+          if (ft.textContent === '# ' + tag) {
+            filterTag = ft;
+          }
+        });
+        
+        if (filterTag) {
+          // Toggle the filter tag
+          toggleTagFilter(tag, filterTag);
+          
+          // Expand the filter box if it's collapsed
+          const filterContent = document.getElementById('filter-content');
+          if (filterContent && !filterContent.classList.contains('expanded')) {
+            filterContent.classList.add('expanded');
+          }
+        }
+      }
+
+      // Collapsible filter box functionality
+      function toggleFilterBox() {
+        const content = document.getElementById('filter-content');
+        
+        if (content.classList.contains('expanded')) {
+          content.classList.remove('expanded');
+        } else {
+          content.classList.add('expanded');
+        }
+      }
+
     </script>
     {% if site.google_analytics %}
     <script>
@@ -174,6 +279,135 @@
       .bibtex-code {
         font-feature-settings: "liga" 0;
         tab-size: 2;
+      }
+      
+      /* Tag system styles */
+      .tag-filters {
+        margin: 15px 0;
+        padding: 0;
+      }
+      
+      .filter-header {
+        user-select: none;
+        transition: color 0.2s ease;
+        text-decoration: underline;
+        text-decoration-style: dashed;
+      }
+      
+      .filter-header:hover {
+        color: #007bff !important;
+      }
+      
+      
+      .filter-content {
+        transition: all 0.3s ease;
+        overflow: hidden;
+        margin-top: 10px;
+        max-height: 0;
+        opacity: 0;
+      }
+      
+      .filter-content.expanded {
+        max-height: 200px;
+        opacity: 1;
+      }
+      
+      .tag-filter {
+        display: inline-block;
+        margin: 3px;
+        padding: 2px 8px;
+        background-color: #e9ecef;
+        border: 1px solid #ced4da;
+        border-radius: 12px;
+        font-size: 0.75em;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        color: #495057;
+      }
+      
+      .tag-filter:hover {
+        background-color: #e8f0fe;
+        border-color: #4285f4;
+        color: #1a73e8;
+      }
+      
+      .tag-filter.active {
+        background-color: #007bff;
+        color: white;
+        border-color: #0056b3;
+      }
+      
+      .clear-filters {
+        display: inline-block;
+        margin: 3px;
+        margin-left: 10px;
+        padding: 4px 10px;
+        background-color: #ffeaea;
+        border: 1px solid #ffcdd2;
+        border-radius: 12px;
+        font-size: 0.75em;
+        font-weight: 500;
+        font-family: inherit;
+        line-height: normal;
+        box-sizing: border-box;
+        vertical-align: baseline;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        color: #c62828;
+      }
+      
+      .clear-filters:hover {
+        background-color: #ffebee;
+        border-color: #ffcdd2;
+      }
+
+      .filter-count {
+        margin-top: 8px;
+        font-size: 0.9em;
+        color: #6c757d;
+        font-style: italic;
+      }
+      
+      /* Action buttons hover effects */
+      .btn.btn-sm.z-depth-0:hover {
+        background-color: #e8f0fe !important;
+        border-color: #4285f4 !important;
+        color: #1a73e8 !important;
+        transform: translateY(-1px);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      
+      /* Individual publication tags */
+      .publication-tags {
+        margin-bottom: 3px;
+      }
+      
+      .pub-tag {
+        display: inline-block;
+        margin: 2px 4px 2px 0;
+        padding: 2px 8px;
+        background-color: #f1f3f4;
+        border: 1px solid #dadce0;
+        border-radius: 12px;
+        font-size: 0.75em;
+        color: #5f6368;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+      
+      .pub-tag:hover {
+        background-color: #e8f0fe;
+        border-color: #4285f4;
+        color: #1a73e8;
+      }
+      
+      .pub-tag.highlighted {
+        background-color: #007bff;
+        border-color: #0056b3;
+        color: white;
+        font-weight: 600;
       }
       
       @media (prefers-color-scheme: dark) {
@@ -228,6 +462,77 @@
         /* Author toggle links in dark mode - lighter gray */
         .author-toggle {
           color: #bbbbbb !important;
+        }
+        
+        /* Action buttons dark mode hover effects */
+        .btn.btn-sm.z-depth-0:hover {
+          background-color: #2d3748 !important;
+          border-color: #4299e1 !important;
+          color: #63b3ed !important;
+          transform: translateY(-1px);
+          box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        /* Tag system dark mode styles */
+        
+        .tag-filter {
+          background-color: #4a5568 !important;
+          color: #e2e8f0 !important;
+          border-color: #718096 !important;
+        }
+        
+        .tag-filter:hover {
+          background-color: #2d3748 !important;
+          border-color: #4299e1 !important;
+          color: #63b3ed !important;
+        }
+        
+        .tag-filter.active {
+          background-color: #3182ce !important;
+          color: #ffffff !important;
+          border-color: #2c5aa0 !important;
+        }
+        
+        .clear-filters {
+          background-color: #4a2c2a !important;
+          border-color: #5d4037 !important;
+          color: #ffcdd2 !important;
+        }
+        
+        .clear-filters:hover {
+          background-color: #3e2723 !important;
+          border-color: #5d4037 !important;
+        }
+
+        .filter-count {
+          color: #a0aec0 !important;
+        }
+        
+        .filter-header {
+          color: #e2e8f0 !important;
+        }
+        
+        .filter-header:hover {
+          color: #63b3ed !important;
+        }
+        
+        /* Individual publication tags dark mode */
+        .pub-tag {
+          background-color: #4a5568 !important;
+          border-color: #718096 !important;
+          color: #cbd5e0 !important;
+        }
+        
+        .pub-tag:hover {
+          background-color: #2d3748 !important;
+          border-color: #4299e1 !important;
+          color: #63b3ed !important;
+        }
+        
+        .pub-tag.highlighted {
+          background-color: #3182ce !important;
+          border-color: #2c5aa0 !important;
+          color: #ffffff !important;
         }
         
         /* Selected publications titles - match section headers in dark mode */
