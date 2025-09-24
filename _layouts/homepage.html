@@ -301,10 +301,14 @@
           // Toggle the filter tag
           toggleTagFilter(tag, filterTag);
           
-          // Expand the filter box if it's collapsed
+          // Expand the filter box if it's collapsed and update text
           const filterContent = document.getElementById('filter-content');
+          const toggleText = document.getElementById('filter-toggle-text');
           if (filterContent && !filterContent.classList.contains('expanded')) {
             filterContent.classList.add('expanded');
+            if (toggleText) {
+              toggleText.textContent = 'Collapse Research Area';
+            }
           }
         }
       }
