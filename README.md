@@ -10,6 +10,35 @@
 
 The latest version of my homepage is available here: [[link](https://github.com/yaoyao-liu/yaoyao-liu.github.io)]
 
+## My customization from the template
+
+This site is adapted from the [Minimal Light Theme](https://github.com/yaoyao-liu/minimal-light) by Yaoyao Liu. The following key modifications have been made to enhance the publication display and user experience. 
+
+My personal website is available here: [[link](https://sizhuang.org/)]
+
+### Publications System Enhancements
+- **Tag-based Filtering**: Added a collapsible tag filtering system that allows users to filter publications by research area
+- **Enhanced Publication Display**: 
+  - Improved Abstract and BibTeX display with consistent styling and width
+  - Added smooth animations for content expansion/collapse
+  - Implemented character-by-character animation for author list expansion
+- **Interactive Elements**:
+  - Clickable publication tags for dynamic filtering
+  - Hover effects on buttons and filter tags
+  - Year section hiding when no papers match current filters
+
+### UI/UX Improvements
+- **Responsive Design**: Optimized container widths and spacing for better readability
+- **Visual Consistency**: Unified styling across light and dark modes
+- **Animation Effects**: Added smooth slide-down animations for filter expansion and author details
+- **Color Scheme**: Enhanced link colors and tag styling with theme-consistent colors
+
+### Technical Modifications
+- Extended `_data/publications.yml` structure to support tags and full abstracts
+- Enhanced `_includes/publications.md` with dynamic filtering logic and improved layout
+- Modified `_layouts/homepage.html` with comprehensive CSS and JavaScript for interactivity
+- Implemented localStorage for filter state persistence
+
 ## Features
 
 - Simple and elegant personal homepage theme
