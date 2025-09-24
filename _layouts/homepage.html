@@ -312,11 +312,14 @@
       // Collapsible filter box functionality
       function toggleFilterBox() {
         const content = document.getElementById('filter-content');
+        const toggleText = document.getElementById('filter-toggle-text');
         
         if (content.classList.contains('expanded')) {
           content.classList.remove('expanded');
+          toggleText.textContent = 'Filter by Research Area';
         } else {
           content.classList.add('expanded');
+          toggleText.textContent = 'Collapse Research Area';
         }
       }
 

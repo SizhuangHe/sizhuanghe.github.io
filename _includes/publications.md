@@ -4,7 +4,7 @@
 <!-- Tag Filtering System -->
 <div class="tag-filters">
   <div class="filter-header" onclick="toggleFilterBox()" style="cursor: pointer; margin-bottom: 0px; font-weight: 600; color: #495057;">
-    <span>Filter by Research Area</span>
+    <span id="filter-toggle-text">Filter by Research Area</span>
   </div>
   <div id="filter-content" class="filter-content" style="margin-left: 20px;">
     {% assign all_tags = '' | split: ',' %}
