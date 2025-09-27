@@ -41,7 +41,11 @@
 
 {% for year in years %}
   <div class="year-section">
-    <h3 class="year-header" style="font-size: 1.1em; margin: 25px 0 15px 0; font-weight: normal; border-bottom: 1px solid #eee; padding-bottom: 5px;">{{ year }}</h3>
+    {% if forloop.first %}
+    <h3 class="year-header" style="font-size: 1.1em; margin: 8px 0 10px 0; font-weight: normal; border-bottom: 1px solid #eee; padding-bottom: 5px;">{{ year }}</h3>
+    {% else %}
+    <h3 class="year-header" style="font-size: 1.1em; margin: 15px 0 10px 0; font-weight: normal; border-bottom: 1px solid #eee; padding-bottom: 5px;">{{ year }}</h3>
+    {% endif %}
     <ol class="bibliography">
     {% for link in site.data.publications.main %}
       {% assign pub_year = link.date | split: ' ' | last %}
