@@ -8,13 +8,14 @@ I'm a second-year [Computer Science Ph.D. student](https://cpsc.yale.edu/people/
 
 Previously, I completed my Bachelor's degree at [University of Michigan, Ann Arbor](https://umich.edu/), majoring in [Honors Mathematics](https://lsa.umich.edu/math) and minoring in [Computer Science](https://cse.engin.umich.edu/).
 
-## Research Interests
+I work on the intersection of machine learning and biology:
 
 - **<span style="color: var(--global-theme-color); font-weight: bold;">Generative Modeling:</span>** Flow Matching, Diffusion, Discrete Diffusion
 - **<span style="color: var(--global-theme-color); font-weight: bold;">Operator Learning:</span>** Modeling Continuous Spatiotemporal Dynamics, Integral Equations
 - **<span style="color: var(--global-theme-color); font-weight: bold;">Computational Biology:</span>** Single-cell Transcriptomics Data Analysis
 - **<span style="color: var(--global-theme-color); font-weight: bold;">LLMs and Agentic AI:</span>** Autonomous Systems for Biological Discovery
 
+Beyond research, one of my biggest passions is <span style="color: var(--global-theme-color); font-weight: bold;">football 🏈</span>. I am a dedicated Michigan Wolverines fan 〽️ (Go Blue!) in college football and root for the Detroit Lions in the NFL. I also have a strong interest in <span style="color: var(--global-theme-color); font-weight: bold;">trains</span>, with my favorite being the Yamanote Line 🟢 operated by JR East in Tokyo.
 
 ## News
 - **[Sep 2025]** Our paper *<span style="color: var(--global-theme-color);">Non-Markovian Discrete Diffusion with Causal Language Models</span>* is accepted to **NeurIPS 2025** (*San Diego, CA*).
