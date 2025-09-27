@@ -4,9 +4,7 @@ layout: homepage
 
 ## About Me
 
-I'm a second-year [Computer Science Ph.D. student](https://cpsc.yale.edu/people/sizhuang-he) at [Yale University](https://www.yale.edu/), advised by Dr. [David van Dijk](https://www.vandijklab.org/). 
-
-Previously, I completed my Bachelor's degree at [University of Michigan, Ann Arbor](https://umich.edu/), majoring in [Honors Mathematics](https://lsa.umich.edu/math) and minoring in [Computer Science](https://cse.engin.umich.edu/).
+I'm a second-year [Computer Science Ph.D. student](https://cpsc.yale.edu/people/sizhuang-he) at [Yale University](https://www.yale.edu/), advised by Dr. [David van Dijk](https://www.vandijklab.org/). Previously, I completed my Bachelor's degree at [University of Michigan, Ann Arbor](https://umich.edu/), majoring in [Honors Mathematics](https://lsa.umich.edu/math) and minoring in [Computer Science](https://cse.engin.umich.edu/).
 
 I work on the intersection of machine learning and biology:
 
@@ -15,7 +13,9 @@ I work on the intersection of machine learning and biology:
 - **<span style="color: var(--global-theme-color); font-weight: bold;">Computational Biology:</span>** Single-cell Transcriptomics Data Analysis
 - **<span style="color: var(--global-theme-color); font-weight: bold;">LLMs and Agentic AI:</span>** Autonomous Systems for Biological Discovery
 
-Beyond research, one of my biggest passions is <span style="color: var(--global-theme-color); font-weight: bold;">football 🏈</span>. I am a dedicated Michigan Wolverines fan 〽️ (Go Blue!) in college football and root for the Detroit Lions in the NFL. I also have a strong interest in <span style="color: var(--global-theme-color); font-weight: bold;">trains</span>, with my favorite being the Yamanote Line 🟢 operated by JR East in Tokyo. I also enjoy <span style="color: var(--global-theme-color); font-weight: bold;">traveling</span>, especially exploring different cities—my all-time top three are Tokyo, Taipei, and Singapore.
+Beyond research, my biggest passions include:
+- **<span style="color: var(--global-theme-color); font-weight: bold;">Football 🏈:</span>** I am a dedicated Michigan Wolverines fan 〽️ (Go Blue!) in college football and root for the Detroit Lions in the NFL. 
+- <span style="color: var(--global-theme-color); font-weight: bold;">Traveling:</span> I enjoy exploring different cities—my all-time top three are Tokyo, Taipei, and Singapore. When visiting new places, I particularly enjoy experiencing local train systems, with my favorite being the Yamanote Line 🟢 operated by JR East in Tokyo.
 
 ## News
 - **[Sep 2025]** Our paper *<span style="color: var(--global-theme-color);">Non-Markovian Discrete Diffusion with Causal Language Models</span>* is accepted to **NeurIPS 2025** (*San Diego, CA*).
