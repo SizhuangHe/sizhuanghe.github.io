@@ -15,7 +15,7 @@ I work on the intersection of machine learning and biology:
 - **<span style="color: var(--global-theme-color); font-weight: bold;">Computational Biology:</span>** Single-cell Transcriptomics Data Analysis
 - **<span style="color: var(--global-theme-color); font-weight: bold;">LLMs and Agentic AI:</span>** Autonomous Systems for Biological Discovery
 
-Beyond research, one of my biggest passions is <span style="color: var(--global-theme-color); font-weight: bold;">football 🏈</span>. I am a dedicated Michigan Wolverines fan 〽️ (Go Blue!) in college football and root for the Detroit Lions in the NFL. I also have a strong interest in <span style="color: var(--global-theme-color); font-weight: bold;">trains</span>, with my favorite being the Yamanote Line 🟢 operated by JR East in Tokyo.
+Beyond research, one of my biggest passions is <span style="color: var(--global-theme-color); font-weight: bold;">football 🏈</span>. I am a dedicated Michigan Wolverines fan 〽️ (Go Blue!) in college football and root for the Detroit Lions in the NFL. I also have a strong interest in <span style="color: var(--global-theme-color); font-weight: bold;">trains</span>, with my favorite being the Yamanote Line 🟢 operated by JR East in Tokyo. I also enjoy traveling, especially exploring different cities—my all-time top three are Tokyo, Taipei, and Singapore.
 
 ## News
 - **[Sep 2025]** Our paper *<span style="color: var(--global-theme-color);">Non-Markovian Discrete Diffusion with Causal Language Models</span>* is accepted to **NeurIPS 2025** (*San Diego, CA*).
