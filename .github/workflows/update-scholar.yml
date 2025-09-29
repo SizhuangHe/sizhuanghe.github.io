@@ -40,8 +40,11 @@ jobs:
       run: |
         if [ -f "google-scholar-stats/gs_data.json" ]; then
           echo "data_exists=true" >> $GITHUB_OUTPUT
+          echo "Data file found, contents:"
+          cat google-scholar-stats/gs_data.json
         else
           echo "data_exists=false" >> $GITHUB_OUTPUT
+          echo "Data file not found"
         fi
 
     - name: Push to google-scholar-stats branch
@@ -53,4 +56,6 @@ jobs:
         git config --local user.name "GitHub Action"
         git add *.json
         git commit -m "Update Google Scholar stats - $(date '+%Y-%m-%d')"
-        git push --force https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:google-scholar-stats
+        # Create the branch if it doesn't exist
+        git branch -M google-scholar-stats
+        git push --force https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git google-scholar-stats:google-scholar-stats

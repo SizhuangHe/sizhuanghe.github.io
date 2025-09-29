@@ -107,10 +107,10 @@ def main():
         
         if stats:
             # Create output directory
-            os.makedirs("../google-scholar-stats", exist_ok=True)
+            os.makedirs("google-scholar-stats", exist_ok=True)
             
             # Save to JSON file
-            output_file = "../google-scholar-stats/gs_data.json"
+            output_file = "google-scholar-stats/gs_data.json"
             with open(output_file, 'w') as f:
                 json.dump(stats, f, indent=2)
             
