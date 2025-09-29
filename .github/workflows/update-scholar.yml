@@ -12,12 +12,15 @@ jobs:
   update-scholar:
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    permissions:
+      contents: write
 
     steps:
     - name: Checkout main branch
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         ref: main
+        token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -58,4 +61,4 @@ jobs:
         git commit -m "Update Google Scholar stats - $(date '+%Y-%m-%d')"
         # Create the branch if it doesn't exist
         git branch -M google-scholar-stats
-        git push --force https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git google-scholar-stats:google-scholar-stats
+        git push --force https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git google-scholar-stats:google-scholar-stats
