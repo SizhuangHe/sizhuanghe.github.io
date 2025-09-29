@@ -146,14 +146,14 @@
           const data = await response.json();
           
           // Update the display
-          document.getElementById('citations').textContent = data.citations?.toLocaleString() || '-';
-          document.getElementById('h-index').textContent = data.h_index || '-';
+          document.getElementById('citations').textContent = data.citations?.toLocaleString() || '0';
+          document.getElementById('h-index').textContent = data.h_index || '0';
           
         } catch (error) {
           console.log('Could not load Google Scholar stats:', error);
           // Show fallback values
-          document.getElementById('citations').textContent = 'N/A';
-          document.getElementById('h-index').textContent = 'N/A';
+          document.getElementById('citations').textContent = '0';
+          document.getElementById('h-index').textContent = '0';
         }
       }
 
