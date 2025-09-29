@@ -34,7 +34,7 @@ blockquote { background: var(--global-bg-color); border-left: 2px solid var(--gl
 
 .publications h1 { color: var(--global-theme-color); font-size: 2rem; text-align: center; margin-top: 1em; margin-bottom: 1em; }
 
-.publications h2 { margin-bottom: 1rem; }
+.publications h2 { margin-bottom: 2rem; }
 
 .publications h2 span { font-size: 1.5rem; }
 
