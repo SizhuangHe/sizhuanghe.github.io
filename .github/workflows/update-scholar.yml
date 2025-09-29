@@ -61,4 +61,5 @@ jobs:
         git commit -m "Update Google Scholar stats - $(date '+%Y-%m-%d')"
         # Create the branch if it doesn't exist
         git branch -M google-scholar-stats
-        git push --force https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git google-scholar-stats:google-scholar-stats
+        git remote add origin https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        git push --force origin google-scholar-stats
