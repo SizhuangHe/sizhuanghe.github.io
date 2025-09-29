@@ -62,11 +62,6 @@
         <br>
         <br>
         <div class="social-icons">
-        {% if site.google_scholar %}
-        <a style="margin: 0 5px 0 0" href="{{ site.google_scholar }}">
-          <i class="ai ai-google-scholar" style="font-size:1.2rem"></i>
-        </a>  
-        {% endif %}
 
         {% if site.cv_link %}
         <a style="margin: 0 5px 0 0" href="{{ site.cv_link }}">
@@ -92,7 +87,27 @@
         </a>
         {% endif %}
         </div>
-        <br>
+
+        <!-- Google Scholar Statistics -->
+        <div class="scholar-stats">
+          <div class="stats-container" id="scholar-stats">
+            {% if site.google_scholar %}
+            <div class="scholar-icon">
+              <a href="{{ site.google_scholar }}" target="_blank" rel="noopener">
+                <i class="ai ai-google-scholar" style="font-size:1.5rem"></i>
+              </a>
+            </div>
+            {% endif %}
+            <div class="stat-item">
+              <div class="stat-number" id="citations">Loading...</div>
+              <div class="stat-label">Citations</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" id="h-index">Loading...</div>
+              <div class="stat-label">H-Index</div>
+            </div>
+          </div>
+        </div>
 
       </header>
       <section>
@@ -112,6 +127,39 @@
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
     <script>
+      // Google Scholar Stats Loading
+      async function loadScholarStats() {
+        // Check if we're on localhost (development)
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+          // Show mock data for local development
+          document.getElementById('citations').textContent = '1,234';
+          document.getElementById('h-index').textContent = '12';
+          return;
+        }
+        
+        try {
+          const response = await fetch('https://raw.githubusercontent.com/SizhuangHe/sizhuanghe.github.io/google-scholar-stats/gs_data.json');
+          if (!response.ok) {
+            throw new Error('Failed to fetch stats');
+          }
+          
+          const data = await response.json();
+          
+          // Update the display
+          document.getElementById('citations').textContent = data.citations?.toLocaleString() || '-';
+          document.getElementById('h-index').textContent = data.h_index || '-';
+          
+        } catch (error) {
+          console.log('Could not load Google Scholar stats:', error);
+          // Show fallback values
+          document.getElementById('citations').textContent = 'N/A';
+          document.getElementById('h-index').textContent = 'N/A';
+        }
+      }
+
+      // Load stats when the page loads
+      document.addEventListener('DOMContentLoaded', loadScholarStats);
+
       function toggleAuthors(element) {
         const truncated = element.previousElementSibling;
         const full = element.nextElementSibling;
@@ -340,6 +388,99 @@
     {% endif %}
     
     <style>
+      /* Google Scholar Stats Sidebar Styles */
+      .scholar-stats {
+        margin: 0.2rem 0 0.5rem 0;
+        padding: 0.5rem;
+        background: #f8f9fa;
+        border-radius: 4px;
+        text-align: center;
+      }
+
+      .stats-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 0.4rem;
+        align-items: center;
+      }
+
+      .stat-item {
+        text-align: center;
+        flex: 1;
+      }
+
+      .stat-number {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: var(--global-theme-color);
+        margin-bottom: 0.1rem;
+        line-height: 1;
+      }
+
+      .stat-label {
+        font-size: 0.65rem;
+        color: #666;
+        text-transform: uppercase;
+        letter-spacing: 0.2px;
+        line-height: 1;
+      }
+
+      .scholar-icon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex: 1;
+        min-height: 2.5rem;
+      }
+
+      .scholar-icon a {
+        color: var(--global-theme-color);
+        text-decoration: none;
+        transition: opacity 0.2s ease;
+      }
+
+      .scholar-icon a:hover {
+        opacity: 0.7;
+      }
+
+      .scholar-label {
+        font-size: 0.65rem;
+        color: #666;
+        text-transform: uppercase;
+        letter-spacing: 0.2px;
+        line-height: 1;
+        margin-top: 0.1rem;
+      }
+
+      @media (max-width: 768px) {
+        .stats-container {
+          gap: 0.3rem;
+        }
+        
+        .stat-number {
+          font-size: 1.1rem;
+        }
+        
+        .stat-label {
+          font-size: 0.7rem;
+        }
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .scholar-stats {
+          background: #2d3748 !important;
+        }
+        
+        .stat-label {
+          color: #a0aec0 !important;
+        }
+        
+        .scholar-label {
+          color: #a0aec0 !important;
+        }
+      }
 
       /* BibTeX inline container styles */
       .bibtex-container {

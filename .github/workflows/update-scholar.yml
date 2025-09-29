@@ -1,0 +1,54 @@
+name: Update Google Scholar Stats
+
+on:
+  schedule:
+    # Run daily at 2:00 AM UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  update-scholar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+    - name: Checkout main branch
+      uses: actions/checkout@v3
+      with:
+        ref: main
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r google_scholar_crawler/requirements.txt
+
+    - name: Run Google Scholar crawler
+      timeout-minutes: 2
+      continue-on-error: true
+      run: |
+        python google_scholar_crawler/update_scholar.py || echo "Crawler failed, will retry next time"
+
+    - name: Check if data was fetched
+      id: check_data
+      run: |
+        if [ -f "google-scholar-stats/gs_data.json" ]; then
+          echo "data_exists=true" >> $GITHUB_OUTPUT
+        else
+          echo "data_exists=false" >> $GITHUB_OUTPUT
+        fi
+
+    - name: Push to google-scholar-stats branch
+      if: steps.check_data.outputs.data_exists == 'true'
+      run: |
+        cd google-scholar-stats
+        git init
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add *.json
+        git commit -m "Update Google Scholar stats - $(date '+%Y-%m-%d')"
+        git push --force https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:google-scholar-stats
