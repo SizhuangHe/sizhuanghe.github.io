@@ -30,9 +30,19 @@ jobs:
         pip install -r google_scholar_crawler/requirements.txt
 
     - name: Run Google Scholar crawler
-      timeout-minutes: 2
+      timeout-minutes: 5
       continue-on-error: true
       run: |
+        # Install Chrome and ChromeDriver
+        wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+        echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
+        sudo apt-get update
+        sudo apt-get install -y google-chrome-stable
+        
+        # Set display for headless mode
+        export DISPLAY=:99
+        Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+        
         python google_scholar_crawler/update_scholar.py || echo "Crawler failed, will retry next time"
 
     - name: Check if data was fetched
