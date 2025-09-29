@@ -23,9 +23,9 @@ def fetch_google_scholar_data(scholar_id="5biMMmIAAAAJ"):
         
         # Extract basic information
         data = {
-            "name": author.get('name', 'Shiyang Zhang'),
-            "affiliation": author.get('affiliation', 'Yale University'),
-            "email": author.get('email', 'harryzhang957@gmail.com'),
+            "name": author.get('name', 'Sizhuang He'),
+            "affiliation": author.get('affiliation', 'Your University'),
+            "email": author.get('email', 'sizhuang.he@yale.edu'),
             "citedby": author.get('citedby', 0),
             "citedby5y": author.get('citedby5y', 0),
             "hindex": author.get('hindex', 0),
@@ -130,9 +130,9 @@ def fetch_with_requests(scholar_id="5biMMmIAAAAJ"):
                 }
             
             return {
-                "name": "Shiyang Zhang",
+                "name": "Sizhuang He",
                 "affiliation": "Yale University",
-                "email": "harryzhang957@gmail.com",
+                "email": "sizhuang.he@yale.edu",
                 "citedby": citations,
                 "hindex": hindex,
                 "i10index": i10index,
