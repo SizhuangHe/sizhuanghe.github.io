@@ -19,7 +19,6 @@ I work on the intersection of machine learning and biology:
 - **[Jan 2025]** I received *<span style="color: var(--global-theme-color);">the Fan Family Fellowship</span>* of Yale University.
 - **[Jan 2025]** Our paper *<span style="color: var(--global-theme-color);">Intelligence at the Edge of Chaos</span>* is accepted to **ICLR 2025** (*Singapore*).
 
-
 {% include_relative _includes/selected-publications.md %}
 {% include_relative _includes/publications.md %}
 
