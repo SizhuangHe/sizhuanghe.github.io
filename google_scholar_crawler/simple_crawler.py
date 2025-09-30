@@ -24,6 +24,10 @@ def generate_fallback_data():
 
 def main():
     print("🚀 Starting Google Scholar data fetch...")
+    print("🔧 Environment check:")
+    print(f"   - GOOGLE_SCHOLAR_ID: {os.environ.get('GOOGLE_SCHOLAR_ID', 'NOT SET')}")
+    print(f"   - Python version: {sys.version}")
+    print(f"   - Current directory: {os.getcwd()}")
     
     try:
         # Try to import scholarly

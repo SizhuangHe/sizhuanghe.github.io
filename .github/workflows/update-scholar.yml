@@ -31,34 +31,60 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r google_scholar_crawler/requirements.txt
 
+    - name: Test basic setup
+      timeout-minutes: 2
+      continue-on-error: true
+      run: |
+        echo "🧪 Testing basic setup..."
+        python google_scholar_crawler/test_simple.py || echo "❌ Test failed"
+        echo "✅ Test completed"
+        
     - name: Run Google Scholar crawler
       timeout-minutes: 5
       continue-on-error: true
       run: |
-        python google_scholar_crawler/simple_crawler.py || echo "Crawler failed, will retry next time"
+        echo "🚀 Starting Google Scholar crawler..."
+        python google_scholar_crawler/simple_crawler.py || echo "❌ Crawler failed, will retry next time"
+        echo "✅ Crawler step completed"
       env:
         GOOGLE_SCHOLAR_ID: "5biMMmIAAAAJ"
 
     - name: Check if data was fetched
       id: check_data
       run: |
+        echo "🔍 Checking if data was fetched..."
         if [ -f "results/gs_data.json" ]; then
+          echo "✅ Data file found!"
+          echo "📊 Data contents:"
+          cat results/gs_data.json | head -20
           echo "data_exists=true" >> $GITHUB_OUTPUT
           # Copy data to google-scholar-stats directory
+          echo "📁 Creating google-scholar-stats directory..."
           mkdir -p google-scholar-stats
+          echo "📋 Copying data files..."
           cp results/gs_data.json google-scholar-stats/
           cp results/gs_data_shieldsio.json google-scholar-stats/
+          echo "✅ Data copied successfully"
         else
+          echo "❌ No data file found"
           echo "data_exists=false" >> $GITHUB_OUTPUT
         fi
 
     - name: Push to google-scholar-stats branch
       if: steps.check_data.outputs.data_exists == 'true'
       run: |
+        echo "🚀 Starting git operations..."
         cd google-scholar-stats
+        echo "📁 Changed to google-scholar-stats directory"
+        echo "🔧 Initializing git repository..."
         git init
+        echo "👤 Setting git user..."
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
+        echo "📋 Adding files to git..."
         git add *.json
+        echo "💾 Committing changes..."
         git commit -m "Update Google Scholar stats - $(date '+%Y-%m-%d')"
+        echo "🚀 Pushing to google-scholar-stats branch..."
         git push --force https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:google-scholar-stats
+        echo "✅ Successfully pushed to google-scholar-stats branch!"
