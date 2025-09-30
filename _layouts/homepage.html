@@ -160,7 +160,8 @@
               month: 'short',
               day: 'numeric',
               hour: '2-digit',
-              minute: '2-digit'
+              minute: '2-digit',
+              timeZoneName: 'short'
             });
             document.getElementById('update-time').textContent = formattedDate;
           }
@@ -174,8 +175,63 @@
         }
       }
 
+      // Load publication citations
+      async function loadPublicationCitations() {
+        try {
+          const response = await fetch('https://raw.githubusercontent.com/SizhuangHe/sizhuanghe.github.io/google-scholar-stats/gs_data.json');
+          if (!response.ok) {
+            throw new Error('Failed to fetch publication data');
+          }
+          
+          const data = await response.json();
+          const publications = data.publications || {};
+          
+          // Create a mapping of titles to citation counts
+          const citationMap = {};
+          Object.values(publications).forEach(pub => {
+            if (pub.bib && pub.bib.title && pub.num_citations !== undefined) {
+              citationMap[pub.bib.title] = pub.num_citations;
+            }
+          });
+          
+          // Update publications with citation counts after the conference
+          document.querySelectorAll('.publication-item').forEach(pubElement => {
+            const periodicalElement = pubElement.querySelector('.periodical');
+            
+            if (!periodicalElement) return;
+            
+            // Get paper_id from data attribute
+            const paperId = pubElement.getAttribute('data-paper-id');
+            
+            if (!paperId) return;
+            
+            // Find citation count by paper ID
+            let citationCount = null;
+            Object.values(publications).forEach(pub => {
+              if (pub.author_pub_id === paperId && pub.num_citations !== undefined) {
+                citationCount = pub.num_citations;
+              }
+            });
+            
+            // Add citation count after the conference if found
+            if (citationCount !== null) {
+              const citationSpan = document.createElement('span');
+              citationSpan.style.cssText = 'color: #666; font-weight: normal; font-size: 0.9em; margin-left: 10px;';
+              citationSpan.textContent = ` • ${citationCount} citations`;
+              periodicalElement.appendChild(citationSpan);
+            }
+          });
+          
+        } catch (error) {
+          console.log('Could not load publication citations:', error);
+        }
+      }
+
       // Load stats when the page loads
-      document.addEventListener('DOMContentLoaded', loadScholarStats);
+      document.addEventListener('DOMContentLoaded', function() {
+        loadScholarStats();
+        loadPublicationCitations();
+      });
 
       function toggleAuthors(element) {
         const truncated = element.previousElementSibling;

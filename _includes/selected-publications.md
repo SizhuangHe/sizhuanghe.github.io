@@ -8,7 +8,7 @@
 {% if link.selected %}
 {% assign selected_count = selected_count | plus: 1 %}
 
-<li>
+<li data-paper-id="{{ link.paper_id }}">
 <div class="pub-row">
   {% assign is_even = selected_count | modulo: 2 %}
   {% if is_even == 1 %}

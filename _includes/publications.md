@@ -51,7 +51,7 @@
       {% assign pub_year = link.date | split: ' ' | last %}
       {% if pub_year == year %}
 
-<li class="publication-item" style="margin-bottom: 1em;" data-tags='{{ link.tags | jsonify }}'>
+<li class="publication-item" style="margin-bottom: 1em;" data-tags='{{ link.tags | jsonify }}' data-paper-id="{{ link.paper_id }}">
 <div class="pub-row">
   <div class="col-sm-12" style="position: relative;padding-right: 15px;padding-left: 15px;">
       <div class="title" style="font-weight: 600; color: #043361;">{{ link.title }}</div>
