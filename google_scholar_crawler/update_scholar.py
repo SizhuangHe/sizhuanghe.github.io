@@ -19,12 +19,12 @@ def fetch_google_scholar_data(scholar_id="5biMMmIAAAAJ"):
     try:
         # Search for the author
         author = scholarly.search_author_id(scholar_id)
-        author = scholarly.fill(author, sections=['basics', 'indices', 'counts'])
+        author = scholarly.fill(author, sections=['basics', 'indices', 'counts', 'publications'])
         
         # Extract basic information
         data = {
             "name": author.get('name', 'Sizhuang He'),
-            "affiliation": author.get('affiliation', 'Your University'),
+            "affiliation": author.get('affiliation', 'Yale University'),
             "email": author.get('email', 'sizhuang.he@yale.edu'),
             "citedby": author.get('citedby', 0),
             "citedby5y": author.get('citedby5y', 0),
@@ -32,8 +32,31 @@ def fetch_google_scholar_data(scholar_id="5biMMmIAAAAJ"):
             "hindex5y": author.get('hindex5y', 0),
             "i10index": author.get('i10index', 0),
             "i10index5y": author.get('i10index5y', 0),
-            "updated": str(datetime.now())
+            "updated": str(datetime.now()),
+            "publications": {}
         }
+        
+        # Extract publications
+        for i, pub in enumerate(author.get('publications', [])):
+            pub_filled = scholarly.fill(pub)
+            pub_id = f"pub_{i}"
+            
+            # Extract publication details
+            bib = pub_filled.get('bib', {})
+            data["publications"][pub_id] = {
+                "bib": {
+                    "title": bib.get('title', ''),
+                    "author": ', '.join(bib.get('author', [])) if isinstance(bib.get('author', []), list) else bib.get('author', ''),
+                    "venue": bib.get('venue', bib.get('journal', '')),
+                    "pub_year": bib.get('pub_year', ''),
+                    "volume": bib.get('volume', ''),
+                    "number": bib.get('number', ''),
+                    "pages": bib.get('pages', '')
+                },
+                "num_citations": pub_filled.get('num_citations', 0),
+                "pub_url": pub_filled.get('pub_url', '#'),
+                "author_pub_id": pub_id
+            }
         
         return data
         
@@ -41,7 +64,7 @@ def fetch_google_scholar_data(scholar_id="5biMMmIAAAAJ"):
         print(f"Error fetching Google Scholar data: {e}")
         return None
 
-def fetch_with_requests(scholar_id="5biMMmIAAAAJ"):
+def fetch_with_requests(scholar_id="pez-fEUAAAAJ"):
     """Fallback method using requests library"""
     try:
         headers = {
@@ -82,13 +105,34 @@ def fetch_with_requests(scholar_id="5biMMmIAAAAJ"):
                 if i10_td:
                     i10index = int(i10_td.text.replace(',', ''))
             
-            # Skip publications for faster processing
+            # Extract publications
             publications = {}
+            pub_rows = soup.find_all('tr', class_='gsc_a_tr')
+            
+            for i, row in enumerate(pub_rows):
+                title_elem = row.find('a', class_='gsc_a_at')
+                authors_elem = row.find('div', class_='gs_gray')
+                venue_elem = row.find_all('div', class_='gs_gray')[1] if len(row.find_all('div', class_='gs_gray')) > 1 else None
+                year_elem = row.find('span', class_='gsc_a_h')
+                citations_elem = row.find('a', class_='gsc_a_ac')
+                
+                pub_id = f"pub_{i}"
+                publications[pub_id] = {
+                    "bib": {
+                        "title": title_elem.text if title_elem else "",
+                        "author": authors_elem.text if authors_elem else "",
+                        "venue": venue_elem.text if venue_elem else "",
+                        "pub_year": year_elem.text if year_elem else ""
+                    },
+                    "num_citations": int(citations_elem.text) if citations_elem and citations_elem.text else 0,
+                    "pub_url": f"https://scholar.google.com{title_elem['href']}" if title_elem and 'href' in title_elem.attrs else "#",
+                    "author_pub_id": pub_id
+                }
             
             return {
-                "name": "Sizhuang He",
+                "name": "Shiyang Zhang",
                 "affiliation": "Yale University",
-                "email": "sizhuang.he@yale.edu",
+                "email": "harryzhang957@gmail.com",
                 "citedby": citations,
                 "hindex": hindex,
                 "i10index": i10index,

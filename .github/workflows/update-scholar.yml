@@ -2,25 +2,20 @@ name: Update Google Scholar Stats
 
 on:
   schedule:
-    # Run daily at midnight UTC
-    - cron: '0 0 * * *'
-  push:
-    branches: [ main ]
+    # Run daily at 2:00 AM UTC
+    - cron: '0 2 * * *'
   workflow_dispatch:  # Allow manual trigger
 
 jobs:
   update-scholar:
     runs-on: ubuntu-latest
-    timeout-minutes: 2
-    permissions:
-      contents: write
+    timeout-minutes: 5
 
     steps:
     - name: Checkout main branch
-      uses: actions/checkout@v4
+      uses: actions/checkout@v3
       with:
         ref: main
-        token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -33,21 +28,20 @@ jobs:
         pip install -r google_scholar_crawler/requirements.txt
 
     - name: Run Google Scholar crawler
-      timeout-minutes: 5
+      timeout-minutes: 2
       continue-on-error: true
       run: |
         python google_scholar_crawler/update_scholar.py || echo "Crawler failed, will retry next time"
+      env:
+        GOOGLE_SCHOLAR_ID: "5biMMmIAAAAJ"
 
     - name: Check if data was fetched
       id: check_data
       run: |
         if [ -f "google-scholar-stats/gs_data.json" ]; then
           echo "data_exists=true" >> $GITHUB_OUTPUT
-          echo "Data file found, contents:"
-          cat google-scholar-stats/gs_data.json
         else
           echo "data_exists=false" >> $GITHUB_OUTPUT
-          echo "Data file not found"
         fi
 
     - name: Push to google-scholar-stats branch
@@ -59,7 +53,4 @@ jobs:
         git config --local user.name "GitHub Action"
         git add *.json
         git commit -m "Update Google Scholar stats - $(date '+%Y-%m-%d')"
-        # Create the branch if it doesn't exist
-        git branch -M google-scholar-stats
-        git remote add origin https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-        git push --force origin google-scholar-stats
+        git push --force https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:google-scholar-stats
