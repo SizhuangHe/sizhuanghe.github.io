@@ -4,12 +4,16 @@ on:
   schedule:
     # Run daily at 2:00 AM UTC
     - cron: '0 2 * * *'
+  push:
+    branches: [ main ]
   workflow_dispatch:  # Allow manual trigger
 
 jobs:
   update-scholar:
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    permissions:
+      contents: write
 
     steps:
     - name: Checkout main branch
