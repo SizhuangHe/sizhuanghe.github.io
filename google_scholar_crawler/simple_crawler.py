@@ -16,7 +16,7 @@ def generate_fallback_data():
         "hindex5y": 0,
         "i10index": 0,
         "i10index5y": 0,
-        "updated": str(datetime.now()),
+        "updated": datetime.now().isoformat() + "Z",
         "publications": {},
         "message": "Google Scholar data will be populated once publications are indexed"
     }
@@ -55,7 +55,7 @@ def main():
             print("✅ Author data filled successfully")
             
             # Process data
-            author['updated'] = str(datetime.now())
+            author['updated'] = datetime.now().isoformat() + "Z"
             author['publications'] = {v['author_pub_id']: v for v in author['publications']}
             
             print(f"✅ Successfully fetched data for {author.get('name', 'Unknown')}")
