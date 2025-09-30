@@ -107,6 +107,9 @@
               <div class="stat-label">H-Index</div>
             </div>
           </div>
+          <div class="last-updated" id="last-updated" style="font-size: 0.6rem; color: #666; margin-top: 0.3rem; text-align: center;">
+            Last updated: <span id="update-time">Loading...</span>
+          </div>
         </div>
 
       </header>
@@ -149,11 +152,25 @@
           document.getElementById('citations').textContent = data.citedby?.toLocaleString() || '0';
           document.getElementById('h-index').textContent = data.hindex || '0';
           
+          // Update last updated time
+          if (data.updated) {
+            const updateDate = new Date(data.updated);
+            const formattedDate = updateDate.toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'short',
+              day: 'numeric',
+              hour: '2-digit',
+              minute: '2-digit'
+            });
+            document.getElementById('update-time').textContent = formattedDate;
+          }
+          
         } catch (error) {
           console.log('Could not load Google Scholar stats:', error);
           // Show fallback values
           document.getElementById('citations').textContent = '0';
           document.getElementById('h-index').textContent = '0';
+          document.getElementById('update-time').textContent = 'Unable to load';
         }
       }
 
