@@ -1,214 +1,348 @@
-# The Minimal Light Theme
+# Academic Personal Website
+
+A modern, feature-rich academic homepage built with Jekyll and the [Minimal Light Theme](https://github.com/yaoyao-liu/minimal-light). 
+
+**Live Site:** [sizhuang.org](https://sizhuang.org/)
 
 [![LICENSE](https://img.shields.io/github/license/yaoyao-liu/minimal-light?style=flat-square&logo=creative-commons&color=EF9421)](https://github.com/yaoyao-liu/minimal-light/blob/main/LICENSE)
 
-\[[Demo the theme](https://minimal-light-theme.yliu.me/)\]  \[[简体中文](https://github.com/yaoyao-liu/minimal-light/blob/master/README_zh_Hans.md) | [繁體中文](https://github.com/yaoyao-liu/minimal-light/blob/master/README_zh_Hant.md) | [Deutsche](https://github.com/yaoyao-liu/minimal-light/blob/master/README_de.md)\]
- 
-*This is the source code of my homepage. I build this website based on [minimal](https://github.com/orderedlist/minimal).*
-<br>
-*Feel free to use and share the source code anywhere you like.*
+## ✨ Key Features
 
-The latest version of my homepage is available here: [[link](https://github.com/yaoyao-liu/yaoyao-liu.github.io)]
+- **📊 Automatic Google Scholar Integration** - Daily automated updates of citations, h-index, and publication metrics
+- **🏷️ Smart Publication Filtering** - Tag-based filtering system with dynamic search
+- **🌓 Dark Mode Support** - Automatic theme switching based on system preferences
+- **📱 Fully Responsive** - Optimized for all devices from mobile to desktop
+- **🚀 Zero Maintenance** - GitHub Actions handles all updates automatically
+- **⚡ Fast & Lightweight** - Static site generation with Jekyll
 
-## My customization from the template
+## 📊 Google Scholar Integration
 
-This site is adapted from the [Minimal Light Theme](https://github.com/yaoyao-liu/minimal-light) by Yaoyao Liu. The following key modifications have been made to enhance the publication display and user experience. 
+This website automatically fetches and displays your Google Scholar statistics without any manual intervention.
 
-My personal website is available here: [[link](https://sizhuang.org/)]
+### How It Works
 
-### Publications System Enhancements
-- **Tag-based Filtering**: Added a collapsible tag filtering system that allows users to filter publications by research area
-- **Enhanced Publication Display**: 
-  - Improved Abstract and BibTeX display with consistent styling and width
-  - Added smooth animations for content expansion/collapse
-  - Implemented character-by-character animation for author list expansion
+```
+Daily (2 AM UTC) or on git push
+    ↓
+GitHub Actions triggered
+    ↓
+Python crawler fetches Google Scholar data
+    ↓
+Data pushed to google-scholar-stats branch
+    ↓
+Website JavaScript loads data in real-time
+    ↓
+Visitors see updated stats instantly
+```
+
+### What's Displayed
+
+- **Homepage Statistics**: Total citations, H-index, and last update time
+- **Per-Publication Citations**: Citation count displayed next to each paper
+- **Automatic Timestamps**: Shows when data was last refreshed
+
+### Technical Implementation
+
+Built with [`scholarly`](https://github.com/scholarly-python-package/scholarly) - a Python package that provides clean access to Google Scholar data.
+
+**Key Features:**
+- ✅ Proxy support to avoid rate limiting
+- ✅ Unbuffered output for real-time GitHub Actions logs  
+- ✅ Graceful fallback if Scholar is unavailable
+- ✅ 5-minute timeout protection
+- ✅ No manual deployment needed
+
+**Files:**
+- Crawler: `google_scholar_crawler/simple_crawler.py`
+- Workflow: `.github/workflows/update-scholar.yml`
+- Data Branch: `google-scholar-stats`
+
+### Setup Instructions
+
+1. Set your Google Scholar ID in `_config.yml`:
+   ```yaml
+   google_scholar: https://scholar.google.com/citations?user=YOUR_ID_HERE
+   ```
+
+2. The workflow automatically extracts your ID and runs daily
+
+3. That's it! Your stats will update automatically every day.
+
+## 🎨 Custom Features
+
+### Enhanced Publication System
+
+- **Tag-Based Filtering**: Filter publications by research area with animated transitions
+- **Rich Content Display**: 
+  - Expandable abstracts with smooth animations
+  - One-click BibTeX copying
+  - Author list with show more/less functionality
 - **Interactive Elements**:
-  - Clickable publication tags for dynamic filtering
-  - Hover effects on buttons and filter tags
-  - Year section hiding when no papers match current filters
+  - Clickable filter tags
+  - Year sections that hide when empty
+  - Hover effects and visual feedback
+  - Filter state persistence via localStorage
 
 ### UI/UX Improvements
-- **Responsive Design**: Optimized container widths and spacing for better readability
-- **Visual Consistency**: Unified styling across light and dark modes
-- **Animation Effects**: Added smooth slide-down animations for filter expansion and author details
-- **Color Scheme**: Enhanced link colors and tag styling with theme-consistent colors
 
-### Technical Modifications
-- Extended `_data/publications.yml` structure to support tags and full abstracts
-- Enhanced `_includes/publications.md` with dynamic filtering logic and improved layout
-- Modified `_layouts/homepage.html` with comprehensive CSS and JavaScript for interactivity
-- Implemented localStorage for filter state persistence
+- **Responsive Layout**: Optimized spacing and containers for all screen sizes
+- **Consistent Design**: Unified styling across light and dark modes
+- **Smooth Animations**: Slide-down effects for filters and expandable content
+- **Theme Colors**: Enhanced link and tag colors matching the overall theme
+- **Typography**: Choice between Serif and Sans Serif fonts
 
-## Features
+## 🚀 Getting Started
 
-- Simple and elegant personal homepage theme
-- Jekyll theme, automatically deployed by GitHub Pages
-- Basic search engine optimization
-- Mobile friendly
-- Supporting Markdown 
-- Supporting dark mode
+### Option 1: Using with GitHub Pages (Recommended)
 
-## Project Architecture
+1. **Fork this repository** or [use it as a template](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
 
-```
-.
-├── _data                    
-|   └── publications.yml                      # the YAML file for publications
-├── _includes                    
-|   ├── publications.md                       # the Markdown file for publications
-|   └── services.md                           # the Markdown file for services
-├── _layouts                  
-|   └── homepage.html                         #  the html template for the homepage 
-├── _sass
-|   ├── minimal-light.scss                    #  this file will be compiled into a CSS file to control the style of the page              
-|   └── minimal-light-no-dark-mode.scss       #  this file is similar to minimal-light.scss with the dark mode disabled
-├── assets                                    #  some files
-├── html_source_file                          #  compiled HTML files
-├── .gitignore                                #  this file specifies intentionally untracked files that Git should ignore
-├── CNAME                                     #  the custom domain, will be used by GitHub page sevice
-├── Gemfile                                   #  a RubyGems related file
-├── LICENSE                                   #  the license file
-├── README.md                                 #  the readme file (English)
-├── README_de.md                              #  the readme file (German)
-├── README_zh_Hans.md                         #  the readme file (Simplified Chinese)
-├── README_zh_Hant.md                         #  the readme file (Traditional Chinese)
-├── _config.yml                               #  the Jekyll configuration file, including some options of the page  
-└── index.md                                  #  the content of the index page, using Markdown
-```
+2. **Rename** to `your-username.github.io`
 
-## Getting Started
+3. **Enable GitHub Pages**:
+   - Go to Settings → Pages
+   - Source: Deploy from a branch
+   - Branch: `main` → `/ (root)` → Save
 
-This template can be used in the following two ways: 
-- **Using with the GitHub Pages Service.** GitHub will provide you with a server to generate and host web pages.
-- **Using locally with Jekyll.** You may install Jekyll on your own computer and generate static web pages (i.e., HTML files) with this template. After that, you may upload the HTML files to your server.
+4. **Edit `_config.yml`** with your information:
+   ```yaml
+   title: Your Name
+   position: Ph.D. Student
+   affiliation: Your University
+   email: yourname (at) university.edu
+   google_scholar: https://scholar.google.com/citations?user=YOUR_ID
+   ```
 
-The detailed instructions are available below.
+5. **Edit `index.md`** with your bio and content
 
+6. **Update `_data/publications.yml`** with your publications
 
-### Using with the GitHub Pages Service
+7. **Push to main** - Your site will be live at `https://your-username.github.io`!
 
-There are two ways to use this template on GitHub:
+### Option 2: Using as a Remote Theme
 
-#### Fork this repository
-- Fork this repository (or [use this repository as a template](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)) and change the name to `your-username.github.io`.
-
-- Enable the GitHub pages for that repository following the steps [here](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site#creating-your-site).
-
-#### Using this repository as a remote theme
-To use this theme, add the following to your repository's `_config.yml`:
-
+Add to your `_config.yml`:
 ```yaml
 remote_theme: yaoyao-liu/minimal-light
 ```
 
-Please note that adding the above line will directly apply all the default settings in this repository to yours.
+Note: You'll need to copy files you want to customize to your own repository.
 
-If you hope to edit any files (e.g., `index.md`), you still need to copy them to your repository.
+### Option 3: Running Locally
 
-### Using Locally with Jekyll
-
-First, install [Ruby](https://www.ruby-lang.org/en/) and [Jekyll](https://jekyllrb.com/). The install instructions can be found here: <https://jekyllrb.com/docs/installation/#guides>
-
-Then, clone this repository:
+**Prerequisites**: Ruby and Jekyll ([installation guide](https://jekyllrb.com/docs/installation/))
 
 ```bash
-git clone https://github.com/yaoyao-liu/minimal-light.git
-cd minimal-light
-```
-Install and run:
+# Clone the repository
+git clone https://github.com/your-username/your-username.github.io.git
+cd your-username.github.io
 
-```bash
+# Install dependencies
 bundle install
 bundle add webrick
+
+# Serve locally
 bundle exec jekyll server
+
+# View at http://localhost:4000
 ```
-View the live page using `localhost`:
-<http://localhost:4000>. You can get the HTML files in `_site` folder.
 
-### Using the HTML version
+## 📁 Project Structure
 
-The compiled HTML files are available in the `html_source_file` folder. If you don't like Jekyll, you may directly edit and use the HTML version.
+```
+.
+├── _config.yml                      # Site configuration
+├── index.md                         # Homepage content
+│
+├── _data/
+│   └── publications.yml             # Publications database
+│
+├── _includes/
+│   ├── publications.md              # Publications section
+│   ├── selected-publications.md     # Featured publications
+│   ├── scholar-stats.md             # Google Scholar stats widget
+│   └── services.md                  # Service & activities
+│
+├── _layouts/
+│   └── homepage.html                # Main page template
+│
+├── _sass/
+│   ├── minimal-light.scss           # Main stylesheet
+│   └── minimal-light-no-dark-mode.scss
+│
+├── assets/
+│   ├── css/                         # Compiled CSS
+│   ├── img/                         # Images & avatars
+│   ├── files/                       # CV and documents
+│   └── js/                          # JavaScript
+│
+├── google_scholar_crawler/
+│   ├── simple_crawler.py            # Main crawler script
+│   ├── requirements.txt             # Python dependencies
+│   └── results/                     # Cached data
+│
+└── .github/
+    └── workflows/
+        └── update-scholar.yml       # Automation workflow
+```
 
-## Customizing
+## ⚙️ Configuration
 
-### Configuration variables
+### Basic Information
 
-The Minimal Light theme will respect the following variables, if set in your site's `_config.yml`:
+Edit `_config.yml`:
 
-  ```yaml
+```yaml
 # Basic Information 
 title: Your Name
 position: Ph.D. Student
-affiliation: Your Affiliation
+affiliation: Your University
 email: yourname (at) example.edu
 
-# Search Engine Optimization (SEO)
-# The following information is used to improve the website traffic from search engines, e.g., Google.
-keywords: minimal light
-description: The Minimal Light is a simple and elegant jekyll theme for academic personal homepage.
-canonical: https://minimal-light-theme.yliu.me/
-
-# Links 
-# If you don't need one of them, you may delete the corresponding line.
-google_scholar: https://scholar.google.com/
+# Links
+google_scholar: https://scholar.google.com/citations?user=YOUR_ID
 cv_link: assets/files/curriculum_vitae.pdf
-github_link: https://github.com/
-linkedin: https://www.linkedin.com/
-twitter: https://twitter.com/
+github_link: https://github.com/username
+linkedin: https://www.linkedin.com/in/username/
+twitter: https://twitter.com/username
 
-# Images (e.g., your profile picture and your website's favicon) 
-# "favicon" and "favicon_dark" are used for the light and dark modes, respectively. 
+# Images
 avatar: ./assets/img/avatar.png
 favicon: ./assets/img/favicon.png
 favicon_dark: ./assets/img/favicon-dark.png
 
-# Footnote
-# You may use the option to disable the footnote, "Powered by Jekyll and Minimal Light theme."
+# Options
 enable_footnote: true
-
-# Auto Dark Mode
-# You may use the option to disable the automatic dark theme
 auto_dark_mode: true
+font: "Serif"  # or "Sans Serif"
+```
 
-# Font
-# You can use this option to choose between Serif or Sans Serif fonts.
-font: "Serif" # or "Sans Serif"
+### Adding Publications
 
-# Google Analytics ID
-# Please remove this if you don't use Google Analytics
-google_analytics: UA-111540567-4
-  ```
-### Edit `index.md`
+Edit `_data/publications.yml`:
 
-Create `index.md` and add your personal information. It supports **Markdown** and **HTML** syntax.
+```yaml
+- title: "Your Paper Title"
+  authors: "Author 1, <strong>Your Name</strong>, Author 3"
+  conference_short: "ICML"
+  conference: "International Conference on Machine Learning <strong>(ICML)</strong>, 2024"
+  pdf: ./assets/papers/paper.pdf
+  code: https://github.com/username/project
+  page: https://project-page.com
+  bibtex: ./assets/bibs/paper.txt
+  image: ./assets/img/paper-preview.png
+  notes: Oral Presentation
+  tags:
+    - Machine Learning
+    - Computer Vision
+```
 
-### Edit included files
+### Styling
 
-There are two markdown files included in `index.md`. They are `_includes/publications.md` and `_includes/service.md`, respectively. These two files also support **Markdown** and **HTML** syntax. If you don't hope to include these two files, you may remove the following lines in `index.md`:
-https://github.com/yaoyao-liu/minimal-light/blob/b38070cd0b6bce45d8a885f3828549af8f82b7cb/index.md?plain=1#L21-L23
+- **Custom CSS**: Edit `_sass/minimal-light.scss`
+- **Layout Changes**: Edit `_layouts/homepage.html`
+- **Color Scheme**: Modify CSS variables in the SCSS file
 
-If you hope to edit the publication list without changing the format, you may edit `_data/publications.yml`:
-https://github.com/yaoyao-liu/minimal-light/blob/77b1b3b31d4561091bcd739f37a2e1880e8b5ca5/_data/publications.yml#L3-L11
+## 🛠️ Advanced Customization
 
+### Google Scholar Crawler Setup
 
-### Stylesheet
+If you want to modify the crawler behavior:
 
-If you'd like to add your own custom styles, you may edit `_sass/minimal-light.scss`.
+1. **Local Testing**:
+   ```bash
+   cd google_scholar_crawler
+   conda create -n scholar-crawler python=3.9
+   conda activate scholar-crawler
+   pip install -r requirements.txt
+   GOOGLE_SCHOLAR_ID=your_id python simple_crawler.py
+   ```
 
-### Layouts
+2. **Modify Crawler** (`simple_crawler.py`):
+   - Add more metrics
+   - Change update frequency
+   - Customize data format
 
-If you'd like to change the theme's HTML layout, you may edit `_layout/homepage.html`.
+3. **Update Workflow** (`.github/workflows/update-scholar.yml`):
+   - Change schedule (default: daily at 2 AM UTC)
+   - Modify timeout settings
+   - Add notifications
 
-## License
+### Disabling Features
+
+**Disable Dark Mode**:
+```yaml
+auto_dark_mode: false
+```
+
+**Disable Google Scholar Stats**:
+Remove or comment out the `loadScholarStats()` call in `_layouts/homepage.html`
+
+**Disable Publication Tags**:
+Remove the tags section from publications in `_data/publications.yml`
+
+## 📝 Content Management
+
+### Writing Content
+
+Both Markdown and HTML are supported in:
+- `index.md` - Your main homepage content
+- `_includes/*.md` - Section includes
+- `_data/publications.yml` - Publication metadata
+
+### Including Files
+
+In `index.md`, you can include sections:
+
+```markdown
+{% include_relative _includes/publications.md %}
+{% include_relative _includes/services.md %}
+```
+
+Remove these lines if you don't need those sections.
+
+## 🔧 Troubleshooting
+
+### Google Scholar Stats Not Showing
+
+1. Check that your Google Scholar ID is correct in `_config.yml`
+2. View the GitHub Actions workflow run logs
+3. Check if the `google-scholar-stats` branch exists
+4. Verify the data files exist in that branch
+
+### Crawler Timeout
+
+If the crawler times out:
+- Increase timeout in `.github/workflows/update-scholar.yml`
+- The workflow will retry on the next scheduled run
+- Data will fallback to previous values
+
+### Local Development
+
+If `bundle exec jekyll server` fails:
+```bash
+bundle update
+bundle add webrick
+```
+
+## 📄 License
 
 This work is licensed under a [Creative Commons Zero v1.0 Universal](https://github.com/yaoyao-liu/minimal-light/blob/master/LICENSE) License.
 
-## Acknowledgements
+## 🙏 Acknowledgements
 
-Our project uses the source code from the following repositories:
+Built with and inspired by:
 
-* [pages-themes/minimal](https://github.com/pages-themes/minimal)
+- [Minimal Light Theme](https://github.com/yaoyao-liu/minimal-light) by Yaoyao Liu
+- [pages-themes/minimal](https://github.com/pages-themes/minimal)
+- [orderedlist/minimal](https://github.com/orderedlist/minimal)
+- [al-folio](https://github.com/alshedivat/al-folio)
+- [scholarly](https://github.com/scholarly-python-package/scholarly) - Python package for Google Scholar access
 
-* [orderedlist/minimal](https://github.com/orderedlist/minimal)
+## 📮 Contact
 
-* [al-folio](https://github.com/alshedivat/al-folio)
+For questions or issues, please [open an issue](https://github.com/SizhuangHe/sizhuanghe.github.io/issues) or visit my website at [sizhuang.org](https://sizhuang.org/).
+
+---
+
+**Other Languages:** [简体中文](https://github.com/yaoyao-liu/minimal-light/blob/master/README_zh_Hans.md) | [繁體中文](https://github.com/yaoyao-liu/minimal-light/blob/master/README_zh_Hant.md) | [Deutsche](https://github.com/yaoyao-liu/minimal-light/blob/master/README_de.md)
