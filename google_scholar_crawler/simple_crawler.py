@@ -42,8 +42,15 @@ def main():
             
         print(f"🔍 Fetching data for Google Scholar ID: {scholar_id}")
         
-        # Set a proxy to avoid blocking (optional)
-        # scholarly.use_proxy(scholarly.ProxyGenerator())
+        # Set a proxy to avoid blocking and speed up requests
+        print("🔧 Setting up free proxy to avoid rate limiting...")
+        try:
+            from scholarly import ProxyGenerator
+            pg = ProxyGenerator()
+            scholarly.use_proxy(pg)
+            print("✅ Proxy configured")
+        except Exception as proxy_error:
+            print(f"⚠️  Proxy setup failed: {proxy_error}, continuing without proxy...")
         
         # Search for author
         try:
