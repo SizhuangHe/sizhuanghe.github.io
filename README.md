@@ -1,19 +1,31 @@
 # Academic Personal Website
 
-A modern, feature-rich academic homepage built with Jekyll and the [Minimal Light Theme](https://github.com/yaoyao-liu/minimal-light). 
+**Built on the [Minimal Light Theme](https://github.com/yaoyao-liu/minimal-light) by [Yaoyao Liu](https://www.yaoyaoliu.com/)**
 
-**Live Site:** [sizhuang.org](https://sizhuang.org/)
+A modern, feature-rich academic homepage with enhanced publication management and automatic Google Scholar integration.
+
+**Live Site:** [sizhuang.org](https://sizhuang.org/)  
+**Original Theme:** [Minimal Light by Yaoyao Liu](https://github.com/yaoyao-liu/minimal-light)
 
 [![LICENSE](https://img.shields.io/github/license/yaoyao-liu/minimal-light?style=flat-square&logo=creative-commons&color=EF9421)](https://github.com/yaoyao-liu/minimal-light/blob/main/LICENSE)
 
 ## ✨ Key Features
 
+This site extends the [Minimal Light Theme](https://github.com/yaoyao-liu/minimal-light) with powerful new capabilities:
+
+### Enhancements Over Original Theme
+
 - **📊 Automatic Google Scholar Integration** - Daily automated updates of citations, h-index, and publication metrics
 - **🏷️ Smart Publication Filtering** - Tag-based filtering system with dynamic search
+- **📑 Enhanced Publication Display** - Expandable abstracts, BibTeX, and author lists with smooth animations
+- **🎯 Interactive Tagging** - Click tags to filter publications by research area
+
+### Inherited from Minimal Light Theme
+
 - **🌓 Dark Mode Support** - Automatic theme switching based on system preferences
 - **📱 Fully Responsive** - Optimized for all devices from mobile to desktop
-- **🚀 Zero Maintenance** - GitHub Actions handles all updates automatically
 - **⚡ Fast & Lightweight** - Static site generation with Jekyll
+- **🎨 Clean & Professional** - Minimalist academic design
 
 ## 📊 Google Scholar Integration
 
@@ -331,13 +343,14 @@ This work is licensed under a [Creative Commons Zero v1.0 Universal](https://git
 
 ## 🙏 Acknowledgements
 
-Built with and inspired by:
+**This website is built on top of the [Minimal Light Theme](https://github.com/yaoyao-liu/minimal-light) created by [Yaoyao Liu](https://www.yaoyaoliu.com/).**
 
-- [Minimal Light Theme](https://github.com/yaoyao-liu/minimal-light) by Yaoyao Liu
-- [pages-themes/minimal](https://github.com/pages-themes/minimal)
-- [orderedlist/minimal](https://github.com/orderedlist/minimal)
-- [al-folio](https://github.com/alshedivat/al-folio)
-- [scholarly](https://github.com/scholarly-python-package/scholarly) - Python package for Google Scholar access
+### Additional Credits
+
+- [scholarly](https://github.com/scholarly-python-package/scholarly) - Python package for Google Scholar data access
+- [pages-themes/minimal](https://github.com/pages-themes/minimal) - Original minimal theme
+- [orderedlist/minimal](https://github.com/orderedlist/minimal) - Minimal theme inspiration
+- [al-folio](https://github.com/alshedivat/al-folio) - Academic Jekyll theme inspiration
 
 ## 📮 Contact
 
