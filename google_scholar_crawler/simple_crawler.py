@@ -49,7 +49,7 @@ def main():
             pg = ProxyGenerator()
             pg.FreeProxies()
             scholarly.use_proxy(pg)
-            print("✅ Free proxy configured")
+            print("✅ Free proxy configured!")
         except Exception as proxy_error:
             print(f"⚠️  Proxy setup failed: {proxy_error}, continuing without proxy...")
         
