@@ -1,26 +1,34 @@
-# Curriculum Vitae
+<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+  <a href="{{ '/' | relative_url }}" class="cv-back-icon" title="Back to Main Page"><</a>
+  <h1 style="margin: 0; flex-grow: 1; text-align: left; margin-left: 1rem;">Curriculum Vitae</h1>
+  <div style="width: 2rem;"></div> <!-- Spacer for balance -->
+</div>
 
-<div style="text-align: center; margin: 1rem 0 2rem 0;">
-  <a href="{{ '/' | relative_url }}" class="cv-nav-btn">← Back to Main Page</a>
-  <a href="{{ '/assets/files/cv.pdf' | relative_url }}" class="cv-download-btn">Download PDF</a>
-  <a href="{{ '/assets/files/cv.tex' | relative_url }}" class="cv-download-btn">LaTeX Source</a>
+<div style="display: flex; align-items: center; justify-content: space-between; margin: 0 0 1rem 0;">
+  <p class="cv-last-updated" style="margin: 0;">Last updated: {{ site.data.cv_integrated.last_updated }}.</p>
+  <div>
+    <a href="{{ '/assets/files/cv.pdf' | relative_url }}" class="cv-download-btn">PDF</a>
+    <a href="{{ '/assets/files/cv.tex' | relative_url }}" class="cv-download-btn">TeX</a>
+  </div>
 </div>
 
 <style>
-.cv-nav-btn {
+.cv-back-icon {
   color: var(--global-theme-color);
-  font-weight: 500;
+  font-size: 1.5rem;
+  font-weight: bold;
   text-decoration: none;
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--global-theme-color);
-  border-radius: 4px;
-  margin: 0 0.5rem;
-  display: inline-block;
+  padding: 0.5rem;
+  border-radius: 50%;
   transition: all 0.2s ease;
-  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
 }
 
-.cv-nav-btn:hover {
+.cv-back-icon:hover {
   background-color: var(--global-theme-color);
   color: white;
   text-decoration: none;
@@ -30,12 +38,13 @@
   color: var(--global-theme-color);
   font-weight: 600;
   text-decoration: none;
-  padding: 0.5rem 1rem;
+  padding: 0.2rem 0.8rem;
   border: 1px solid var(--global-theme-color);
   border-radius: 4px;
-  margin: 0 0.5rem;
+  margin: 0 0.3rem;
   display: inline-block;
   transition: all 0.2s ease;
+  font-size: 0.85rem;
 }
 
 .cv-download-btn:hover { 
@@ -154,7 +163,7 @@
   .cv-publication-list li { 
     padding-left: 1.5rem; 
   }
-  .cv-nav-btn, .cv-download-btn {
+  .cv-download-btn {
     display: block;
     margin: 0.5rem auto;
     width: fit-content;
@@ -220,5 +229,3 @@
 {% for item in svc.items %}    - {{ item }}
 {% endfor %}
 {% endfor %}
-
-<p class="cv-last-updated">Last updated: {{ site.data.cv_integrated.last_updated }}.</p>

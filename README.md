@@ -81,52 +81,101 @@ Built with [`scholarly`](https://github.com/scholarly-python-package/scholarly) 
 
 3. That's it! Your stats will update automatically every day.
 
-## 📄 Automatic CV Compilation
+## 📄 Automatic CV Generation
 
-Your CV is **automatically generated and compiled** from your website data - maintaining a single source of truth!
+Your CV is **automatically generated and maintained** from your website data using a sophisticated two-stage workflow - ensuring perfect synchronization between your website and CV!
 
 ### How It Works
 
-1. **Edit Website Data**: Update your publications in `_data/publications.yml` or info in `_config.yml`
-2. **Commit and Push**: Push changes to the main branch
-3. **Automatic Generation**: GitHub Actions:
-   - Runs `scripts/generate_cv.py` to generate LaTeX from your data
-   - Compiles to `assets/files/curriculum_vitae.pdf` (PDF)
-   - Converts to `assets/files/cv.html` (HTML)
-4. **Auto-commit**: Generated files are automatically committed back
-
-### Single Source of Truth
-
-The CV pulls data from:
-- **`_config.yml`**: Name, email, social links
-- **`_data/publications.yml`**: All publications (automatically categorized)
-- **`index.md`**: Education and research interests
-
-**No need to maintain separate CV content!** Update your website, CV updates automatically.
-
-### Benefits
-
-- ✅ **Single Source of Truth**: Website and CV always in sync
-- ✅ **Zero Duplication**: Update once, propagates everywhere
-- ✅ **Professional Quality**: LaTeX produces beautifully typeset PDFs
-- ✅ **Auto-categorization**: Publications sorted into conference/workshop/preprint
-- ✅ **Dual Format**: PDF for downloads, HTML for web viewing
-- ✅ **Version Control**: All sources tracked in git
-
-### Files
-
-- **Generator**: `scripts/generate_cv.py` - Python script that reads website data
-- **Workflow**: `.github/workflows/compile-cv.yml` - Automation pipeline
-- **Output**: `assets/files/cv.tex` (auto-generated, in `.gitignore`)
-
-### Manual Generation (Optional)
-
-To test locally:
-```bash
-cd /path/to/repository
-python scripts/generate_cv.py
-# Opens cv.tex in Overleaf or compiles locally
 ```
+Push changes to _data/*.yml or index.md
+    ↓
+GitHub Actions triggered automatically
+    ↓
+Stage 1: Data Integration
+├─ Scrapes education from _data/education.yml
+├─ Scrapes publications from _data/publications.yml  
+├─ Scrapes honors from _data/honors.yml
+├─ Scrapes services from _data/service.yml
+├─ Scrapes research interests from index.md
+└─ Creates integrated _data/cv_integrated.yml
+    ↓
+Stage 2: Multi-Format Generation
+├─ Generates LaTeX source (assets/files/cv.tex)
+├─ Compiles to PDF (assets/files/cv.pdf)
+└─ Jekyll generates HTML webpage (/cv/)
+    ↓
+Auto-commit back to repository
+    ↓
+Live website updates automatically
+```
+
+### Three CV Formats
+
+1. **📄 PDF Download** - Professional LaTeX-compiled PDF at `/assets/files/cv.pdf`
+2. **🌐 HTML Webpage** - Interactive web version at `/cv/` with consistent styling
+3. **📝 LaTeX Source** - Editable source code at `/assets/files/cv.tex`
+
+### Data Sources
+
+The CV automatically pulls from:
+- **`_data/education.yml`**: Academic background and degrees
+- **`_data/publications.yml`**: All publications with proper LaTeX formatting
+- **`_data/honors.yml`**: Awards and honors with institutions and years
+- **`_data/service.yml`**: Professional service and reviewing activities
+- **`index.md`**: Research interests and bio information
+
+### Key Features
+
+- ✅ **Single Source of Truth**: Update once, propagates to all formats
+- ✅ **Automatic LaTeX Formatting**: Proper escaping and bibliography formatting
+- ✅ **Professional Typography**: LaTeX produces publication-quality PDFs
+- ✅ **Consistent Styling**: HTML version matches main website theme
+- ✅ **Real-time Updates**: Changes appear immediately after push
+- ✅ **Version Control**: All sources and outputs tracked in git
+- ✅ **No Manual Maintenance**: Set it once, works forever
+
+### Workflow Files
+
+- **`scripts/generate_cv.py`**: Two-stage Python generator
+  - Stage 1: Data scraping and integration
+  - Stage 2: LaTeX generation with proper formatting
+- **`.github/workflows/compile-cv.yml`**: GitHub Actions automation
+  - Triggers on changes to CV-related files
+  - Compiles LaTeX to PDF using `xu-cheng/latex-action`
+  - Auto-commits generated files back to repository
+- **`_data/cv_integrated.yml`**: Intermediate data file (auto-generated)
+- **`cv.md`**: Jekyll page template for HTML version
+
+### Manual Testing (Optional)
+
+To test the CV generation locally:
+
+```bash
+# Activate the Python environment
+conda activate scholar-crawler
+
+# Run Stage 1: Data integration
+python scripts/generate_cv.py --stage 1
+
+# Run Stage 2: LaTeX generation  
+python scripts/generate_cv.py --stage 2
+
+# Check outputs
+ls -la assets/files/cv.*
+```
+
+### Customization
+
+**LaTeX Template**: Modify the preamble and commands in `scripts/generate_cv.py`
+**HTML Styling**: Edit `_includes/cv.md` for webpage appearance
+**Data Structure**: Add new YAML files and update the scraping logic
+
+**Example: Adding a new section**
+1. Create `_data/your_section.yml`
+2. Add scraping logic to Stage 1 in `generate_cv.py`
+3. Add LaTeX formatting to Stage 2
+4. Update HTML template in `_includes/cv.md`
 
 ## 🎨 Custom Features
 
@@ -213,15 +262,21 @@ bundle exec jekyll server
 .
 ├── _config.yml                      # Site configuration
 ├── index.md                         # Homepage content
+├── cv.md                           # CV webpage template
 │
 ├── _data/
-│   └── publications.yml             # Publications database
+│   ├── publications.yml             # Publications database
+│   ├── education.yml               # Education and degrees
+│   ├── honors.yml                  # Awards and honors
+│   ├── service.yml                 # Professional service
+│   └── cv_integrated.yml           # Auto-generated CV data
 │
 ├── _includes/
 │   ├── publications.md              # Publications section
 │   ├── selected-publications.md     # Featured publications
 │   ├── scholar-stats.md             # Google Scholar stats widget
-│   └── services.md                  # Service & activities
+│   ├── services.md                  # Service & activities
+│   └── cv.md                       # CV HTML template
 │
 ├── _layouts/
 │   └── homepage.html                # Main page template
@@ -234,7 +289,13 @@ bundle exec jekyll server
 │   ├── css/                         # Compiled CSS
 │   ├── img/                         # Images & avatars
 │   ├── files/                       # CV and documents
+│   │   ├── cv.pdf                   # Auto-generated CV PDF
+│   │   └── cv.tex                   # Auto-generated LaTeX source
 │   └── js/                          # JavaScript
+│
+├── scripts/
+│   ├── generate_cv.py               # Two-stage CV generator
+│   └── requirements.txt             # Python dependencies
 │
 ├── google_scholar_crawler/
 │   ├── simple_crawler.py            # Main crawler script
@@ -243,7 +304,8 @@ bundle exec jekyll server
 │
 └── .github/
     └── workflows/
-        └── update-scholar.yml       # Automation workflow
+        ├── update-scholar.yml       # Scholar stats automation
+        └── compile-cv.yml           # CV generation automation
 ```
 
 ## ⚙️ Configuration
