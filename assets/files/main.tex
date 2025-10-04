@@ -1,0 +1,422 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks,colorlinks=true,urlcolor=black]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}  % Optional
+\usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% \definecolor{mycolor}{RGB}{0, 128, 0} % Define a custom color (RGB model)
+\definecolor{mycolor}{RGB}{49, 89, 152} % GPT
+\definecolor{urlcolor}{RGB}{44, 79, 152} % GPT
+% \definecolor{mycolor}{RGB}{57, 114, 180}    % Zuobai and Runzhe
+% \definecolor{mycolor}{RGB}{37, 150, 190} % Define a custom color (RGB model)
+% \definecolor{itemcolor}{RGB}{37, 150, 190}
+\definecolor{itemcolor}{RGB}{0, 0, 0}
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\color{mycolor}\scshape\raggedright\large
+}{}{0em}{}[\color{mycolor}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      #1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[label={\color{itemcolor}•}]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+% For Experience
+\newcommand{\resumeExpListStart}{\begin{itemize}[leftmargin=0.15in, label={\color{itemcolor}$\circ$}, itemsep=1\itemsep]}
+\newcommand{\resumeExpListEnd}{\end{itemize}}
+\newcommand{\resumeSubExpListStart}{\begin{itemize}[leftmargin=\leftmargin, label={\color{itemcolor}•}, itemsep=2\itemsep]}
+\newcommand{\resumeSubExpListEnd}{\end{itemize}}
+
+\newcommand{\resumeExpItem}[1]{
+  \item{
+    {\textbf{#1} \vspace{-1pt}}
+  }
+}
+
+\newcommand{\resumeExpBriefItem}[1]{
+  \item{
+    {{\small#1} \vspace{-1pt}}
+  }
+}
+
+
+\newcommand{\resumeSubExpItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeText}{\vspace{3pt}}
+\newcommand{\resumePosition}[1]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l}
+      \small#1 \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeDataItem}[2]{
+  \item\small{
+    #1 \hfill #2 \vspace{-2pt}
+  }
+}
+\newcommand{\resumePublication}[2]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{p{0.9\textwidth}@{\extracolsep{\fill}}r}
+      \textbf{#1} & \\
+      \textit{\small#2} & \\
+    \end{tabular*}\vspace{-2pt}
+}
+
+% \newcommand{\resumeHonor}[2]{
+%   \vspace{-2pt}\item
+%     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+%       \textbf{#1} & #2 \\
+%     \end{tabular*}\vspace{-7pt}
+% }
+\newcommand{\resumeHonor}[2]{
+  \vspace{-2pt}\item
+    {\small#1} \hfill {\small#2}
+  \vspace{-7pt}
+}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    \textbf{\Huge \scshape \color{mycolor}Yangtian Zhang} \\ \vspace{10pt}
+    % \small 123-456-7890 $|$ 
+    \href{mailto:yangtian.zhang@yale.edu}{Email: \underline{yangtian.zhang@yale.edu}} $|$ 
+    \href{https://zytzrh.github.io/}{Homepage: \underline{https://zytzrh.github.io/}} $|$
+    \href{https://github.com/zytzrh}{Github: \underline{https://github.com/zytzrh}}\\ \vspace{3pt}
+\end{center}
+
+\hypersetup{urlcolor=urlcolor}
+% \begin{center}
+%     \textbf{\Huge \scshape Yangtian Zhang} \\ \vspace{1pt}
+%     % \small 123-456-7890 $|$ 
+%     \href{mailto:zytzrh@gmail.com}{Email: zytzrh@gmail.com} \\
+%     \href{https://zytzrh.github.io/}{Homepage: \underline{https://zytzrh.github.io/}} \\
+%     \href{https://github.com/zytzrh}{Github: \underline{https://github.com/zytzrh}}
+% \end{center}
+
+%-----------Interest-----------
+\section{Research Interest}
+\resumeText{My primary research interests lie within the domain of Generative AI and Multi-Modal Foundation Models. My goal is to develop generative approaches for solving diverse real-world issues, including those in vision, language, and scientific domains.}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Shanghai Jiao Tong University}{Shanghai, China}
+      {Bachelor of Engineering (B.Eng.) in Computer Science, \textit{Summa Cum Laude}}{Sept. 2018 -- June 2022}
+      \resumeItemListStart
+        \resumeItem{Member of \textbf{ACM Honors Class}, which is an elite CS program for top 5\% talented students.}
+        \resumeItem{GPA: \textbf{90.79 / 100}
+        % Ranking: \textbf{5 / 31}
+        }
+      \resumeItemListEnd
+    \resumeSubheading
+      {Yale University}{New Haven, US}
+      {Doctor of Philosophy (Ph.D.) student in Computer Science}{Sept. 2024 -- }
+      \resumeItemListStart
+        \resumeItem{Co-advised by \textbf{Prof. Rex Ying} and \textbf{Prof. David van Dijk}.}
+        \resumeItem{Working on multi-modal foundation models and generative modeling techniques.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+% %-----------Professional Services-----------
+% \section{Professional Services}
+%  \begin{itemize}[leftmargin=0.15in, label={}]
+%     \small{\item{
+%      {Reviewer, }\textbf{Neural Information Processing Systems (NeurIPS)}{, 2023} \\
+%      {Reviewer, }\textbf{International Conference on Machine Learning (ICML)}{, 2023} \\
+%      {Reviewer, }\textbf{International Conference on Learning Representations (ICLR)}{, 2024} \\
+%     }}
+%  \end{itemize}
+
+% %-----------Teaching Experience-----------
+% \section{Teaching Experience}
+% % During my undergraduate studies, I serve as a teaching assistant, and I was deeply involved in the course design of the following class: 
+% % \vspace{-3pt}
+%  \begin{itemize}[leftmargin=0.15in, label={}]
+%     \small{\item{
+%      {Teaching Assistant: }{CS158: Data Structures and Algorithms}{, 2020} \\
+%      {Teaching Assistant: }{MS125: Principle and Practice of Computer Algorithms}{, 2020} \\
+%      {Teaching Assistant: }{CS420: Machine Learning}{, 2021} \\
+%     }}
+%  \end{itemize}
+
+%%-----------Publications-----------
+\section{Publications}
+\resumeSubHeadingListStart
+    \resumePublication{Non-Markovian Discrete Diffusion with Causal Language Models}
+    {\textbf{Yangtian Zhang*}, Sizhuang He*, Daniel Levine, Lawrence Zhao, David Zhang, Syed A Rizvi, Emanuele Zappala, Rex Ying, David van Dijk (NeurIPS 2025)}
+
+    \resumePublication{Flow Matching for Collaborative Filtering}
+    {Chengkai Liu*, \textbf{Yangtian Zhang*}, Jianling Wang, Rex Ying, James Caverlee (KDD 2025)}
+
+    \resumePublication{CaLMFlow: Volterra Flow Matching using Causal Language Models}
+    {Sizhuang He, Daniel Levine, Ivan Vrkic, Marco Francesco Bressana, David Zhang, Syed Asad Rizvi, \textbf{Yangtian Zhang}, Emanuele Zappala, David van Dijk }
+    
+    \resumePublication{DiffPack: A Torsional Diffusion Model for Autoregressive Protein Side-Chain Packing}
+    {\textbf{Yangtian Zhang*}, Zuobai Zhang*, Bozitao Zhong, Sanchit Misra, Jian Tang (NeurIPS 2023)}
+    
+    \resumePublication{E3Bind: An End-to-End Equivariant Network for Protein-Ligand Docking}
+    {\textbf{Yangtian Zhang*}, Huiyu Cai*, Chence Shi, Bozitao Zhong, Jian Tang (ICLR 2023)}
+
+
+
+    \resumePublication{PEER: A Comprehensive and Multi-Task Benchmark for Protein Sequence Understanding}
+    {Minghao Xu, Zuobai Zhang, Jiarui Lu, Zhaocheng Zhu, \textbf{Yangtian Zhang}, Ma Chang, Runcheng Liu, Jian Tang (NeurIPS 2022 Datasets and Benchmarks Track)}
+
+    \resumePublication{Torchdrug: A powerful and flexible machine learning platform for drug discovery}
+    {Zhaocheng Zhu, Chence Shi, Zuobai Zhang, Shengchao Liu, Minghao Xu, Xinyu Yuan, \textbf{Yangtian Zhang}, Junkun Chen, Huiyu Cai, Jiarui Lu, Chang Ma, Runcheng Liu, Louis-Pascal Xhonneux, Meng Qu, Jian Tang }
+
+
+    \resumePublication{A Survey on Diffusion Models for Recommender Systems}
+    {Jianghao Lin, Jiaqi Liu, Jiachen Zhu, Yunjia Xi, Chengkai Liu, \textbf{Yangtian Zhang}, Yong Yu, Weinan Zhang (CoRR 2024)}
+
+
+
+\resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Research Experience}
+
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Google Deepmind}{April. 2024 -- July 2024}
+      {Student Researcher, advised by \textbf{Dr. Jiaxin Shi} and \textbf{Dr. Michalis Titsias}}{New York, USA}
+    \resumeExpListStart
+        \resumeExpBriefItem{Conducted research on discrete generative modeling and discrete diffusion.}
+    \resumeExpListEnd
+    % MSRA
+    \resumeSubheading
+      {Microsoft Research AI4Science}{April. 2024 -- July 2024}
+      {Research Intern, advised by \textbf{Dr. Tao Qin}}{Beijing, China}
+    \resumeExpListStart
+        \resumeExpBriefItem{Conducted research on multi-modal foundation model for AI-driven scentific discovery.}
+    \resumeExpListEnd
+  
+  
+      
+      
+    % Mila
+    \resumeSubheading
+      {Mila - Quebec AI Institute}{Sept. 2021 -- April 2024}
+      {Graduate Research Assistant, advised by \textbf{Prof. Jian Tang}}{Montreal, Canada}
+    \resumeExpListStart
+    % \resumeExpItem{Research Topic: Generative AI, Geometric Deep Learning, Graph Representation Learning}
+    \resumeExpBriefItem{Developed non-euclidean generative modelling with applications in protein science. See \href{https://arxiv.org/abs/2306.01794}{paper} here}
+        % \resumeSubExpListStart
+        %     \resumeSubExpItem{Analyzed the overparameterization and inefficiency issue of previous protein sidechain packing(PSCP) algorithm.}
+        %     \resumeSubExpItem{Formulated a Riemannian diffusion process to better address the above problem in a generative manner. Developed DiffPack, an autoregressive diffusion model to predict the score in SE(3)-invariant torsion space.}
+        %     \resumeSubExpItem{
+        %     % Achieved improvement of 13.5\% in angle accuracy on CASP testset.
+        %     Paper has been accepted to NeurIPS 2023. See \href{https://arxiv.org/abs/2306.01794}{paper} here.}
+        % \resumeSubExpListEnd
+    \resumeExpBriefItem{Developed geometric deep learning techniques to molecular docking. See \href{https://arxiv.org/abs/2210.06069}{paper} here.}
+        % \resumeSubExpListStart
+        %     \resumeSubExpItem{Reformulated the traditional molecule docking pipeline into an iterative refinement process (akin to AlphaFold2), enabling more rapid inference of protein-ligand conformations.}
+        %     \resumeSubExpItem{Proposed E3Bind, an End-to-End E(3) equivariant network to update the atom coordinate in each iteration. The model comprises an expressive geometric-aware encoder and an equivariant coordinate update module.}
+        %     \resumeSubExpItem{Paper has been accepted to ICLR 2023. See \href{https://arxiv.org/abs/2210.06069}{paper} here.}
+        % \resumeSubExpListEnd
+
+      % \resumeExpBriefItem{Foundation Model for Protein Sequence Understanding. See \href{https://arxiv.org/abs/2206.02096}{paper} here.}
+        % \resumeSubExpListStart
+        %     \resumeSubExpItem{Proposed a comprehensive multi-task learning benchmark to evaluate the performance of mainstream language architectures in biological sequence understanding (e.g. protein function prediction, protein-protein interaction) }
+        %     \resumeSubExpItem{Paper has been accepted to NeurIPS 2022 Datasets and Benchmarks Track. See \href{https://arxiv.org/abs/2206.02096}{paper} here.}
+        % \resumeSubExpListEnd
+    \resumeExpListEnd
+    
+    % SJTU
+    \resumeSubheading
+      {APEX Lab, Shanghai Jiao Tong University}{Sept. 2020 -- June 2022}
+      {Undergraduate Research Assistant, advised by \textbf{Prof. Weinan Zhang}}{Shanghai, China}
+    \resumeExpListStart
+    % \resumeExpItem{Research Topic: Reinforcement Learning, Imitation Learning}
+    \resumeExpBriefItem{Designed a Multi-Step Generative Adversarial Imitation Learning framework. See \href{https://zytzrh.github.io/assets/pdf/AutoGAIL.pdf}{paper} here.}
+        % \resumeSubExpListStart
+        %     \resumeSubExpItem{Analyzed the roll-out discrepancy and the sample complexity of Multi Step Generative Adversarial Imitation Learning (GAIL).}
+        %     \resumeSubExpItem{Proposed AutoGAIL, an auto curriculum version of T-step Occupancy Measure matching algorithm, to achieve better trade-off between rollout discrepancy and the sample complexity. See \href{https://zytzrh.github.io/assets/pdf/AutoGAIL.pdf}{paper draft} here.}
+        % \resumeSubExpListEnd
+    % \resumeExpBriefItem{Equivariant Imitation Learning}
+        % \resumeSubExpListStart
+        %     \resumeSubExpItem{Formulate the imitation learning framework in Symmetric Markov Decision Process.}
+        %     \resumeSubExpItem{Proposed an equivariant imitation learning algorithm, EquiGAIL, which achieves better sample efficiency compared with vanila imitation learning algorithm in various RL environments (e.g. MolGym).}
+        % \resumeSubExpListEnd
+    \resumeExpListEnd
+      
+
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Selected Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{TorchDrug: A Powerful and Flexible Machine Learning Platform for Drug Discovery}}{}
+          \resumeItemListStart
+            \resumeItem{Played a pivotal role in the development of TorchDrug, a robust ML platform for drug discovery, assisting in supporting 6 tasks and implementing over 25 models, specializing in bioinformatics applications.}
+            \resumeItem{Over 1,300 stars and 40,000 downloads. See \href{https://torchdrug.ai/}{project} here.}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{TorchProtein: A Specialized Machine Learning Library for Protein Science}}{}
+          \resumeItemListStart
+            \resumeItem{Played a pivotal role in the development of TorchProtein, a specialized extension of TorchDrug, focusing on implementing representation learning models for both protein sequences and structures. See \href{https://torchprotein.ai/}{project} here.}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Hands-on-RL: A Comprehensive Chinese Tutorial for Reinforcement Learning}}{}
+          \resumeItemListStart
+            \resumeItem{Contributed to the tutorial by authoring sections related to imitation learning, synthesizing complex RL concepts into accessible content, and implementing practical examples on Jupyter notebooks. See \href{https://github.com/boyu-ai/Hands-on-RL}{project} here.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%%-----------Honors & Awards-----------
+\section{Honors \& Awards}
+    \resumeSubHeadingListStart
+        \resumeHonor{\textbf{Irving T. Ho Memorial Scholarship} (4 undergrads per year)}{2021}
+        \resumeHonor{\textbf{Zhiyuan Honorary Scholarship} (Top 5\% in SJTU)}{2018-2021}
+        \resumeHonor{\textbf{Shanghai Jiao Tong University Excellent Scholarship} (Top 10\% in SJTU)}{2018-2021}
+        \resumeHonor{\textbf{Outstanding Graduate Student}}{2022}
+        \resumeHonor{\textbf{Meritorious Winner in Mathematical Contest in Modeling} (Top 7\%)}{2020}
+        % \resumeHonor{\textbf{First Prize, National College Student Physics Competition}}{2020}
+        \resumeHonor{\textbf{First Prize, National Olympiad in Physics}}{2017}
+        
+    \resumeSubHeadingListEnd
+
+%%-----------Services-----------
+\section{Services}
+  \resumeSubHeadingListStart
+        \resumePosition{\textbf{Academic Reviewer}}
+            \resumeItemListStart
+                \resumeDataItem{Neural Information Processing Systems (NeurIPS)}{2023-2024}
+                \resumeDataItem{International Conference on Machine Learning (ICML)}{2023-2024}
+                \resumeDataItem{International Conference on Learning Representations (ICLR)}{2024}
+                \resumeDataItem{Association for the Advancement of Artificial Intelligence (AAAI)}{2024}
+            \resumeItemListEnd
+        \resumePosition{\textbf{Teaching Assistant} $|$ \emph{Shanghai Jiao Tong University}}
+            \resumeItemListStart
+                \resumeDataItem{CS158: Data Structures and Algorithms}{2020}
+                \resumeDataItem{MS125: Principle and Practice of Computer Algorithms}{2020}
+                \resumeDataItem{CS420: Machine Learning}{2021}
+            \resumeItemListEnd
+  \resumeSubHeadingListEnd
+        
+
+
+
+
+
+
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Programming Languages}{: Python, C/C++, Java, MATLAB, Verilog-HDL} \\
+     \textbf{Deep Learning Packages: }{: PyTorch, TensorFlow, Keras} \\
+     \textbf{Language}{: Mandarin Chinese(Native), English(Fluent)} \\
+    }}
+ \end{itemize}
+
+
+%-------------------------------------------
+\end{document}

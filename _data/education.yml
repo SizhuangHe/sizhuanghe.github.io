@@ -1,0 +1,19 @@
+items:
+  - institution: Yale University
+    location: New Haven, CT
+    degree: Ph.D. in Computer Science
+    dates: Aug. 2024 -- Present
+    details:
+      - label: Advisor
+        value: Dr. David van Dijk
+      - label: Research Focus
+        value: Machine Learning for Computational Biology
+  - institution: University of Michigan, Ann Arbor
+    location: Ann Arbor, MI
+    degree: Bachelor of Science in Honors Mathematics (Minor in Computer Science)
+    dates: Sep. 2019 -- May 2023
+    details:
+      - label: Graduated with Highest Distinction
+        value: ""
+      - label: "GPA"
+        value: "4.0 / 4.0"

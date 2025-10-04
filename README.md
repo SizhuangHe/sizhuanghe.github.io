@@ -16,6 +16,7 @@ This site extends the [Minimal Light Theme](https://github.com/yaoyao-liu/minima
 ### Enhancements Over Original Theme
 
 - **📊 Automatic Google Scholar Integration** - Daily automated updates of citations, h-index, and publication metrics
+- **📄 Automatic CV Compilation** - LaTeX CV automatically compiled to PDF and HTML on every update
 - **🏷️ Smart Publication Filtering** - Tag-based filtering system with dynamic search
 - **📑 Enhanced Publication Display** - Expandable abstracts, BibTeX, and author lists with smooth animations
 - **🎯 Interactive Tagging** - Click tags to filter publications by research area
@@ -79,6 +80,53 @@ Built with [`scholarly`](https://github.com/scholarly-python-package/scholarly) 
 2. The workflow automatically extracts your ID and runs daily
 
 3. That's it! Your stats will update automatically every day.
+
+## 📄 Automatic CV Compilation
+
+Your CV is **automatically generated and compiled** from your website data - maintaining a single source of truth!
+
+### How It Works
+
+1. **Edit Website Data**: Update your publications in `_data/publications.yml` or info in `_config.yml`
+2. **Commit and Push**: Push changes to the main branch
+3. **Automatic Generation**: GitHub Actions:
+   - Runs `scripts/generate_cv.py` to generate LaTeX from your data
+   - Compiles to `assets/files/curriculum_vitae.pdf` (PDF)
+   - Converts to `assets/files/cv.html` (HTML)
+4. **Auto-commit**: Generated files are automatically committed back
+
+### Single Source of Truth
+
+The CV pulls data from:
+- **`_config.yml`**: Name, email, social links
+- **`_data/publications.yml`**: All publications (automatically categorized)
+- **`index.md`**: Education and research interests
+
+**No need to maintain separate CV content!** Update your website, CV updates automatically.
+
+### Benefits
+
+- ✅ **Single Source of Truth**: Website and CV always in sync
+- ✅ **Zero Duplication**: Update once, propagates everywhere
+- ✅ **Professional Quality**: LaTeX produces beautifully typeset PDFs
+- ✅ **Auto-categorization**: Publications sorted into conference/workshop/preprint
+- ✅ **Dual Format**: PDF for downloads, HTML for web viewing
+- ✅ **Version Control**: All sources tracked in git
+
+### Files
+
+- **Generator**: `scripts/generate_cv.py` - Python script that reads website data
+- **Workflow**: `.github/workflows/compile-cv.yml` - Automation pipeline
+- **Output**: `assets/files/cv.tex` (auto-generated, in `.gitignore`)
+
+### Manual Generation (Optional)
+
+To test locally:
+```bash
+cd /path/to/repository
+python scripts/generate_cv.py
+# Opens cv.tex in Overleaf or compiles locally
+```
 
 ## 🎨 Custom Features
 

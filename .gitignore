@@ -5,3 +5,6 @@ Gemfile.lock
 .DS_Store
 .jekyll-cache
 git-update.sh
+
+# Auto-generated files
+assets/files/cv.tex

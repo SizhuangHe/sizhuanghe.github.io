@@ -1,0 +1,108 @@
+name: Sizhuang He
+contact:
+  email_display: sizhuang.he@yale.edu
+  email_link: sizhuang.he@yale.edu
+  homepage: https://sizhuang.org
+  github: https://github.com/SizhuangHe
+research:
+  items:
+  - title: Generative Modeling
+    description: Flow Matching, Diffusion, Discrete Diffusion
+  - title: Operator Learning
+    description: Modeling Continuous Spatiotemporal Dynamics, Integral Equations
+  - title: Computational Biology
+    description: Single-cell Transcriptomics Data Analysis
+  - title: LLMs and Agentic AI
+    description: Autonomous Systems for Biological Discovery
+  latex: '\textbf{Generative Modeling}: Flow Matching, Diffusion, Discrete Diffusion,
+    \textbf{Operator Learning}: Modeling Continuous Spatiotemporal Dynamics, Integral
+    Equations, \textbf{Computational Biology}: Single-cell Transcriptomics Data Analysis,
+    \textbf{LLMs and Agentic AI}: Autonomous Systems for Biological Discovery'
+education:
+- institution: Yale University
+  location: New Haven, CT
+  degree: Ph.D. in Computer Science
+  dates: Aug. 2024 -- Present
+  details:
+  - - Advisor
+    - Dr. David van Dijk
+  - - Research Focus
+    - Machine Learning for Computational Biology
+- institution: University of Michigan, Ann Arbor
+  location: Ann Arbor, MI
+  degree: Bachelor of Science in Honors Mathematics (Minor in Computer Science)
+  dates: Sep. 2019 -- May 2023
+  details:
+  - - Graduated with Highest Distinction
+    - ''
+  - - GPA
+    - 4.0 / 4.0
+publications:
+- title: Non-Markovian Discrete Diffusion with Causal Language Models
+  title_latex: Non-Markovian Discrete Diffusion with Causal Language Models
+  title_html: Non-Markovian Discrete Diffusion with Causal Language Models
+  authors_latex: Y. Zhang*, \underline{\textbf{S. He}}*, et al.
+  authors_html: Y. Zhang*, <span class="cv-me">S. He</span>*, et al.
+  venue_latex: NeurIPS 2025 (Poster)
+  venue_html: NeurIPS 2025 (Poster)
+- title: Intelligence at the Edge of Chaos
+  title_latex: Intelligence at the Edge of Chaos
+  title_html: Intelligence at the Edge of Chaos
+  authors_latex: S. Zhang*, A. Patel*, S. Rizvi, N. Liu, \underline{\textbf{S. He}},
+    et al.
+  authors_html: S. Zhang*, A. Patel*, S. Rizvi, N. Liu, <span class="cv-me">S. He</span>,
+    et al.
+  venue_latex: ICLR 2025 (Poster)
+  venue_html: ICLR 2025 (Poster)
+- title: 'COAST: Intelligent Time-Adaptive Neural Operators'
+  title_latex: 'COAST: Intelligent Time-Adaptive Neural Operators'
+  title_html: 'COAST: Intelligent Time-Adaptive Neural Operators'
+  authors_latex: Z. Wu, S. Zhang, \underline{\textbf{S. He}}, et al.
+  authors_html: Z. Wu, S. Zhang, <span class="cv-me">S. He</span>, et al.
+  venue_latex: AI4MATH Workshop at ICML 2025 (Poster)
+  venue_html: AI4MATH Workshop at ICML 2025 (Poster)
+- title: Scaling Large Language Models for Next-Generation Single-Cell Analysis
+  title_latex: Scaling Large Language Models for Next-Generation Single-Cell Analysis
+  title_html: Scaling Large Language Models for Next-Generation Single-Cell Analysis
+  authors_latex: S. Rizvi*, D. Levine*, A. Patel*, S. Zhang*, E. Wang*, \underline{\textbf{S.
+    He}}, et al.
+  authors_html: S. Rizvi*, D. Levine*, A. Patel*, S. Zhang*, E. Wang*, <span class="cv-me">S.
+    He</span>, et al.
+  venue_latex: bioRxiv
+  venue_html: bioRxiv
+- title: 'CaLMFlow: Flow Matching using Causal Language Models'
+  title_latex: 'CaLMFlow: Flow Matching using Causal Language Models'
+  title_html: 'CaLMFlow: Flow Matching using Causal Language Models'
+  authors_latex: \underline{\textbf{S. He}}*, D. Levine*, et al.
+  authors_html: <span class="cv-me">S. He</span>*, D. Levine*, et al.
+  venue_latex: arXiv
+  venue_html: arXiv
+- title: 'Operator Learning Meets Numerical Analysis: Improving Neural Networks through
+    Iterative Methods'
+  title_latex: 'Operator Learning Meets Numerical Analysis: Improving Neural Networks
+    through Iterative Methods'
+  title_html: 'Operator Learning Meets Numerical Analysis: Improving Neural Networks
+    through Iterative Methods'
+  authors_latex: E. Zappala, D. Levine, \underline{\textbf{S. He}}, et al.
+  authors_html: E. Zappala, D. Levine, <span class="cv-me">S. He</span>, et al.
+  venue_latex: arXiv
+  venue_html: arXiv
+honors:
+- name: Fan Family Fellowship
+  institution: Yale University
+  year: '2025'
+- name: Outstanding Achievement in Mathematics Award
+  institution: University of Michigan, Ann Arbor
+  year: '2023'
+- name: James B. Angell Scholar
+  institution: University of Michigan, Ann Arbor
+  year: '2023'
+- name: University Honors
+  institution: University of Michigan, Ann Arbor
+  year: 2022, 2023
+service:
+- heading: Conference Reviewer
+  items:
+  - International Conference on Learning Representations (ICLR)
+  - AI4MATH Workshop at ICML 2025
+last_updated: October 04, 2025
