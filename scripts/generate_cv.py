@@ -558,14 +558,16 @@ def stage2_generate_latex():
     lines.append('\\resumeSubHeadingListEnd\n')
     lines.append('\\vspace{-6pt}\\small{\\textit{* denotes equal contribution}}\n')
 
-    # Honors & Awards section - Match Research Interest formatting but separate lines
+    # Honors & Awards section - Use bullet points with proper spacing
     lines.append('%%-----------Honors \\& Awards-----------\n\\section{Honors \\& Awards}')
+    lines.append('  \\resumeItemListStart')
     
-    # Format each honor on a separate line with same spacing as research interest
+    # Format each honor as a bullet point
     for honor in cv_data['honors']:
         honor_text = f"\\textbf{{{escape_latex(honor['name'])}}}, {escape_latex(honor['institution'])} ({escape_latex(honor['year'])})"
-        lines.append('\\resumeText{' + honor_text + '}')
+        lines.append(f"    \\resumeItem{{{honor_text}}}")
     
+    lines.append('  \\resumeItemListEnd')
     lines.append('')  # Add empty line after section
 
     # Services section - Match template exactly
