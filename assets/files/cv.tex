@@ -1,0 +1,232 @@
+%-------------------------
+% Resume in Latex (auto-generated)
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+% Source: https://github.com/SizhuangHe/sizhuanghe.github.io
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks,colorlinks=true,urlcolor=black]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}  % Optional
+\usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% \definecolor{mycolor}{RGB}{0, 128, 0} % Define a custom color (RGB model)
+\definecolor{mycolor}{RGB}{49, 89, 152} % GPT
+\definecolor{urlcolor}{RGB}{44, 79, 152} % GPT
+% \definecolor{mycolor}{RGB}{57, 114, 180}    % Zuobai and Runzhe
+% \definecolor{mycolor}{RGB}{37, 150, 190} % Define a custom color (RGB model)
+% \definecolor{itemcolor}{RGB}{37, 150, 190}
+\definecolor{itemcolor}{RGB}{0, 0, 0}
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\color{mycolor}\scshape\raggedright\large
+}{}{0em}{}[\color{mycolor}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      #1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[label={\color{itemcolor}•}]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+% For Experience
+\newcommand{\resumeExpListStart}{\begin{itemize}[leftmargin=0.15in, label={\color{itemcolor}$\circ$}, itemsep=1\itemsep]}
+\newcommand{\resumeExpListEnd}{\end{itemize}}
+\newcommand{\resumeSubExpListStart}{\begin{itemize}[leftmargin=\leftmargin, label={\color{itemcolor}•}, itemsep=2\itemsep]}
+\newcommand{\resumeSubExpListEnd}{\end{itemize}}
+
+\newcommand{\resumeExpItem}[1]{
+  \item{
+    {\textbf{#1} \vspace{-1pt}}
+  }
+}
+
+\newcommand{\resumeExpBriefItem}[1]{
+  \item{
+    {{\small#1} \vspace{-1pt}}
+  }
+}
+
+
+\newcommand{\resumeSubExpItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeText}{\vspace{3pt}}
+\newcommand{\resumePosition}[1]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l}
+      \small#1 \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeDataItem}[2]{
+  \item\small{
+    #1 \hfill #2 \vspace{-2pt}
+  }
+}
+\newcommand{\resumePublication}[2]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{p{0.9\textwidth}@{\extracolsep{\fill}}r}
+      \textbf{#1} & \\
+      \textit{\small#2} & \\
+    \end{tabular*}\vspace{-2pt}
+}
+
+\newcommand{\resumeHonor}[2]{
+  \vspace{-2pt}\item
+    {\small#1} \hfill {\small#2}
+  \vspace{-7pt}
+}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape \color{mycolor}Sizhuang He} \\ \vspace{10pt}
+    \href{mailto:sizhuang.he@yale.edu}{Email: \underline{sizhuang.he@yale.edu}} $|$ \href{https://sizhuang.org}{Homepage: \underline{https://sizhuang.org}} $|$ \href{https://github.com/SizhuangHe}{Github: \underline{https://github.com/SizhuangHe}}\\ \vspace{3pt}
+\end{center}
+
+\hypersetup{urlcolor=urlcolor}
+
+%-----------Interest-----------
+\section{Research Interest}
+\resumeText{\textbf{Generative Modeling}: Flow Matching, Diffusion, Discrete Diffusion, \textbf{Operator Learning}: Modeling Continuous Spatiotemporal Dynamics, Integral Equations, \textbf{Computational Biology}: Single-cell Transcriptomics Data Analysis, \textbf{LLMs and Agentic AI}: Autonomous Systems for Biological Discovery}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Yale University}{New Haven, CT}
+      {Ph.D. in Computer Science}{Aug. 2024 -- Present}
+      \resumeItemListStart
+        \resumeItem{Advisor: Dr. David van Dijk}
+        \resumeItem{Research Focus: Machine Learning for Computational Biology}
+      \resumeItemListEnd
+    \resumeSubheading
+      {University of Michigan, Ann Arbor}{Ann Arbor, MI}
+      {Bachelor of Science in Honors Mathematics (Minor in Computer Science)}{Sep. 2019 -- May 2023}
+      \resumeItemListStart
+        \resumeItem{Graduated with Highest Distinction}
+        \resumeItem{GPA: 4.0 / 4.0}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%%-----------Publications-----------
+\section{Publications}
+\resumeSubHeadingListStart
+    \resumePublication{Non-Markovian Discrete Diffusion with Causal Language Models}{Y. Zhang*, \underline{\textbf{S. He}}*, et al. (NeurIPS 2025 (Poster))}
+    \resumePublication{Intelligence at the Edge of Chaos}{S. Zhang*, A. Patel*, S. Rizvi, N. Liu, \underline{\textbf{S. He}}, et al. (ICLR 2025 (Poster))}
+    \resumePublication{COAST: Intelligent Time-Adaptive Neural Operators}{Z. Wu, S. Zhang, \underline{\textbf{S. He}}, et al. (AI4MATH Workshop at ICML 2025 (Poster))}
+    \resumePublication{Scaling Large Language Models for Next-Generation Single-Cell Analysis}{S. Rizvi*, D. Levine*, A. Patel*, S. Zhang*, E. Wang*, \underline{\textbf{S. He}}, et al. (bioRxiv)}
+    \resumePublication{CaLMFlow: Flow Matching using Causal Language Models}{\underline{\textbf{S. He}}*, D. Levine*, et al. (arXiv)}
+    \resumePublication{Operator Learning Meets Numerical Analysis: Improving Neural Networks through Iterative Methods}{E. Zappala, D. Levine, \underline{\textbf{S. He}}, et al. (arXiv)}
+\resumeSubHeadingListEnd
+
+\vspace{-6pt}\small{\textit{* denotes equal contribution}}
+
+%%-----------Honors \& Awards-----------
+\section{Honors \& Awards}
+\resumeText{\textbf{Fan Family Fellowship}, Yale University (2025)}
+\resumeText{\textbf{Outstanding Achievement in Mathematics Award}, University of Michigan, Ann Arbor (2023)}
+\resumeText{\textbf{James B. Angell Scholar}, University of Michigan, Ann Arbor (2023)}
+\resumeText{\textbf{University Honors}, University of Michigan, Ann Arbor (2022, 2023)}
+
+%%-----------Services-----------
+\section{Services}
+  \resumeSubHeadingListStart
+        \resumePosition{\textbf{Conference Reviewer}}
+            \resumeItemListStart
+                \resumeDataItem{International Conference on Learning Representations (ICLR)}{}
+                \resumeDataItem{AI4MATH Workshop at ICML 2025}{}
+            \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+\vfill
+\center{\small Last updated: \today}
+
+\end{document}
