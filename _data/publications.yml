@@ -1,3 +1,4 @@
+# Publications data for automated CV generation
 main:
   - title: Scaling Large Language Models for Next-Generation Single-Cell Analysis
     alt_title: "Cell2Sentence"
