@@ -2,8 +2,8 @@ name: Update Google Scholar Stats
 
 on:
   schedule:
-    # Run daily at 2:00 AM UTC
-    - cron: '0 2 * * *'
+    # Run weekly on Sundays at 2:00 AM UTC
+    - cron: '0 2 * * 0'
   push:
     branches: [ main ]
   workflow_dispatch:  # Allow manual trigger
