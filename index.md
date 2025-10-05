@@ -13,6 +13,8 @@ I work on the intersection of machine learning and biology:
 - **<span style="color: var(--global-theme-color); font-weight: bold;">Computational Biology:</span>** Single-cell Transcriptomics Data Analysis
 - **<span style="color: var(--global-theme-color); font-weight: bold;">LLMs and Agentic AI:</span>** Autonomous Systems for Biological Discovery
 
+Check out my CV here: **[Curriculum Vitae](/cv/)** 
+
 ## News
 - **[Sep 2025]** Our paper *<span style="color: var(--global-theme-color);">Non-Markovian Discrete Diffusion with Causal Language Models</span>* is accepted to **NeurIPS 2025** (*San Diego, CA*).
 - **[Jul 2025]** Our paper *<span style="color: var(--global-theme-color);">COAST: Intelligent Time-Adaptive Neural Operators</span>* is accepted to **AI4MATH@ICML 2025** (*Vancouver, Canada*).
