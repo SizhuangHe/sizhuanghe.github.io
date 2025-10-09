@@ -18,7 +18,7 @@ main:
     selected: true
     summary: "C2S-Scale scales this framework to 27 billion parameters trained on a billion-token multimodal corpus—achieving state-of-the-art predictive and generative performance for complex, multicellular analyses."
     full_abstract: "Single-cell RNA sequencing has transformed our understanding of cellular diversity, yet current single-cell foundation models (scFMs) remain limited in their scalability, flexibility across diverse tasks, and ability to natively integrate textual information. In this work, we build upon the Cell2Sentence (C2S) framework, which represents scRNA-seq profiles as textual 'cell sentences,' to train Large Language Models (LLMs) on a corpus comprising over one billion tokens of transcriptomic data, biological text, and metadata. By scaling model size to 27 billion parameters, we observe consistent improvements in predictive and generative capabilities, as well as the capacity for advanced downstream tasks requiring synthesis of information across multicellular contexts. Through targeted fine-tuning supported by modern reinforcement learning techniques, our approach excels in tasks such as perturbation response prediction, natural language interpretation, and complex biological reasoning. By unifying transcriptomic and textual data at unprecedented scales, this approach not only surpasses both specialized single-cell models and general-purpose LLMs, but also establishes a powerful platform for next-generation single-cell analysis, paving the way for the development of 'virtual cells.'"
-
+  
   - title: Non-Markovian Discrete Diffusion with Causal Language Models
     alt_title: "CaDDI"
     paper_id: "5biMMmIAAAAJ:9yKSN-GCB0IC"
@@ -35,6 +35,21 @@ main:
     summary: "We introduce a novel approach to discrete diffusion models that conditions on the entire generative trajectory, thereby lifting the Markov constraint and allowing the model to revisit and improve past states. CaDDi treats standard causal language models as a special case and permits the direct reuse of pretrained LLM weights with no architectural changes."
     full_abstract: "Discrete diffusion models offer a flexible, controllable approach to structured sequence generation, yet they still lag behind causal language models in expressive power. A key limitation lies in their reliance on the Markovian assumption, which restricts each step to condition only on the current state, leading to potential uncorrectable error accumulation. In this paper, we introduce CaDDi, a discrete diffusion model that conditions on the entire generative trajectory, thereby lifting the Markov constraint and allowing the model to revisit and improve past states. By unifying sequential (causal) and temporal (diffusion) reasoning in a single non-Markovian transformer, CaDDi also treats standard causal language models as a special case and permits the direct reuse of pretrained LLM weights with no architectural changes. Empirically, CaDDi outperforms state-of-the-art discrete diffusion baselines on natural-language benchmarks, substantially narrowing the remaining gap to large autoregressive transformers." 
 
+  - title: "TANTE: Time-Adaptive Operator Learning via Neural Taylor Expansion"
+    paper_id: "5biMMmIAAAAJ:zYLM7Y9cAGgC"
+    authors: Zhikai Wu, Sifan Wang, Shiyang Zhang, <b><u>Sizhuang He</u></b>, Min Zhu, Anran Jiao, Lu Lu, and David van Dijk
+    date: Jan 2025
+    conference_short: In Review
+    conference: In Review
+    pdf: https://arxiv.org/pdf/2502.08574
+    # code: https://github.com/MrGiovanni/ContinualLearning
+    bibtex: ./assets/bibs/tante.txt
+    image: ./assets/img/tante.png
+    # poster: ./assets/posters/CaLMFlow_NYAS_Poster.pdf
+    # notes: Accepted to AI4MATH Workshop at ICML 2025 as a poster
+    tags: ["Neural Operators", "Operator Learning"]
+    full_abstract: "Operator learning for time-dependent partial differential equations (PDEs) has seen rapid progress in recent years, enabling efficient approximation of complex spatiotemporal dynamics. However, most existing methods rely on fixed time step sizes during rollout, which limits their ability to adapt to varying temporal complexity and often leads to error accumulation. Here, we propose the Time-Adaptive Transformer with Neural Taylor Expansion (TANTE), a novel operator-learning framework that produces continuous-time predictions with adaptive step sizes. TANTE predicts future states by performing a Taylor expansion at the current state, where neural networks learn both the higher-order temporal derivatives and the local radius of convergence. This allows the model to dynamically adjust its rollout based on the local behavior of the solution, thereby reducing cumulative error and improving computational efficiency. We demonstrate the effectiveness of TANTE across a wide range of PDE benchmarks, achieving superior accuracy and adaptability compared to fixed-step baselines, delivering accuracy gains of 60–80% and speed-ups of 30–40% at inference time. The code is publicly available at https://github.com/zwu88/TANTE for transparency and reproducibility."
+  
   - title: "COAST: Intelligent Time-Adaptive Neural Operators"
     paper_id: "5biMMmIAAAAJ:u5HHmVD_uO8C"
     authors: Zhikai Wu, Shiyang Zhang, <b><u>Sizhuang He</u></b>, Sifan Wang, Min Zhu, Anran Jiao, Lu Lu, and David van Dijk
@@ -98,4 +113,3 @@ main:
     notes: Preprint
     tags: ["Numerical Analysis", "Operator Learning", "Integral Equations"]
     full_abstract: "Deep neural networks, despite their success in numerous applications, often function without established theoretical foundations. In this paper, we bridge this gap by drawing parallels between deep learning and classical numerical analysis. By framing neural networks as operators with fixed points representing desired solutions, we develop a theoretical framework grounded in iterative methods for operator equations. Under defined conditions, we present convergence proofs based on fixed point theory. We demonstrate that popular architectures, such as diffusion models and AlphaFold, inherently employ iterative operator learning. Empirical assessments highlight that performing iterations through network operators improves performance. We also introduce an iterative graph neural network, PIGN, that further demonstrates benefits of iterations. Our work aims to enhance the understanding of deep learning by merging insights from numerical analysis, potentially guiding the design of future networks with clearer theoretical underpinnings and improved performance."
-  

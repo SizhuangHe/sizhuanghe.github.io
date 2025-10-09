@@ -1,0 +1,9 @@
+@misc{wu2025tantetimeadaptiveoperatorlearning,
+      title={TANTE: Time-Adaptive Operator Learning via Neural Taylor Expansion}, 
+      author={Zhikai Wu and Sifan Wang and Shiyang Zhang and Sizhuang He and Min Zhu and Anran Jiao and Lu Lu and David van Dijk},
+      year={2025},
+      eprint={2502.08574},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2502.08574}, 
+}
