@@ -52,21 +52,20 @@
         "5998770937752595628"
       ]
     },
-    "5biMMmIAAAAJ:u5HHmVD_uO8C": {
+    "5biMMmIAAAAJ:Tyk-4Ss8FVUC": {
       "container_type": "Publication",
       "source": "AUTHOR_PUBLICATION_ENTRY",
       "bib": {
-        "title": "TANTE: Time-Adaptive Operator Learning via Neural Taylor Expansion",
+        "title": "Coast: Intelligent time-adaptive neural operators",
         "pub_year": "2025",
         "citation": "arXiv preprint arXiv:2502.08574, 2025"
       },
       "filled": false,
-      "author_pub_id": "5biMMmIAAAAJ:u5HHmVD_uO8C",
-      "num_citations": 4,
-      "citedby_url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=7589745580209316879,144148732804484368",
+      "author_pub_id": "5biMMmIAAAAJ:Tyk-4Ss8FVUC",
+      "num_citations": 3,
+      "citedby_url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=7589745580209316879",
       "cites_id": [
-        "7589745580209316879",
-        "144148732804484368"
+        "7589745580209316879"
       ]
     },
     "5biMMmIAAAAJ:9yKSN-GCB0IC": {
@@ -85,6 +84,22 @@
         "8651430653710845890"
       ]
     },
+    "5biMMmIAAAAJ:zYLM7Y9cAGgC": {
+      "container_type": "Publication",
+      "source": "AUTHOR_PUBLICATION_ENTRY",
+      "bib": {
+        "title": "TANTE: Time-Adaptive Operator Learning via Neural Taylor Expansion",
+        "pub_year": "2025",
+        "citation": "arXiv preprint arXiv:2502.08574, 2025"
+      },
+      "filled": false,
+      "author_pub_id": "5biMMmIAAAAJ:zYLM7Y9cAGgC",
+      "num_citations": 1,
+      "citedby_url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=144148732804484368",
+      "cites_id": [
+        "144148732804484368"
+      ]
+    },
     "5biMMmIAAAAJ:2osOgNQ5qMEC": {
       "container_type": "Publication",
       "source": "AUTHOR_PUBLICATION_ENTRY",
@@ -100,6 +115,18 @@
       "cites_id": [
         "11492781543123091324"
       ]
+    },
+    "5biMMmIAAAAJ:u5HHmVD_uO8C": {
+      "container_type": "Publication",
+      "source": "AUTHOR_PUBLICATION_ENTRY",
+      "bib": {
+        "title": "TANTE: Time-Adaptive Operator Learning via Neural Taylor Expansion",
+        "pub_year": "2025",
+        "citation": "arXiv preprint arXiv:2502.08574, 2025"
+      },
+      "filled": false,
+      "author_pub_id": "5biMMmIAAAAJ:u5HHmVD_uO8C",
+      "num_citations": 0
     },
     "5biMMmIAAAAJ:d1gkVwhDpl0C": {
       "container_type": "Publication",
@@ -120,5 +147,6 @@
   "i10index": 0,
   "i10index5y": 0,
   "cites_per_year": {},
-  "updated": "2025-10-02T10:06:26.074030Z"
+  "updated": "2025-10-08T23:08:25.019919Z",
+  "message": "Using cached data - Google Scholar was unavailable during last update"
 }

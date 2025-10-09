@@ -36,7 +36,7 @@ main:
     full_abstract: "Discrete diffusion models offer a flexible, controllable approach to structured sequence generation, yet they still lag behind causal language models in expressive power. A key limitation lies in their reliance on the Markovian assumption, which restricts each step to condition only on the current state, leading to potential uncorrectable error accumulation. In this paper, we introduce CaDDi, a discrete diffusion model that conditions on the entire generative trajectory, thereby lifting the Markov constraint and allowing the model to revisit and improve past states. By unifying sequential (causal) and temporal (diffusion) reasoning in a single non-Markovian transformer, CaDDi also treats standard causal language models as a special case and permits the direct reuse of pretrained LLM weights with no architectural changes. Empirically, CaDDi outperforms state-of-the-art discrete diffusion baselines on natural-language benchmarks, substantially narrowing the remaining gap to large autoregressive transformers." 
 
   - title: "TANTE: Time-Adaptive Operator Learning via Neural Taylor Expansion"
-    paper_id: "5biMMmIAAAAJ:zYLM7Y9cAGgC"
+    paper_id: "5biMMmIAAAAJ:u5HHmVD_uO8C"
     authors: Zhikai Wu, Sifan Wang, Shiyang Zhang, <b><u>Sizhuang He</u></b>, Min Zhu, Anran Jiao, Lu Lu, and David van Dijk
     date: Jan 2025
     conference_short: In Review
@@ -51,7 +51,7 @@ main:
     full_abstract: "Operator learning for time-dependent partial differential equations (PDEs) has seen rapid progress in recent years, enabling efficient approximation of complex spatiotemporal dynamics. However, most existing methods rely on fixed time step sizes during rollout, which limits their ability to adapt to varying temporal complexity and often leads to error accumulation. Here, we propose the Time-Adaptive Transformer with Neural Taylor Expansion (TANTE), a novel operator-learning framework that produces continuous-time predictions with adaptive step sizes. TANTE predicts future states by performing a Taylor expansion at the current state, where neural networks learn both the higher-order temporal derivatives and the local radius of convergence. This allows the model to dynamically adjust its rollout based on the local behavior of the solution, thereby reducing cumulative error and improving computational efficiency. We demonstrate the effectiveness of TANTE across a wide range of PDE benchmarks, achieving superior accuracy and adaptability compared to fixed-step baselines, delivering accuracy gains of 60–80% and speed-ups of 30–40% at inference time. The code is publicly available at https://github.com/zwu88/TANTE for transparency and reproducibility."
   
   - title: "COAST: Intelligent Time-Adaptive Neural Operators"
-    paper_id: "5biMMmIAAAAJ:u5HHmVD_uO8C"
+    paper_id: "5biMMmIAAAAJ:Tyk-4Ss8FVUC"
     authors: Zhikai Wu, Shiyang Zhang, <b><u>Sizhuang He</u></b>, Sifan Wang, Min Zhu, Anran Jiao, Lu Lu, and David van Dijk
     date: Jan 2025
     conference_short: AI4MATH
