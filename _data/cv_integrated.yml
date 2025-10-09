@@ -45,6 +45,13 @@ publications:
   authors_html: Y. Zhang*, <span class="cv-me">S. He</span>*, et al.
   venue_latex: NeurIPS 2025 (Poster)
   venue_html: NeurIPS 2025 (Poster)
+- title: 'TANTE: Time-Adaptive Operator Learning via Neural Taylor Expansion'
+  title_latex: 'TANTE: Time-Adaptive Operator Learning via Neural Taylor Expansion'
+  title_html: 'TANTE: Time-Adaptive Operator Learning via Neural Taylor Expansion'
+  authors_latex: Z. Wu, S. Wang, S. Zhang, \underline{\textbf{S. He}}, et al.
+  authors_html: Z. Wu, S. Wang, S. Zhang, <span class="cv-me">S. He</span>, et al.
+  venue_latex: In Review
+  venue_html: In Review
 - title: Intelligence at the Edge of Chaos
   title_latex: Intelligence at the Edge of Chaos
   title_html: Intelligence at the Edge of Chaos
@@ -105,4 +112,4 @@ service:
   items:
   - International Conference on Learning Representations (ICLR)
   - AI4MATH Workshop at ICML 2025
-last_updated: October 05, 2025
+last_updated: October 09, 2025
