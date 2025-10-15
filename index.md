@@ -27,7 +27,7 @@ Check out my CV here: **[Curriculum Vitae](/cv/)**
 
 ## Services
 - **<span style="color: var(--global-theme-color); font-weight: bold;">Conference Reviewer:</span>**
-    - ICLR
+    - ICLR 2026
     - AI4MATH@ICML2025
 
 ## Apart from research
