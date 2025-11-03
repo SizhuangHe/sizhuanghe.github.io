@@ -26,9 +26,11 @@ Check out my CV here: **[Curriculum Vitae](/cv/)**
 
 
 ## Services
+- **<span style="color: var(--global-theme-color); font-weight: bold;">Journal Reviewer:</span>**
+    - Transactions on Machine Learning Research (**TMLR**)
 - **<span style="color: var(--global-theme-color); font-weight: bold;">Conference Reviewer:</span>**
-    - ICLR 2026
-    - AI4MATH@ICML2025
+    - International Conference on Learning Representations (**ICLR**) 2026
+    - AI4MATH Workshop at International Conference on Machine Learning (**ICML**) 2025
 
 ## Apart from research
 Beyond research, my biggest passions include:
