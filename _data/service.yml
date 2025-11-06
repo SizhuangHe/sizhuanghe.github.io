@@ -1,5 +1,8 @@
 groups:
+- heading: Journal Reviewer
+  items:
+  - Transactions on Machine Learning Research
 - heading: Conference Reviewer
   items:
-  - International Conference on Learning Representations (ICLR)
-  - AI4MATH Workshop at ICML 2025
+  - International Conference on Learning Representations, 2026
+  - AI4MATH Workshop at International Conference on Machine Learning, 2025

@@ -63,12 +63,6 @@
         <br>
         <div class="social-icons">
 
-        {% if site.cv_link %}
-        <a style="margin: 0 5px 0 0" href="{{ site.cv_link }}">
-          <i class="ai ai-cv" style="font-size:1.3rem;"></i>
-        </a>
-        {% endif %}
-
         {% if site.github_link %}
         <a style="margin: 0 5px 0 0" href="{{ site.github_link }}">
           <i class="fab fa-github"></i>
@@ -110,6 +104,22 @@
           <div class="last-updated" id="last-updated" style="font-size: 0.6rem; color: #666; margin-top: 0.3rem; text-align: center;">
             Last updated: <span id="update-time">Loading...</span>
           </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="navigation-links">
+          <a href="{{ '/' | relative_url }}" class="nav-link">
+            Home
+          </a>
+          <a href="{{ site.cv_link }}" class="nav-link">
+            CV
+          </a>
+          <a href="{{ site.publications_link }}" class="nav-link">
+            Publications
+          </a>
+          <a href="{{ site.beyond_link }}" class="nav-link">
+            Beyond Research
+          </a>
         </div>
 
       </header>
@@ -461,6 +471,44 @@
     {% endif %}
     
     <style>
+      /* Navigation Links Sidebar Styles */
+      .navigation-links {
+        margin: 1rem 0 0.5rem 0;
+        padding: 0.5rem 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .nav-link {
+        display: block;
+        padding: 0.6rem 0.75rem;
+        background: #f8f9fa;
+        border-radius: 6px;
+        text-decoration: none;
+        color: #043361;
+        font-size: 1.05rem;
+        font-weight: 600;
+        transition: all 0.2s ease;
+        border: 1px solid transparent;
+        text-align: center;
+      }
+
+      .nav-link:hover {
+        transform: scale(1.1);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .nav-link {
+          background: #2d3748;
+          color: rgb(62, 183, 240);
+        }
+
+        .nav-link:hover {
+          transform: scale(1.1);
+        }
+      }
+
       /* Google Scholar Stats Sidebar Styles */
       .scholar-stats {
         margin: 0.2rem 0 0.5rem 0;

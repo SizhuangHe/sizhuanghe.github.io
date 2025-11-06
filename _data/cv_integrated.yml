@@ -6,18 +6,9 @@ contact:
   github: https://github.com/SizhuangHe
 research:
   items:
-  - title: Generative Modeling
-    description: Flow Matching, Diffusion, Discrete Diffusion
-  - title: Operator Learning
-    description: Modeling Continuous Spatiotemporal Dynamics, Integral Equations
-  - title: Computational Biology
-    description: Single-cell Transcriptomics Data Analysis
-  - title: LLMs and Agentic AI
-    description: Autonomous Systems for Biological Discovery
-  latex: '\textbf{Generative Modeling}: Flow Matching, Diffusion, Discrete Diffusion,
-    \textbf{Operator Learning}: Modeling Continuous Spatiotemporal Dynamics, Integral
-    Equations, \textbf{Computational Biology}: Single-cell Transcriptomics Data Analysis,
-    \textbf{LLMs and Agentic AI}: Autonomous Systems for Biological Discovery'
+  - title: Focus
+    description: Machine Learning and Computational Biology
+  latex: Machine Learning and Computational Biology
 education:
 - institution: Yale University
   location: New Haven, CT
@@ -43,8 +34,8 @@ publications:
   title_html: Non-Markovian Discrete Diffusion with Causal Language Models
   authors_latex: Y. Zhang*, \underline{\textbf{S. He}}*, et al.
   authors_html: Y. Zhang*, <span class="cv-me">S. He</span>*, et al.
-  venue_latex: NeurIPS 2025 (Poster)
-  venue_html: NeurIPS 2025 (Poster)
+  venue_latex: NeurIPS 2025
+  venue_html: NeurIPS 2025
 - title: 'TANTE: Time-Adaptive Operator Learning via Neural Taylor Expansion'
   title_latex: 'TANTE: Time-Adaptive Operator Learning via Neural Taylor Expansion'
   title_html: 'TANTE: Time-Adaptive Operator Learning via Neural Taylor Expansion'
@@ -59,15 +50,15 @@ publications:
     et al.
   authors_html: S. Zhang*, A. Patel*, S. Rizvi, N. Liu, <span class="cv-me">S. He</span>,
     et al.
-  venue_latex: ICLR 2025 (Poster)
-  venue_html: ICLR 2025 (Poster)
+  venue_latex: ICLR 2025
+  venue_html: ICLR 2025
 - title: 'COAST: Intelligent Time-Adaptive Neural Operators'
   title_latex: 'COAST: Intelligent Time-Adaptive Neural Operators'
   title_html: 'COAST: Intelligent Time-Adaptive Neural Operators'
   authors_latex: Z. Wu, S. Zhang, \underline{\textbf{S. He}}, et al.
   authors_html: Z. Wu, S. Zhang, <span class="cv-me">S. He</span>, et al.
-  venue_latex: AI4MATH Workshop at ICML 2025 (Poster)
-  venue_html: AI4MATH Workshop at ICML 2025 (Poster)
+  venue_latex: AI4MATH Workshop at ICML 2025
+  venue_html: AI4MATH Workshop at ICML 2025
 - title: Scaling Large Language Models for Next-Generation Single-Cell Analysis
   title_latex: Scaling Large Language Models for Next-Generation Single-Cell Analysis
   title_html: Scaling Large Language Models for Next-Generation Single-Cell Analysis
@@ -75,8 +66,8 @@ publications:
     He}}, et al.
   authors_html: S. Rizvi*, D. Levine*, A. Patel*, S. Zhang*, E. Wang*, <span class="cv-me">S.
     He</span>, et al.
-  venue_latex: bioRxiv
-  venue_html: bioRxiv
+  venue_latex: In Review
+  venue_html: In Review
 - title: 'CaLMFlow: Flow Matching using Causal Language Models'
   title_latex: 'CaLMFlow: Flow Matching using Causal Language Models'
   title_html: 'CaLMFlow: Flow Matching using Causal Language Models'
@@ -108,8 +99,11 @@ honors:
   institution: University of Michigan, Ann Arbor
   year: 2022, 2023
 service:
+- heading: Journal Reviewer
+  items:
+  - Transactions on Machine Learning Research
 - heading: Conference Reviewer
   items:
-  - International Conference on Learning Representations (ICLR)
-  - AI4MATH Workshop at ICML 2025
-last_updated: November 03, 2025
+  - International Conference on Learning Representations, 2026
+  - AI4MATH Workshop at International Conference on Machine Learning, 2025
+last_updated: November 06, 2025

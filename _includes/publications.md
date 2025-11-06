@@ -92,28 +92,31 @@
       </div>
       <div class="periodical" style="margin-top: 2px;"><em>{{ link.conference }}</em></div>
     <div class="links" style="margin-top: 5px;">
-      {% if link.full_abstract %} 
-      <a href="javascript:void(0)" onclick="toggleAbstract('abstract-{{ forloop.index }}')" class="btn btn-sm z-depth-0" role="button" style="font-size:11px;">Abstract</a>
-      {% endif %}
-      {% if link.bibtex %} 
-      <a href="javascript:void(0)" onclick="toggleBibtex('bibtex-{{ forloop.index }}', '{{ link.bibtex }}')" class="btn btn-sm z-depth-0" role="button" style="font-size:11px;">BibTex</a>
-      {% endif %}
-      {% if link.pdf %} 
-      <a href="{{ link.pdf }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:11px;">PDF</a>
-      {% endif %}
-      {% if link.blog %} 
-      <a href="{{ link.blog }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:11px;">Blog</a>
-      {% endif %}
-      {% if link.code %} 
-      <a href="{{ link.code }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:11px;">Code</a>
-      {% endif %}
-      {% if link.page %} 
+      {% if link.page %}
       <a href="{{ link.page }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:11px;">Project Page</a>
       {% endif %}
-      {% if link.poster %} 
+      {% if link.full_abstract %}
+      <a href="javascript:void(0)" onclick="toggleAbstract('abstract-{{ forloop.index }}')" class="btn btn-sm z-depth-0" role="button" style="font-size:11px;">Abstract</a>
+      {% endif %}
+      {% if link.bibtex %}
+      <a href="javascript:void(0)" onclick="toggleBibtex('bibtex-{{ forloop.index }}', '{{ link.bibtex }}')" class="btn btn-sm z-depth-0" role="button" style="font-size:11px;">BibTex</a>
+      {% endif %}
+      {% if link.pdf %}
+      <a href="{{ link.pdf }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:11px;">PDF</a>
+      {% endif %}
+      {% if link.blog %}
+      <a href="{{ link.blog }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:11px;">Blog</a>
+      {% endif %}
+      {% if link.blog2 %}
+      <a href="{{ link.blog2 }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:11px;">Blog</a>
+      {% endif %}
+      {% if link.code %}
+      <a href="{{ link.code }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:11px;">Code</a>
+      {% endif %}
+      {% if link.poster %}
       <a href="{{ link.poster }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:11px;">Poster</a>
       {% endif %}
-      {% if link.others %} 
+      {% if link.others %}
       {{ link.others }}
       {% endif %}
     </div>

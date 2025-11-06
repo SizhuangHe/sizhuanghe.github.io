@@ -1,8 +1,4 @@
-<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
-  <a href="{{ '/' | relative_url }}" class="cv-back-icon" title="Back to Main Page"><</a>
-  <h1 style="margin: 0; flex-grow: 1; text-align: left; margin-left: 1rem;">Curriculum Vitae</h1>
-  <div style="width: 2rem;"></div> <!-- Spacer for balance -->
-</div>
+<h1 style="margin: 0 0 0.5rem 0;">Curriculum Vitae</h1>
 
 <div style="display: flex; align-items: center; justify-content: space-between; margin: 0 0 1rem 0;">
   <p class="cv-last-updated" style="margin: 0;">Last updated: {{ site.data.cv_integrated.last_updated }}.</p>
@@ -13,27 +9,6 @@
 </div>
 
 <style>
-.cv-back-icon {
-  color: var(--global-theme-color);
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 0.5rem;
-  border-radius: 50%;
-  transition: all 0.2s ease;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2rem;
-  height: 2rem;
-}
-
-.cv-back-icon:hover {
-  background-color: var(--global-theme-color);
-  color: white;
-  text-decoration: none;
-}
-
 .cv-download-btn {
   color: var(--global-theme-color);
   font-weight: 600;
