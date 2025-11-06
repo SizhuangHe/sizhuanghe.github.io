@@ -5,4 +5,3 @@ Gemfile.lock
 .DS_Store
 .jekyll-cache
 git-update.sh
-_data/cv_integrated.yml
