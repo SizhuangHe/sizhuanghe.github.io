@@ -64,7 +64,7 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add _data/cv_integrated.yml assets/files/cv.tex assets/files/cv.pdf
+        git add -f _data/cv_integrated.yml assets/files/cv.tex assets/files/cv.pdf
         git commit -m "🤖 Auto-update CV: LaTeX, PDF, and data for Jekyll [skip ci]" || exit 0
         git push
         
