@@ -6,9 +6,18 @@ contact:
   github: https://github.com/SizhuangHe
 research:
   items:
-  - title: Focus
-    description: Machine Learning and Computational Biology
-  latex: Machine Learning and Computational Biology
+  - title: Generative Modeling
+    description: Flow Matching, Diffusion, Discrete Diffusion
+  - title: Operator Learning
+    description: Modeling Continuous Spatiotemporal Dynamics, Integral Equations
+  - title: Computational Biology
+    description: Single-cell Transcriptomics Data Analysis
+  - title: LLMs and Agentic AI
+    description: Autonomous Systems for Biological Discovery
+  latex: '\textbf{Generative Modeling}: Flow Matching, Diffusion, Discrete Diffusion,
+    \textbf{Operator Learning}: Modeling Continuous Spatiotemporal Dynamics, Integral
+    Equations, \textbf{Computational Biology}: Single-cell Transcriptomics Data Analysis,
+    \textbf{LLMs and Agentic AI}: Autonomous Systems for Biological Discovery'
 education:
 - institution: Yale University
   location: New Haven, CT

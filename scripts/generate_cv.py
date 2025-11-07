@@ -232,9 +232,16 @@ def stage1_scrape_data():
 
     research_items = []
     research_latex_parts = []
-    with open('index.md', 'r', encoding='utf-8') as f:
+
+    # Try reading from _includes/about.md first (modular structure)
+    about_file = '_includes/about.md'
+    if not os.path.exists(about_file):
+        about_file = 'index.md'  # Fallback to index.md
+
+    with open(about_file, 'r', encoding='utf-8') as f:
         content = f.read()
-        research_match = re.search(r'I work on the intersection.*?(?=##)', content, re.DOTALL)
+        # Match from "I work on the intersection" until we hit "##", end of file, or "Check out"
+        research_match = re.search(r'I work on the intersection.*?(?=(##|Check out|$))', content, re.DOTALL)
         if research_match:
             section = research_match.group(0)
             bullet_pattern = re.compile(r'- \*\*<span.*?>(.*?)</span>\*\* (.*)')

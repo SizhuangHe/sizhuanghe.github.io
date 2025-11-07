@@ -10,6 +10,7 @@ on:
       - '_data/honors.yml'
       - '_data/service.yml'
       - 'index.md'
+      - '_includes/about.md'
       - 'scripts/generate_cv.py'
   workflow_dispatch:  # Allow manual trigger
 
