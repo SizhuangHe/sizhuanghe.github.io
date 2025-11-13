@@ -1,6 +1,8 @@
 projects:
 - name: LiftHub
-  description: A full-stack web application for tracking fitness progress with interactive data visualizations. Built with Plotly Dash for real-time analytics and workout monitoring, featuring a modern responsive UI with Dash Bootstrap Components.
+  description: A full-stack web application for tracking fitness progress with interactive
+    data visualizations. Built with Plotly Dash for real-time analytics and workout
+    monitoring, featuring a modern responsive UI with Dash Bootstrap Components.
   github: https://github.com/SizhuangHe/lifthub
   tags:
   - Python
@@ -9,7 +11,6 @@ projects:
   - Fitness
   - Data Visualization
   stars: 0
-
 - name: Academic Homepage Template
   description: A modern Jekyll-based academic website featuring automated Google Scholar
     integration, dynamic CV generation from structured data, and an interactive publication
@@ -20,4 +21,4 @@ projects:
   - GitHub Actions
   - Python
   - Academic
-  stars: 2
+  stars: 3
