@@ -8,4 +8,6 @@ layout: homepage
 
 {% include_relative _includes/selected-publications.md %}
 
+{% include_relative _includes/projects.md %}
+
 {% include_relative _includes/services.md %}
