@@ -156,7 +156,7 @@
 
 {% for item in site.data.cv_integrated.research.items %}<strong><span style="color: var(--global-theme-color); font-weight: bold;">{{ item.title }}:</span></strong> {{ item.description }}{% unless forloop.last %}, {% endunless %}{% endfor %}
 
-Currently, I work on <strong><span style="color: var(--global-theme-color); font-weight: bold;">discrete diffusion models on the finite symmetric group</span></strong> and develop <strong><span style="color: var(--global-theme-color); font-weight: bold;">LLM multi-agent systems</span></strong> for single perturbation response prediction and DNA methylation data curation.
+Currently, I work on <strong><span style="color: var(--global-theme-color); font-weight: bold;">discrete diffusion models on the finite symmetric group</span></strong> and develop <strong><span style="color: var(--global-theme-color); font-weight: bold;">LLM multi-agent systems</span></strong> for single-cell perturbation response prediction and DNA methylation data curation.
 
 ## Education
 
