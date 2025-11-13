@@ -1,0 +1,74 @@
+/* Internship seeking banner - Morandi Brick Red */
+.internship-banner {
+  background-color: #faeeed;
+  border: 2px solid #043361;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.internship-banner strong {
+  color: #043361;
+  font-size: 22px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.internship-banner p {
+  color: #594a4a;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.internship-banner p br {
+  display: block;
+  content: "";
+  margin-top: 0.5em;
+}
+
+.internship-banner b {
+  color: #043361;
+  font-weight: bold;
+}
+
+.internship-banner a {
+  color: #043361;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.internship-banner a:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .internship-banner {
+    background-color: #6b5555;
+    border-color: rgb(62, 183, 240);
+    box-shadow: 0 2px 8px rgba(62, 183, 240, 0.12);
+  }
+
+  .internship-banner strong {
+    color: rgb(62, 183, 240);
+  }
+
+  .internship-banner p {
+    color: #f5ebe9;
+  }
+
+  .internship-banner b {
+    color: rgb(62, 183, 240);
+  }
+
+  .internship-banner a {
+    color: rgb(62, 183, 240);
+  }
+
+  .internship-banner a:hover {
+    opacity: 0.8;
+  }
+}

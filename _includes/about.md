@@ -8,5 +8,3 @@ I work on the intersection of machine learning and biology:
 - **<span style="color: var(--global-theme-color); font-weight: bold;">Operator Learning:</span>** Modeling Continuous Spatiotemporal Dynamics, Integral Equations
 - **<span style="color: var(--global-theme-color); font-weight: bold;">Computational Biology:</span>** Single-cell Transcriptomics Data Analysis
 - **<span style="color: var(--global-theme-color); font-weight: bold;">LLMs and Agentic AI:</span>** Autonomous Systems for Biological Discovery
-
-Check out my CV here: **[Curriculum Vitae](/cv/)**

@@ -540,7 +540,8 @@ def stage2_generate_latex():
 
     # Research Interest section
     lines.append('%-----------Interest-----------\n\\section{Research Interest}')
-    lines.append('\\resumeText{' + cv_data['research']['latex'] + '}\n')
+    lines.append('\\resumeText{' + cv_data['research']['latex'] + '}')
+    lines.append('\\resumeText{Currently, I work on \\textbf{discrete diffusion models on the finite symmetric group} and develop \\textbf{LLM multi-agent systems} for single perturbation response prediction and DNA methylation data curation.}\n')
 
     # Education section
     lines.append('%-----------EDUCATION-----------\n\\section{Education}\n  \\resumeSubHeadingListStart')
