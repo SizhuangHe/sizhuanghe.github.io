@@ -29,6 +29,7 @@ main:
     conference_short: NeurIPS
     conference: NeurIPS 2025
     pdf: https://arxiv.org/pdf/2502.09767
+    poster: ./assets/posters/CaDDi_NeurIPS_poster.pdf
     # code: https://github.com/MrGiovanni/ContinualLearning
     bibtex: ./assets/bibs/caddi.txt
     image: ./assets/img/caddi.png
