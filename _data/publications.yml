@@ -9,9 +9,9 @@ main:
     conference: In Review
     pdf: https://www.biorxiv.org/content/10.1101/2025.04.14.648850v1.full.pdf
     # code: https://github.com/MrGiovanni/ContinualLearning
-    bibtex: ./assets/bibs/c2s2.txt
-    image: ./assets/img/c2s2.png
-    # poster: ./assets/posters/CaLMFlow_NYAS_Poster.pdf
+    bibtex: /assets/bibs/c2s2.txt
+    image: /assets/img/c2s2.png
+    # poster: /assets/posters/CaLMFlow_NYAS_Poster.pdf
     page: https://www.c2s.bio
     blog: https://research.google/blog/teaching-machines-the-language-of-biology-scaling-large-language-models-for-next-generation-single-cell-analysis/
     blog2: https://blog.google/technology/ai/google-gemma-ai-cancer-therapy-discovery/
@@ -29,10 +29,10 @@ main:
     conference_short: NeurIPS
     conference: NeurIPS 2025
     pdf: https://arxiv.org/pdf/2502.09767
-    poster: ./assets/posters/CaDDi_NeurIPS_poster.pdf
+    poster: /assets/posters/CaDDi_NeurIPS_poster.pdf
     # code: https://github.com/MrGiovanni/ContinualLearning
-    bibtex: ./assets/bibs/caddi.txt
-    image: ./assets/img/caddi.png
+    bibtex: /assets/bibs/caddi.txt
+    image: /assets/img/caddi.png
     tags: ["Diffusion Models", "Causal Language Models", "Generative Modeling"]
     selected: true
     summary: "We introduce a novel approach to discrete diffusion models that conditions on the entire generative trajectory, thereby lifting the Markov constraint and allowing the model to revisit and improve past states. CaDDi treats standard causal language models as a special case and permits the direct reuse of pretrained LLM weights with no architectural changes."
@@ -46,9 +46,9 @@ main:
     conference: In Review
     pdf: https://arxiv.org/pdf/2502.08574
     # code: https://github.com/MrGiovanni/ContinualLearning
-    bibtex: ./assets/bibs/tante.txt
-    image: ./assets/img/tante.png
-    # poster: ./assets/posters/CaLMFlow_NYAS_Poster.pdf
+    bibtex: /assets/bibs/tante.txt
+    image: /assets/img/tante.png
+    # poster: /assets/posters/CaLMFlow_NYAS_Poster.pdf
     # notes: Accepted to AI4MATH Workshop at ICML 2025 as a poster
     tags: ["Neural Operators", "Operator Learning"]
     full_abstract: "Operator learning for time-dependent partial differential equations (PDEs) has seen rapid progress in recent years, enabling efficient approximation of complex spatiotemporal dynamics. However, most existing methods rely on fixed time step sizes during rollout, which limits their ability to adapt to varying temporal complexity and often leads to error accumulation. Here, we propose the Time-Adaptive Transformer with Neural Taylor Expansion (TANTE), a novel operator-learning framework that produces continuous-time predictions with adaptive step sizes. TANTE predicts future states by performing a Taylor expansion at the current state, where neural networks learn both the higher-order temporal derivatives and the local radius of convergence. This allows the model to dynamically adjust its rollout based on the local behavior of the solution, thereby reducing cumulative error and improving computational efficiency. We demonstrate the effectiveness of TANTE across a wide range of PDE benchmarks, achieving superior accuracy and adaptability compared to fixed-step baselines, delivering accuracy gains of 60–80% and speed-ups of 30–40% at inference time. The code is publicly available at https://github.com/zwu88/TANTE for transparency and reproducibility."
@@ -61,9 +61,9 @@ main:
     conference: AI4MATH Workshop at ICML 2025
     pdf: https://arxiv.org/pdf/2502.08574
     # code: https://github.com/MrGiovanni/ContinualLearning
-    bibtex: ./assets/bibs/coast.txt
-    image: ./assets/img/coast.png
-    # poster: ./assets/posters/CaLMFlow_NYAS_Poster.pdf
+    bibtex: /assets/bibs/coast.txt
+    image: /assets/img/coast.png
+    # poster: /assets/posters/CaLMFlow_NYAS_Poster.pdf
     # notes: Accepted to AI4MATH Workshop at ICML 2025 as a poster
     tags: ["Neural Operators", "Operator Learning"]
     full_abstract: "Operator learning for time-dependent partial differential equations (PDEs) has seen rapid progress in recent years, enabling efficient approximation of complex spatiotemporal dynamics. However, most existing methods rely on fixed time step sizes during rollout, which limits their ability to adapt to varying temporal complexity and often leads to error accumulation. To address this gap, we propose the Time-Adaptive Transformer with Neural Taylor Expansion (TANTE), a novel operator-learning framework that produces continuous-time predictions with adaptive step sizes. TANTE predicts future states by performing a Taylor expansion at the current state, where neural networks learn both the higher-order temporal derivatives and the local radius of convergence. This allows the model to dynamically adjust its rollout based on the local behavior of the solution, thereby reducing cumulative error and improving computational efficiency. We demonstrate the effectiveness of TANTE across a wide range of PDE benchmarks, achieving superior accuracy and adaptability compared to fixed-step baselines, delivering accuracy gains of 10-50% and speed‑ups of 30-80% at inference."
@@ -77,9 +77,9 @@ main:
     conference: arXiv
     pdf: https://arxiv.org/pdf/2410.05292
     # code: https://github.com/MrGiovanni/ContinualLearning
-    bibtex: ./assets/bibs/calmflow.txt
-    image: ./assets/img/CaLMFlow.png
-    # poster: ./assets/posters/CaLMFlow_NYAS_Poster.pdf
+    bibtex: /assets/bibs/calmflow.txt
+    image: /assets/img/CaLMFlow.png
+    # poster: /assets/posters/CaLMFlow_NYAS_Poster.pdf
     notes: Preprint
     tags: ["Flow Matching", "Causal Language Models", "Generative Modeling", "Integral Equations"]
     selected: true
@@ -95,8 +95,8 @@ main:
     conference: ICLR 2025
     pdf: https://arxiv.org/pdf/2410.02536
     # code: https://github.com/MrGiovanni/ContinualLearning
-    bibtex: ./assets/bibs/complexity.txt
-    image: ./assets/img/complexity.png
+    bibtex: /assets/bibs/complexity.txt
+    image: /assets/img/complexity.png
     # notes: Accepted to ICLR 2025 as a poster
     tags: ["Large Language Models", "Complexity Theory", "Cellular Automata"]
     selected: true
@@ -111,8 +111,8 @@ main:
     conference: arXiv
     pdf: https://arxiv.org/pdf/2310.01618
     # code: https://github.com/MrGiovanni/ContinualLearning
-    bibtex: ./assets/bibs/iterative_methods.txt
-    image: ./assets/img/iterative_methods.png
+    bibtex: /assets/bibs/iterative_methods.txt
+    image: /assets/img/iterative_methods.png
     notes: Preprint
     tags: ["Numerical Analysis", "Operator Learning", "Integral Equations"]
     full_abstract: "Deep neural networks, despite their success in numerous applications, often function without established theoretical foundations. In this paper, we bridge this gap by drawing parallels between deep learning and classical numerical analysis. By framing neural networks as operators with fixed points representing desired solutions, we develop a theoretical framework grounded in iterative methods for operator equations. Under defined conditions, we present convergence proofs based on fixed point theory. We demonstrate that popular architectures, such as diffusion models and AlphaFold, inherently employ iterative operator learning. Empirical assessments highlight that performing iterations through network operators improves performance. We also introduce an iterative graph neural network, PIGN, that further demonstrates benefits of iterations. Our work aims to enhance the understanding of deep learning by merging insights from numerical analysis, potentially guiding the design of future networks with clearer theoretical underpinnings and improved performance."
