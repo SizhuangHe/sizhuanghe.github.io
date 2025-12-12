@@ -14,10 +14,6 @@ research:
     description: Single-cell Transcriptomics Data Analysis
   - title: LLMs and Agentic AI
     description: Autonomous Systems for Biological Discovery
-  latex: '\textbf{Generative Modeling}: Flow Matching, Diffusion, Discrete Diffusion,
-    \textbf{Operator Learning}: Modeling Continuous Spatiotemporal Dynamics, Integral
-    Equations, \textbf{Computational Biology}: Single-cell Transcriptomics Data Analysis,
-    \textbf{LLMs and Agentic AI}: Autonomous Systems for Biological Discovery'
 education:
 - institution: Yale University
   location: New Haven, CT
@@ -37,62 +33,55 @@ education:
     - ''
   - - GPA
     - 4.0 / 4.0
+research_experience:
+- heading: Generative Models and LLMs
+  items:
+  - title: CaDDi
+    description: Developed <strong>CaDDi</strong>, a Non-Markovian Discrete Diffusion framework that unifies discrete diffusion with causal LLMs—two core paradigms in natural language generation previously viewed as orthogonal.
+    details:
+    - By breaking the longstanding Markovian assumption in discrete diffusion models, <strong>CaDDi</strong> achieves <strong>more coherent text generation</strong>—demonstrated by lower generative perplexity compared to prior discrete diffusion approaches.
+    - Finetuned a Qwen-3 1.5B LLM to perform diffusion-style denoising, achieving improved performance on multiple reasoning benchmarks.
+    - Published as a co-first author at NeurIPS 2025.
+  - title: CaLMFlow
+    description: Developed <strong>CaLMFlow</strong>, a flow-matching paradigm that reformulates the problem from solving an ODE to a Volterra integral equation, mitigating <strong>stiffness</strong> issues commonly encountered in ODE-based formulations.
+    details:
+    - Applied <strong>CaLMFlow</strong> to single-cell perturbation response prediction, demonstrating <strong>superior ability to model the underlying data distribution</strong> and <strong>significantly improved extrapolation to OOD perturbations</strong> compared to specialized baselines.
+- heading: LLM Agentic Systems for Biological Data Curation
+  items:
+  - title: DNA Methylation Curation
+    description: Developing an <strong>LLM-based multi-agent system</strong> for large-scale, automated curation of DNA methylation datasets.
+    details:
+    - Designed a <strong>fully automated</strong> and <strong>generalizable</strong> pipeline that adapts to unseen datasets and aligns with the workflow needs of biological researchers.
+    - The pipeline <strong>scales to thousands of publicly available datasets</strong> and reduces curation workloads that previously required years of manual effort by multiple biologists to just a few hours.
+    - Designed for <strong>deployment as a continuous system</strong> that automatically downloads, curates, and updates relevant public datasets, providing biologists with clean, standardized data to accelerate downstream research.
 publications:
 - title: Non-Markovian Discrete Diffusion with Causal Language Models
-  title_latex: Non-Markovian Discrete Diffusion with Causal Language Models
   title_html: Non-Markovian Discrete Diffusion with Causal Language Models
-  authors_latex: Y. Zhang*, \underline{\textbf{S. He}}*, et al.
   authors_html: Y. Zhang*, <span class="cv-me">S. He</span>*, et al.
-  venue_latex: NeurIPS 2025
   venue_html: NeurIPS 2025
 - title: 'TANTE: Time-Adaptive Operator Learning via Neural Taylor Expansion'
-  title_latex: 'TANTE: Time-Adaptive Operator Learning via Neural Taylor Expansion'
   title_html: 'TANTE: Time-Adaptive Operator Learning via Neural Taylor Expansion'
-  authors_latex: Z. Wu, S. Wang, S. Zhang, \underline{\textbf{S. He}}, et al.
   authors_html: Z. Wu, S. Wang, S. Zhang, <span class="cv-me">S. He</span>, et al.
-  venue_latex: In Review
   venue_html: In Review
 - title: Intelligence at the Edge of Chaos
-  title_latex: Intelligence at the Edge of Chaos
   title_html: Intelligence at the Edge of Chaos
-  authors_latex: S. Zhang*, A. Patel*, S. Rizvi, N. Liu, \underline{\textbf{S. He}},
-    et al.
-  authors_html: S. Zhang*, A. Patel*, S. Rizvi, N. Liu, <span class="cv-me">S. He</span>,
-    et al.
-  venue_latex: ICLR 2025
+  authors_html: S. Zhang*, A. Patel*, S. Rizvi, N. Liu, <span class="cv-me">S. He</span>, et al.
   venue_html: ICLR 2025
 - title: 'COAST: Intelligent Time-Adaptive Neural Operators'
-  title_latex: 'COAST: Intelligent Time-Adaptive Neural Operators'
   title_html: 'COAST: Intelligent Time-Adaptive Neural Operators'
-  authors_latex: Z. Wu, S. Zhang, \underline{\textbf{S. He}}, et al.
   authors_html: Z. Wu, S. Zhang, <span class="cv-me">S. He</span>, et al.
-  venue_latex: AI4MATH Workshop at ICML 2025
   venue_html: AI4MATH Workshop at ICML 2025
 - title: Scaling Large Language Models for Next-Generation Single-Cell Analysis
-  title_latex: Scaling Large Language Models for Next-Generation Single-Cell Analysis
   title_html: Scaling Large Language Models for Next-Generation Single-Cell Analysis
-  authors_latex: S. Rizvi*, D. Levine*, A. Patel*, S. Zhang*, E. Wang*, \underline{\textbf{S.
-    He}}, et al.
-  authors_html: S. Rizvi*, D. Levine*, A. Patel*, S. Zhang*, E. Wang*, <span class="cv-me">S.
-    He</span>, et al.
-  venue_latex: In Review
+  authors_html: S. Rizvi*, D. Levine*, A. Patel*, S. Zhang*, E. Wang*, <span class="cv-me">S. He</span>, et al.
   venue_html: In Review
 - title: 'CaLMFlow: Flow Matching using Causal Language Models'
-  title_latex: 'CaLMFlow: Flow Matching using Causal Language Models'
   title_html: 'CaLMFlow: Flow Matching using Causal Language Models'
-  authors_latex: \underline{\textbf{S. He}}*, D. Levine*, et al.
   authors_html: <span class="cv-me">S. He</span>*, D. Levine*, et al.
-  venue_latex: arXiv
   venue_html: arXiv
-- title: 'Operator Learning Meets Numerical Analysis: Improving Neural Networks through
-    Iterative Methods'
-  title_latex: 'Operator Learning Meets Numerical Analysis: Improving Neural Networks
-    through Iterative Methods'
-  title_html: 'Operator Learning Meets Numerical Analysis: Improving Neural Networks
-    through Iterative Methods'
-  authors_latex: E. Zappala, D. Levine, \underline{\textbf{S. He}}, et al.
+- title: 'Operator Learning Meets Numerical Analysis: Improving Neural Networks through Iterative Methods'
+  title_html: 'Operator Learning Meets Numerical Analysis: Improving Neural Networks through Iterative Methods'
   authors_html: E. Zappala, D. Levine, <span class="cv-me">S. He</span>, et al.
-  venue_latex: arXiv
   venue_html: arXiv
 honors:
 - name: Fan Family Fellowship
@@ -110,9 +99,9 @@ honors:
 service:
 - heading: Journal Reviewer
   items:
-  - Transactions on Machine Learning Research
+  - Transactions on Machine Learning Research (TMLR)
 - heading: Conference Reviewer
   items:
-  - International Conference on Learning Representations, 2026
-  - AI4MATH Workshop at International Conference on Machine Learning, 2025
-last_updated: November 19, 2025
+  - International Conference on Learning Representations (ICLR), 2026
+  - AI4MATH Workshop at International Conference on Machine Learning (ICML), 2025
+last_updated: December 12, 2025
