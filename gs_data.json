@@ -1,0 +1,142 @@
+{
+  "container_type": "Author",
+  "filled": [
+    "basics",
+    "publications",
+    "indices",
+    "counts"
+  ],
+  "scholar_id": "5biMMmIAAAAJ",
+  "source": "AUTHOR_PROFILE_PAGE",
+  "name": "Sizhuang He",
+  "url_picture": "https://scholar.googleusercontent.com/citations?view_op=view_photo&user=5biMMmIAAAAJ&citpid=1",
+  "affiliation": "Yale University",
+  "organization": 3534443088967806588,
+  "interests": [
+    "Discrete Diffusion",
+    "LLM"
+  ],
+  "email_domain": "@yale.edu",
+  "homepage": "https://sizhuang.org/",
+  "citedby": 35,
+  "publications": {
+    "5biMMmIAAAAJ:u-x6o8ySG0sC": {
+      "container_type": "Publication",
+      "source": "AUTHOR_PUBLICATION_ENTRY",
+      "bib": {
+        "title": "Scaling Large Language Models for Next-Generation Single-Cell Analysis",
+        "pub_year": "2025",
+        "citation": "bioRxiv, 2025.04. 14.648850, 2025"
+      },
+      "filled": false,
+      "author_pub_id": "5biMMmIAAAAJ:u-x6o8ySG0sC",
+      "num_citations": 17,
+      "citedby_url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=5998770937752595628",
+      "cites_id": [
+        "5998770937752595628"
+      ]
+    },
+    "5biMMmIAAAAJ:qjMakFHDy7sC": {
+      "container_type": "Publication",
+      "source": "AUTHOR_PUBLICATION_ENTRY",
+      "bib": {
+        "title": "Intelligence at the Edge of Chaos",
+        "pub_year": "2024",
+        "citation": "arXiv preprint arXiv:2410.02536, 2024"
+      },
+      "filled": false,
+      "author_pub_id": "5biMMmIAAAAJ:qjMakFHDy7sC",
+      "num_citations": 11,
+      "citedby_url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=12410492037350669821",
+      "cites_id": [
+        "12410492037350669821"
+      ]
+    },
+    "5biMMmIAAAAJ:Tyk-4Ss8FVUC": {
+      "container_type": "Publication",
+      "source": "AUTHOR_PUBLICATION_ENTRY",
+      "bib": {
+        "title": "Coast: Intelligent time-adaptive neural operators",
+        "pub_year": "2025",
+        "citation": "arXiv preprint arXiv:2502.08574, 2025"
+      },
+      "filled": false,
+      "author_pub_id": "5biMMmIAAAAJ:Tyk-4Ss8FVUC",
+      "num_citations": 3,
+      "citedby_url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=7589745580209316879",
+      "cites_id": [
+        "7589745580209316879"
+      ]
+    },
+    "5biMMmIAAAAJ:2osOgNQ5qMEC": {
+      "container_type": "Publication",
+      "source": "AUTHOR_PUBLICATION_ENTRY",
+      "bib": {
+        "title": "Operator learning meets numerical analysis: Improving neural networks through iterative methods",
+        "pub_year": "2023",
+        "citation": "arXiv preprint arXiv:2310.01618, 2023"
+      },
+      "filled": false,
+      "author_pub_id": "5biMMmIAAAAJ:2osOgNQ5qMEC",
+      "num_citations": 2,
+      "citedby_url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=11492781543123091324",
+      "cites_id": [
+        "11492781543123091324"
+      ]
+    },
+    "5biMMmIAAAAJ:9yKSN-GCB0IC": {
+      "container_type": "Publication",
+      "source": "AUTHOR_PUBLICATION_ENTRY",
+      "bib": {
+        "title": "Non-Markovian Discrete Diffusion with Causal Language Models",
+        "pub_year": "2025",
+        "citation": "arXiv preprint arXiv:2502.09767, 2025"
+      },
+      "filled": false,
+      "author_pub_id": "5biMMmIAAAAJ:9yKSN-GCB0IC",
+      "num_citations": 1,
+      "citedby_url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=8651430653710845890",
+      "cites_id": [
+        "8651430653710845890"
+      ]
+    },
+    "5biMMmIAAAAJ:zYLM7Y9cAGgC": {
+      "container_type": "Publication",
+      "source": "AUTHOR_PUBLICATION_ENTRY",
+      "bib": {
+        "title": "TANTE: Time-Adaptive Operator Learning via Neural Taylor Expansion",
+        "pub_year": "2025",
+        "citation": "arXiv preprint arXiv:2502.08574, 2025"
+      },
+      "filled": false,
+      "author_pub_id": "5biMMmIAAAAJ:zYLM7Y9cAGgC",
+      "num_citations": 1,
+      "citedby_url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=144148732804484368",
+      "cites_id": [
+        "144148732804484368"
+      ]
+    },
+    "5biMMmIAAAAJ:d1gkVwhDpl0C": {
+      "container_type": "Publication",
+      "source": "AUTHOR_PUBLICATION_ENTRY",
+      "bib": {
+        "title": "CaLMFlow: Volterra Flow Matching using Causal Language Models",
+        "pub_year": "2024",
+        "citation": "arXiv preprint arXiv:2410.05292, 2024"
+      },
+      "filled": false,
+      "author_pub_id": "5biMMmIAAAAJ:d1gkVwhDpl0C",
+      "num_citations": 0
+    }
+  },
+  "citedby5y": 35,
+  "hindex": 3,
+  "hindex5y": 3,
+  "i10index": 2,
+  "i10index5y": 2,
+  "cites_per_year": {
+    "2024": 1,
+    "2025": 31
+  },
+  "updated": "2025-12-28T03:45:48.249788Z"
+}
