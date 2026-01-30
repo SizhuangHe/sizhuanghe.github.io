@@ -113,6 +113,7 @@ honors:
 service:
 - heading: Journal Reviewer
   items:
+  - ACM Computing Surveys
   - Transactions on Machine Learning Research (TMLR)
 - heading: Conference Reviewer
   items:
