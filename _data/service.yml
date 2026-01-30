@@ -1,6 +1,7 @@
 groups:
 - heading: Journal Reviewer
   items:
+  - ACM Computing Surveys
   - Transactions on Machine Learning Research
 - heading: Conference Reviewer
   items:
