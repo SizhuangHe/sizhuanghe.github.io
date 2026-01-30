@@ -55,10 +55,24 @@ research_experience:
     - The pipeline <strong>scales to thousands of publicly available datasets</strong> and reduces curation workloads that previously required years of manual effort by multiple biologists to just a few hours.
     - Designed for <strong>deployment as a continuous system</strong> that automatically downloads, curates, and updates relevant public datasets, providing biologists with clean, standardized data to accelerate downstream research.
 publications:
+- title: Learning Permutation Distributions via Reflected Diffusion on Ranks
+  title_latex: Learning Permutation Distributions via Reflected Diffusion on Ranks
+  title_html: Learning Permutation Distributions via Reflected Diffusion on Ranks
+  authors_latex: \underline{\textbf{S. He}}*, Y. Zhang*, et al.
+  authors_html: <span class="cv-me">S. He</span>*, Y. Zhang*, et al.
+  venue_latex: In Review
+  venue_html: In Review
 - title: Non-Markovian Discrete Diffusion with Causal Language Models
   title_html: Non-Markovian Discrete Diffusion with Causal Language Models
   authors_html: Y. Zhang*, <span class="cv-me">S. He</span>*, et al.
   venue_html: NeurIPS 2025
+- title: "STRIDE: Post-Training LLMs to Reason and Refine Bio-Sequences via Edit Trajectories"
+  title_latex: "STRIDE: Post-Training LLMs to Reason and Refine Bio-Sequences via Edit Trajectories"
+  title_html: "STRIDE: Post-Training LLMs to Reason and Refine Bio-Sequences via Edit Trajectories"
+  authors_latex: D. Zhang, S. Zhang, \underline{\textbf{S. He}}, Y. Zhang and D. van Dijk
+  authors_html: D. Zhang, S. Zhang, <span class="cv-me">S. He</span>, Y. Zhang and D. van Dijk
+  venue_latex: In Review
+  venue_html: In Review
 - title: 'TANTE: Time-Adaptive Operator Learning via Neural Taylor Expansion'
   title_html: 'TANTE: Time-Adaptive Operator Learning via Neural Taylor Expansion'
   authors_html: Z. Wu, S. Wang, S. Zhang, <span class="cv-me">S. He</span>, et al.
@@ -102,6 +116,7 @@ service:
   - Transactions on Machine Learning Research (TMLR)
 - heading: Conference Reviewer
   items:
+  - International Conference on Machine Learning (ICML), 2026
   - International Conference on Learning Representations (ICLR), 2026
   - AI4MATH Workshop at International Conference on Machine Learning (ICML), 2025
-last_updated: December 12, 2025
+last_updated: January 30, 2026 (Updated with STRIDE)

@@ -1,5 +1,5 @@
 <h2 id="publications" style="margin: 2px 0px -15px;">Complete Publication List</h2>
-<p style="font-size: 0.9em; margin-top: 15px; margin-bottom: -10px;"><i>(*: Equal Contribution; Last Updated: Sep 2025)</i></p>
+<p style="font-size: 0.9em; margin-top: 15px; margin-bottom: -10px;"><i>(*: Equal Contribution; Last Updated: Jan 2026)</i></p>
 
 <!-- Tag Filtering System -->
 <div class="tag-filters">
@@ -142,7 +142,7 @@
     <!-- Abstract display -->
     {% if link.full_abstract %}
     <div id="abstract-{{ forloop.index }}" class="abstract-container" style="display: none; margin-top: 10px; padding: 15px; background-color: #f8f9fa; border-left: 3px solid #724e52; border-radius: 4px; width: 700px; max-width: 80%;">
-      <div id="abstract-content-{{ forloop.index }}" style="margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; line-height: 1.6; color: #495057; text-align: justify;">{{ link.full_abstract }}</div>
+      <div id="abstract-content-{{ forloop.index }}" class="tex2jax_process" style="margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; line-height: 1.6; color: #495057; text-align: justify; hyphens: auto; -webkit-hyphens: auto; overflow-wrap: break-word;">{{ link.full_abstract | markdownify }}</div>
     </div>
     {% endif %}
   </div>
