@@ -96,10 +96,10 @@
       <a href="{{ link.page }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:11px;">Project Page</a>
       {% endif %}
       {% if link.full_abstract %}
-      <a href="javascript:void(0)" onclick="toggleAbstract('abstract-{{ forloop.index }}')" class="btn btn-sm z-depth-0" role="button" style="font-size:11px;">Abstract</a>
+      <a href="javascript:void(0)" onclick="toggleAbstract('abstract-{{ forloop.index }}', this)" class="btn btn-sm z-depth-0" role="button" style="font-size:11px;">Abstract</a>
       {% endif %}
       {% if link.bibtex %}
-      <a href="javascript:void(0)" onclick="toggleBibtex('bibtex-{{ forloop.index }}', '{{ link.bibtex }}')" class="btn btn-sm z-depth-0" role="button" style="font-size:11px;">BibTex</a>
+      <a href="javascript:void(0)" onclick="toggleBibtex('bibtex-{{ forloop.index }}', '{{ link.bibtex }}', this)" class="btn btn-sm z-depth-0" role="button" style="font-size:11px;">BibTex</a>
       {% endif %}
       {% if link.pdf %}
       <a href="{{ link.pdf }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:11px;">PDF</a>

@@ -754,6 +754,14 @@
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
+    /* Action buttons active state */
+    .btn.btn-sm.z-depth-0.active {
+      background-color: #1a73e8 !important;
+      border-color: #1557b0 !important;
+      color: #ffffff !important;
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
+    }
+
     /* Individual publication tags */
     .publication-tags {
       margin-bottom: 3px;
@@ -847,6 +855,14 @@
         color: #63b3ed !important;
         transform: translateY(-1px);
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Action buttons dark mode active state */
+      .btn.btn-sm.z-depth-0.active {
+        background-color: #3182ce !important;
+        border-color: #2c5aa0 !important;
+        color: #ffffff !important;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25);
       }
 
       /* Tag system dark mode styles */
@@ -967,7 +983,7 @@
     });
 
     // BibTeX Inline Functions
-    window.toggleBibtex = function (containerId, bibtexUrl) {
+    window.toggleBibtex = function (containerId, bibtexUrl, buttonElement) {
       const container = document.getElementById(containerId);
       const preElement = document.getElementById('bibtex-content-' + containerId.split('-')[1]);
 
@@ -988,9 +1004,11 @@
             });
         }
         container.style.display = 'block';
+        if (buttonElement) buttonElement.classList.add('active');
       } else {
         // Hide the display
         container.style.display = 'none';
+        if (buttonElement) buttonElement.classList.remove('active');
       }
     };
 
@@ -1031,13 +1049,15 @@
     };
 
     // Abstract Toggle Functions
-    window.toggleAbstract = function (containerId) {
+    window.toggleAbstract = function (containerId, buttonElement) {
       const container = document.getElementById(containerId);
 
       if (container.style.display === 'none' || container.style.display === '') {
         container.style.display = 'block';
+        if (buttonElement) buttonElement.classList.add('active');
       } else {
         container.style.display = 'none';
+        if (buttonElement) buttonElement.classList.remove('active');
       }
     };
 
