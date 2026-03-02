@@ -1,7 +1,7 @@
 projects:
 - name: Daily Briefing
-  description: A personal daily briefing app that aggregates news and life updates into
-    a concise summary. Features a Python backend for content curation and a TypeScript/JavaScript
+  description: A personal daily briefing app that aggregates news and life updates
+    into a concise summary. Features a Python backend for content curation and a TypeScript/JavaScript
     frontend, with automated scheduling via macOS automation.
   github: https://github.com/SizhuangHe/daily-briefing
   tags:
@@ -32,4 +32,4 @@ projects:
   - GitHub Actions
   - Python
   - Academic
-  stars: 3
+  stars: 4
