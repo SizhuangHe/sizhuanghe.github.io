@@ -1,0 +1,9 @@
+@misc{zhang2026strideposttrainingllmsreason,
+      title={STRIDE: Post-Training LLMs to Reason and Refine Bio-Sequences via Edit Trajectories},
+      author={Daiheng Zhang and Shiyang Zhang and Sizhuang He and Yangtian Zhang and Syed Asad Rizvi and David van Dijk},
+      year={2026},
+      eprint={2603.03573},
+      archivePrefix={arXiv},
+      primaryClass={cs.CE},
+      url={https://arxiv.org/abs/2603.03573},
+}

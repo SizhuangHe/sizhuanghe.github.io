@@ -21,17 +21,14 @@ main:
     alt_title: "STRIDE"
     paper_id: 
     authors: Daiheng Zhang, Shiyang Zhang, <b><u>Sizhuang He</u></b>, Yangtian Zhang and David van Dijk
-    date: Jan 2026
-    conference_short: In Review
-    conference: In Review
-    # pdf: https://arxiv.org/pdf/2502.09767
-    # poster: /assets/posters/CaDDi_NeurIPS_poster.pdf
-    # code: https://github.com/MrGiovanni/ContinualLearning
-    # bibtex: /assets/bibs/caddi.txt
-    # image: /assets/img/soft_rank_diffusion.png
+    date: Mar 2026
+    conference_short: Preprint
+    conference: arXiv preprint
+    pdf: https://arxiv.org/pdf/2603.03573
+    bibtex: /assets/bibs/stride.txt
+    # image: /assets/img/stride.png
     tags: ["Protein Optimization", "Large Language Models", "Generative Modeling", "Post-training"]
-    # selected: true
-    # summary: "We propose Soft-Rank Diffusion, a discrete diffusion framework for learning distributions over permutations on $S_n$ that replaces shuffle-based random walks with a structured soft-rank forward process. By lifting permutations to continuous relaxed ranks, we obtain smoother and more tractable trajectories, while our contextualized generalized Plackett–Luce (cGPL) denoisers provide a prefix-conditional generalization of PL-style reverse models for inherently sequential decision structure. Across sorting and combinatorial optimization benchmarks, Soft-Rank Diffusion consistently outperforms prior permutation diffusion baselines, with especially strong gains on long sequences."
+    notes: Preprint
     full_abstract: 'Discrete biological sequence optimization demands iterative refinement while satisfying strict syntactic constraints.
       Diffusion-based approaches provide strong progressive refinement but are not naturally aligned with discrete, grammar-constrained edit operations, whereas autoregressive LLMs readily produce valid sequences yet often lack explicit long-horizon planning.
       To close this gap, we introduce _STRIDE_ (_Sequence Trajectory Refinement via Internalized Denoising Emulation_), a post-training framework that recasts optimization as an intrinsic reasoning problem in edit space.
