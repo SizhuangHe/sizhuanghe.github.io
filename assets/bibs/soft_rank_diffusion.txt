@@ -1,0 +1,9 @@
+@misc{he2026learningpermutationdistributionsreflected,
+      title={Learning Permutation Distributions via Reflected Diffusion on Ranks},
+      author={Sizhuang He and Yangtian Zhang and Shiyang Zhang and David van Dijk},
+      year={2026},
+      eprint={2603.17353},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2603.17353},
+}

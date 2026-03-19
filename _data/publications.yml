@@ -2,17 +2,18 @@
 main:
   - title: Learning Permutation Distributions via Reflected Diffusion on Ranks
     alt_title: "Soft-Rank Diffusion"
-    paper_id: 
+    paper_id:
     authors: <b><u>Sizhuang He<sup>*</sup></u></b>, Yangtian Zhang <sup>*</sup>, Shiyang Zhang and David van Dijk
     date: Jan 2026
     conference_short: In Review
     conference: In Review
-    # pdf: https://arxiv.org/pdf/2502.09767
+    pdf: https://arxiv.org/pdf/2603.17353
     # poster: /assets/posters/CaDDi_NeurIPS_poster.pdf
     # code: https://github.com/MrGiovanni/ContinualLearning
-    # bibtex: /assets/bibs/caddi.txt
+    bibtex: /assets/bibs/soft_rank_diffusion.txt
     image: /assets/img/soft_rank_diffusion.png
     tags: ["Diffusion Models", "Discrete Diffusion", "Generative Modeling", "Learning Permutations"]
+    notes: Preprint
     selected: true
     summary: "We propose Soft-Rank Diffusion, a discrete diffusion framework for learning distributions over permutations on $S_n$ that replaces shuffle-based random walks with a structured soft-rank forward process. By lifting permutations to continuous relaxed ranks, we obtain smoother and more tractable trajectories, while our contextualized generalized Plackett–Luce (cGPL) denoisers provide a prefix-conditional generalization of PL-style reverse models for inherently sequential decision structure. Across sorting and combinatorial optimization benchmarks, Soft-Rank Diffusion consistently outperforms prior permutation diffusion baselines, with especially strong gains on long sequences."
     full_abstract: 'The finite symmetric group $S_n$ provides a natural domain for permutations, yet learning probability distributions on $S_n$ is challenging due to its factorially growing size and discrete, non-Euclidean structure. Recent permutation diffusion methods define forward noising via shuffle-based random walks (e.g., riffle shuffles) and learn reverse transitions with Plackett–Luce (PL) variants, but the resulting trajectories can be abrupt and increasingly hard to denoise as $n$ grows. We propose _Soft-Rank Diffusion_, a discrete diffusion framework that replaces shuffle-based corruption with a structured soft-rank forward process: we lift permutations to a continuous latent representation of order by relaxing discrete ranks into soft ranks, yielding smoother and more tractable trajectories. For the reverse process, we introduce _contextualized generalized Plackett--Luce (cGPL)_ denoisers that generalize prior PL-style parameterizations and improve expressivity for sequential decision structures. Experiments on sorting and combinatorial optimization benchmarks show that Soft-Rank Diffusion consistently outperforms prior diffusion baselines, with particularly strong gains in long-sequence and intrinsically sequential settings.'
@@ -22,8 +23,8 @@ main:
     paper_id: 
     authors: Daiheng Zhang, Shiyang Zhang, <b><u>Sizhuang He</u></b>, Yangtian Zhang and David van Dijk
     date: Mar 2026
-    conference_short: Preprint
-    conference: arXiv preprint
+    conference_short: In Review
+    conference: In Review
     pdf: https://arxiv.org/pdf/2603.03573
     bibtex: /assets/bibs/stride.txt
     # image: /assets/img/stride.png
@@ -109,8 +110,8 @@ main:
     paper_id: "5biMMmIAAAAJ:d1gkVwhDpl0C"
     authors: <b><u>Sizhuang He<sup>*</sup></u></b>, Daniel Levine<sup>*</sup>, Ivan Vrkic, Marco Bressana, David Zhang, Syed Rizvi, Yangtian Zhang, Emanuele Zappala, and David van Dijk
     date: Oct 2024
-    conference_short: ArXiv
-    conference: arXiv
+    conference_short: Preprint
+    conference: Preprint
     pdf: https://arxiv.org/pdf/2410.05292
     # code: https://github.com/MrGiovanni/ContinualLearning
     bibtex: /assets/bibs/calmflow.txt
@@ -143,8 +144,8 @@ main:
     paper_id: "5biMMmIAAAAJ:2osOgNQ5qMEC"
     authors: Emanuele Zappala, Daniel Levine, <b><u>Sizhuang He</u></b>, Syed Rizvi, Sacha L&eacute;vy, and David van Dijk
     date: Oct 2023
-    conference_short: ArXiv
-    conference: arXiv
+    conference_short: Preprint
+    conference: Preprint
     pdf: https://arxiv.org/pdf/2310.01618
     # code: https://github.com/MrGiovanni/ContinualLearning
     bibtex: /assets/bibs/iterative_methods.txt
