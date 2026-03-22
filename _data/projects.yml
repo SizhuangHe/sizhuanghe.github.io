@@ -1,27 +1,4 @@
 projects:
-- name: Daily Briefing
-  description: A personal daily briefing app that aggregates news and life updates
-    into a concise summary. Features a Python backend for content curation and a TypeScript/JavaScript
-    frontend, with automated scheduling via macOS automation.
-  github: https://github.com/SizhuangHe/daily-briefing
-  tags:
-  - Python
-  - TypeScript
-  - Full-Stack
-  - Automation
-  stars: 0
-- name: LiftHub
-  description: A full-stack web application for tracking fitness progress with interactive
-    data visualizations. Built with Plotly Dash for real-time analytics and workout
-    monitoring, featuring a modern responsive UI with Dash Bootstrap Components.
-  github: https://github.com/SizhuangHe/lifthub
-  tags:
-  - Python
-  - Plotly Dash
-  - SQLite
-  - Fitness
-  - Data Visualization
-  stars: 0
 - name: Academic Homepage Template
   description: A modern Jekyll-based academic website featuring automated Google Scholar
     integration, dynamic CV generation from structured data, and an interactive publication
