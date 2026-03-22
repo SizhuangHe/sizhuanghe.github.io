@@ -96,7 +96,7 @@ main:
     date: Jan 2025
     conference_short: AI4MATH
     conference: AI4MATH Workshop at ICML 2025
-    pdf: https://arxiv.org/pdf/2502.08574
+    pdf: https://openreview.net/pdf?id=cz99ALd3yv
     # code: https://github.com/MrGiovanni/ContinualLearning
     bibtex: /assets/bibs/coast.txt
     image: /assets/img/coast.png
