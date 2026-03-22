@@ -119,7 +119,7 @@ main:
     # poster: /assets/posters/CaLMFlow_NYAS_Poster.pdf
     notes: Preprint
     tags: ["Flow Matching", "Causal Language Models", "Generative Modeling", "Integral Equations"]
-    selected: true
+    selected: false
     summary: "We present Volterra Flow Matching, a novel generative modeling framework that reformulates ODE-based flow matching frameworks with Volterra Integral Equations, hence avoiding a core challenge in ODE-based methods, known as stiffness. We show the connection between Volterra Integral Equations and causal transformers, the backbone of modern Large Language Models and hence demonstrates that causal language models can be naturally extended to generative modeling over continuous data domains through the lens of Volterra Flow Matching."
     full_abstract: "We introduce CaLMFlow, a novel framework that recasts flow matching as a Volterra integral equation (VIE) while leveraging causal language models (CLMs) for continuous data generation. Although integral equations have previously been studied for nonlocal operator learning, we are the first to apply them explicitly to flow matching. By discretizing both time and space, CaLMFlow transforms continuous trajectories into a sequence-based representation, allowing standard large language model architectures to capture long-range dependencies and flexibly incorporate textual prompts. In experiments on synthetic benchmarks and a single-cell perturbation response task, CaLMFlow demonstrates improved stability and scalability over ODE-based methods in high-dimensional regimes. These findings suggest that combining an integral-equation formulation with CLMs provides a promising, context-aware paradigm for generative modeling."
 
