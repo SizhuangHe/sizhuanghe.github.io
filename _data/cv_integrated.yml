@@ -6,14 +6,15 @@ contact:
   github: https://github.com/SizhuangHe
 research:
   items:
+  - title: LLM Agentic Systems
+    description: LLM multi-agent systems for large-scale DNA methylation data curation
+  - title: Post-Training for LLM Agents
+    description: Designing dense, verifiable step-level reward chains for LLM agents over
+      sparse outcome rewards
   - title: Generative Modeling
     description: Flow Matching, Diffusion, Discrete Diffusion
-  - title: Operator Learning
-    description: Modeling Continuous Spatiotemporal Dynamics, Integral Equations
   - title: Computational Biology
-    description: Single-cell Transcriptomics Data Analysis
-  - title: LLMs and Agentic AI
-    description: Autonomous Systems for Biological Discovery
+    description: Single-cell Transcriptomics Data Modeling
 education:
 - institution: Yale University
   location: New Haven, CT
@@ -34,8 +35,29 @@ education:
   - - GPA
     - 4.0 / 4.0
 research_experience:
+- heading: LLM Agents
+  items:
+  - title: Multi-Agent System
+    description: Actively developing an <strong>LLM multi-agent system</strong> for large-scale, automated curation of DNA methylation datasets.
+    details:
+    - Designed a <strong>fully automated</strong> and <strong>generalizable</strong> pipeline that adapts to unseen datasets and aligns with the workflow needs of biological researchers.
+    - The pipeline <strong>scales to thousands of publicly available datasets</strong> and reduces curation workloads that previously required years of manual effort by multiple biologists to just a few hours.
+    - Designed for <strong>deployment as a continuous system</strong> that automatically downloads, curates, and updates relevant public datasets, providing biologists with clean, standardized data to accelerate downstream research.
+    - Developing a <strong>RAG system</strong> for agent memory storage and retrieval, enabling more accurate generation and allowing agents to self-evolve by learning from past experience.
+  - title: Post-Training for LLM Agents
+    description: Developing a post-training method for LLM agents that replaces sparse final-outcome rewards with <strong>dense, verifiable step-level</strong> supervision for multi-step reasoning and tool calling.
+    details:
+    - Designing a framework that extracts <strong>verifiable intermediate rewards</strong> from environmental responses without requiring human-annotated labels or pretrained reward models.
+    - Training Qwen-2.5 7B with GRPO on interactive benchmarks (ALFWorld, ScienceWorld) for stable multi-step policy optimization.
 - heading: Generative Models and LLMs
   items:
+  - title: Soft-Rank Diffusion
+    description: Developed <strong>Soft-Rank Diffusion</strong>, the first discrete diffusion framework that lifts permutations into a continuous soft-rank space, enabling <strong>scalable</strong> generative modeling over the <strong>combinatorially intractable</strong> symmetric group.
+    details:
+    - Designed an innovative forward process that replaces abrupt shuffle-based corruption with <strong>smooth reflected diffusion</strong> in continuous soft-rank space, yielding more structured trajectories that scale gracefully with sequence length.
+    - Derived a hybrid reverse sampler that augments intractable discrete steps in permutation space with <strong>tractable continuous updates</strong> in soft-rank space, enabling efficient and principled generation.
+    - Demonstrated superior performance on sorting and combinatorial optimization benchmarks, with particularly strong gains in the long-sequence regime where prior methods degrade.
+    - Currently under peer review.
   - title: CaDDi
     description: Developed <strong>CaDDi</strong>, a Non-Markovian Discrete Diffusion framework that unifies discrete diffusion with causal LLMs—two core paradigms in natural language generation previously viewed as orthogonal.
     details:
@@ -46,14 +68,6 @@ research_experience:
     description: Developed <strong>CaLMFlow</strong>, a flow-matching paradigm that reformulates the problem from solving an ODE to a Volterra integral equation, mitigating <strong>stiffness</strong> issues commonly encountered in ODE-based formulations.
     details:
     - Applied <strong>CaLMFlow</strong> to single-cell perturbation response prediction, demonstrating <strong>superior ability to model the underlying data distribution</strong> and <strong>significantly improved extrapolation to OOD perturbations</strong> compared to specialized baselines.
-- heading: LLM Agentic Systems for Biological Data Curation
-  items:
-  - title: DNA Methylation Curation
-    description: Developing an <strong>LLM-based multi-agent system</strong> for large-scale, automated curation of DNA methylation datasets.
-    details:
-    - Designed a <strong>fully automated</strong> and <strong>generalizable</strong> pipeline that adapts to unseen datasets and aligns with the workflow needs of biological researchers.
-    - The pipeline <strong>scales to thousands of publicly available datasets</strong> and reduces curation workloads that previously required years of manual effort by multiple biologists to just a few hours.
-    - Designed for <strong>deployment as a continuous system</strong> that automatically downloads, curates, and updates relevant public datasets, providing biologists with clean, standardized data to accelerate downstream research.
 publications:
 - title: Learning Permutation Distributions via Reflected Diffusion on Ranks
   title_latex: Learning Permutation Distributions via Reflected Diffusion on Ranks
@@ -117,7 +131,8 @@ service:
   - Transactions on Machine Learning Research (TMLR)
 - heading: Conference Reviewer
   items:
+  - Conference on Neural Information Processing Systems (NeurIPS), 2026
   - International Conference on Machine Learning (ICML), 2026
   - International Conference on Learning Representations (ICLR), 2026
   - AI4MATH Workshop at International Conference on Machine Learning (ICML), 2025
-last_updated: January 30, 2026 (Updated with STRIDE)
+last_updated: March 25, 2026

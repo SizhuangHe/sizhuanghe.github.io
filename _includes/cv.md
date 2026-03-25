@@ -4,7 +4,6 @@
   <p class="cv-last-updated" style="margin: 0;">Last updated: {{ site.data.cv_integrated.last_updated }}.</p>
   <div>
     <a href="{{ '/assets/files/cv.pdf' | relative_url }}" class="cv-download-btn">PDF</a>
-    <a href="{{ '/assets/files/cv.tex' | relative_url }}" class="cv-download-btn">TeX</a>
   </div>
 </div>
 
@@ -152,11 +151,11 @@
 }
 </style>
 
-## Research Interest
+## Research Directions
 
-{% for item in site.data.cv_integrated.research.items %}<strong><span style="color: var(--global-theme-color); font-weight: bold;">{{ item.title }}:</span></strong> {{ item.description }}{% unless forloop.last %}, {% endunless %}{% endfor %}
-
-Currently, I work on <strong><span style="color: var(--global-theme-color); font-weight: bold;">discrete diffusion models on the finite symmetric group</span></strong> and develop <strong><span style="color: var(--global-theme-color); font-weight: bold;">LLM multi-agent systems</span></strong> for single-cell perturbation response prediction and DNA methylation data curation.
+{% for item in site.data.cv_integrated.research.items %}
+<strong><span style="color: var(--global-theme-color); font-weight: bold;">{{ item.title }}:</span></strong> {{ item.description }}
+{% endfor %}
 
 ## Education
 
@@ -177,6 +176,28 @@ Currently, I work on <strong><span style="color: var(--global-theme-color); font
     {% endfor %}
   </ul>
   {% endif %}
+</div>
+{% endfor %}
+
+## Research Experience
+
+{% for group in site.data.cv_integrated.research_experience %}
+<div style="margin-bottom: 1.5rem;">
+<strong><span style="color: var(--global-theme-color);">{{ group.heading }}</span></strong>
+<ul style="margin-top: 0.3rem;">
+{% for item in group.items %}
+<li style="margin-bottom: 0.8rem;">
+{{ item.description }}
+{% if item.details %}
+<ul style="margin-top: 0.3rem;">
+{% for detail in item.details %}
+<li style="margin-bottom: 0.2rem; font-size: 0.95em;">{{ detail }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+</li>
+{% endfor %}
+</ul>
 </div>
 {% endfor %}
 
