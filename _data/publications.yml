@@ -28,7 +28,6 @@ main:
     bibtex: /assets/bibs/stride.txt
     # image: /assets/img/stride.png
     tags: ["Protein Optimization", "Large Language Models", "Generative Modeling", "Post-training"]
-    selected: true
     full_abstract: 'Discrete biological sequence optimization demands iterative refinement while satisfying strict syntactic constraints.
       Diffusion-based approaches provide strong progressive refinement but are not naturally aligned with discrete, grammar-constrained edit operations, whereas autoregressive LLMs readily produce valid sequences yet often lack explicit long-horizon planning.
       To close this gap, we introduce _STRIDE_ (_Sequence Trajectory Refinement via Internalized Denoising Emulation_), a post-training framework that recasts optimization as an intrinsic reasoning problem in edit space.
