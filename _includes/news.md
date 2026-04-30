@@ -1,4 +1,6 @@
 ## News
+- **[Apr 2026]** Our paper *<span style="color: var(--global-theme-color);">STRIDE: Post-Training LLMs to Reason and Refine Bio-Sequences via Edit Trajectories</span>* is accepted to **ICML 2026**.
+- **[Apr 2026]** Our paper *<span style="color: var(--global-theme-color);">Learning Permutation Distributions via Reflected Diffusion on Ranks</span>* is accepted to **ICML 2026**.
 - **[Sep 2025]** Our paper *<span style="color: var(--global-theme-color);">Non-Markovian Discrete Diffusion with Causal Language Models</span>* is accepted to **NeurIPS 2025** (*San Diego, CA*).
 - **[Jul 2025]** Our paper *<span style="color: var(--global-theme-color);">COAST: Intelligent Time-Adaptive Neural Operators</span>* is accepted to **AI4MATH@ICML 2025** (*Vancouver, Canada*).
 - **[Jan 2025]** I received *<span style="color: var(--global-theme-color);">the Fan Family Fellowship</span>* of Yale University.
