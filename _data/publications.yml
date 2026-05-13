@@ -77,8 +77,8 @@ main:
     paper_id: "5biMMmIAAAAJ:u5HHmVD_uO8C"
     authors: Zhikai Wu, Sifan Wang, Shiyang Zhang, <b><u>Sizhuang He</u></b>, Min Zhu, Anran Jiao, Lu Lu, and David van Dijk
     date: Jan 2025
-    conference_short: In Review
-    conference: In Review
+    conference_short: JCP
+    conference: Journal of Computational Physics
     pdf: https://arxiv.org/pdf/2502.08574
     # code: https://github.com/MrGiovanni/ContinualLearning
     bibtex: /assets/bibs/tante.txt

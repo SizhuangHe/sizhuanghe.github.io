@@ -90,7 +90,7 @@ publications:
 - title: 'TANTE: Time-Adaptive Operator Learning via Neural Taylor Expansion'
   title_html: 'TANTE: Time-Adaptive Operator Learning via Neural Taylor Expansion'
   authors_html: Z. Wu, S. Wang, S. Zhang, <span class="cv-me">S. He</span>, et al.
-  venue_html: In Review
+  venue_html: Journal of Computational Physics
 - title: Intelligence at the Edge of Chaos
   title_html: Intelligence at the Edge of Chaos
   authors_html: S. Zhang*, A. Patel*, S. Rizvi, N. Liu, <span class="cv-me">S. He</span>, et al.
