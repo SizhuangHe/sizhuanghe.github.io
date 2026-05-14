@@ -1,5 +1,5 @@
 ## News
-- **[May 2026]** I will join <span style="color: var(--global-theme-color);">Chan Zuckerberg Biohub</span> as an AI Research Scientist Intern in Summer 2026 (*Redwood City, CA*).
+- **[May 2026]** I will join **<span style="color: var(--global-theme-color);">Chan Zuckerberg Biohub</span>** as an AI Research Scientist Intern in Summer 2026 (*Redwood City, CA*).
 - **[Apr 2026]** 2 papers accepted to **ICML 2026** (*Seoul, Korea*):
   - *<span style="color: var(--global-theme-color);">STRIDE: Post-Training LLMs to Reason and Refine Bio-Sequences via Edit Trajectories</span>*
   - *<span style="color: var(--global-theme-color);">Learning Permutation Distributions via Reflected Diffusion on Ranks</span>*
