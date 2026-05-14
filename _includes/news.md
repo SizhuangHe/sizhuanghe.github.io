@@ -1,5 +1,5 @@
 ## News
-- **[May 2026]** I will join **<span style="color: var(--global-theme-color);">Chan Zuckerberg Biohub</span>** as an AI Research Scientist Intern in Summer 2026 (*Redwood City, CA*).
+- **[May 2026]** I will join **<span style="color: var(--global-theme-color);">Chan Zuckerberg Biohub</span>** in Redwood City, CA as an AI Research Scientist Intern in Summer 2026.
 - **[May 2026]** 1 paper accepted to **<span style="color: var(--global-theme-color);">Journal of Computational Physics</span>**.
 - **[Apr 2026]** 2 papers accepted to **<span style="color: var(--global-theme-color);">ICML 2026</span>** (*Seoul, Korea*).
 - **[Sep 2025]** 1 paper accepted to **<span style="color: var(--global-theme-color);">NeurIPS 2025</span>** (*San Diego, CA*).
