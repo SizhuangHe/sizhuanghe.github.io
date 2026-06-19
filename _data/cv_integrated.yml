@@ -34,6 +34,11 @@ education:
     - ''
   - - GPA
     - 4.0 / 4.0
+work_experience:
+- organization: Chan Zuckerberg Biohub, Inc.
+  location: Redwood City, CA
+  title: AI Research Scientist Intern
+  dates: Jun. 2026 -- Aug. 2026
 research_experience:
 - heading: LLM Agents
   items:
@@ -135,4 +140,4 @@ service:
   - International Conference on Machine Learning (ICML), 2026
   - International Conference on Learning Representations (ICLR), 2026
   - AI4MATH Workshop at International Conference on Machine Learning (ICML), 2025
-last_updated: March 25, 2026
+last_updated: June 19, 2026

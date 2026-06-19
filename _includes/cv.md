@@ -179,6 +179,21 @@
 </div>
 {% endfor %}
 
+## Work Experience
+
+{% for job in site.data.cv_integrated.work_experience %}
+<div class="cv-education-item">
+  <div class="cv-education-heading">
+    <span><strong>{{ job.organization }}</strong></span>
+    <span>{{ job.location }}</span>
+  </div>
+  <div class="cv-education-sub">
+    <span>{{ job.title }}</span>
+    <span>{{ job.dates }}</span>
+  </div>
+</div>
+{% endfor %}
+
 ## Research Experience
 
 {% for group in site.data.cv_integrated.research_experience %}
