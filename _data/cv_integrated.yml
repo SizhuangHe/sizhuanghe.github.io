@@ -62,7 +62,7 @@ research_experience:
     - Designed an innovative forward process that replaces abrupt shuffle-based corruption with <strong>smooth reflected diffusion</strong> in continuous soft-rank space, yielding more structured trajectories that scale gracefully with sequence length.
     - Derived a hybrid reverse sampler that augments intractable discrete steps in permutation space with <strong>tractable continuous updates</strong> in soft-rank space, enabling efficient and principled generation.
     - Demonstrated superior performance on sorting and combinatorial optimization benchmarks, with particularly strong gains in the long-sequence regime where prior methods degrade.
-    - Currently under peer review.
+    - Accepted at ICML 2026.
   - title: CaDDi
     description: Developed <strong>CaDDi</strong>, a Non-Markovian Discrete Diffusion framework that unifies discrete diffusion with causal LLMs—two core paradigms in natural language generation previously viewed as orthogonal.
     details:
@@ -74,17 +74,13 @@ research_experience:
     details:
     - Applied <strong>CaLMFlow</strong> to single-cell perturbation response prediction, demonstrating <strong>superior ability to model the underlying data distribution</strong> and <strong>significantly improved extrapolation to OOD perturbations</strong> compared to specialized baselines.
 publications:
-- title: 'FLUX: Geometry-Aware Longitudinal Flow Matching with Mixture of Experts'
-  title_html: 'FLUX: Geometry-Aware Longitudinal Flow Matching with Mixture of Experts'
-  authors_html: J. O. Caro, Y. Zhang, H. M. Batchelor, <span class="cv-me">S. He</span>, et al.
-  venue_html: Preprint
 - title: Learning Permutation Distributions via Reflected Diffusion on Ranks
   title_latex: Learning Permutation Distributions via Reflected Diffusion on Ranks
   title_html: Learning Permutation Distributions via Reflected Diffusion on Ranks
   authors_latex: \underline{\textbf{S. He}}*, Y. Zhang*, et al.
   authors_html: <span class="cv-me">S. He</span>*, Y. Zhang*, et al.
-  venue_latex: In Review
-  venue_html: In Review
+  venue_latex: ICML 2026
+  venue_html: ICML 2026
 - title: Non-Markovian Discrete Diffusion with Causal Language Models
   title_html: Non-Markovian Discrete Diffusion with Causal Language Models
   authors_html: Y. Zhang*, <span class="cv-me">S. He</span>*, et al.
@@ -94,8 +90,12 @@ publications:
   title_html: "STRIDE: Post-Training LLMs to Reason and Refine Bio-Sequences via Edit Trajectories"
   authors_latex: D. Zhang, S. Zhang, \underline{\textbf{S. He}}, Y. Zhang and D. van Dijk
   authors_html: D. Zhang, S. Zhang, <span class="cv-me">S. He</span>, Y. Zhang and D. van Dijk
-  venue_latex: In Review
-  venue_html: In Review
+  venue_latex: ICML 2026
+  venue_html: ICML 2026
+- title: 'FLUX: Geometry-Aware Longitudinal Flow Matching with Mixture of Experts'
+  title_html: 'FLUX: Geometry-Aware Longitudinal Flow Matching with Mixture of Experts'
+  authors_html: J. O. Caro, Y. Zhang, H. M. Batchelor, <span class="cv-me">S. He</span>, et al.
+  venue_html: Preprint
 - title: 'TANTE: Time-Adaptive Operator Learning via Neural Taylor Expansion'
   title_html: 'TANTE: Time-Adaptive Operator Learning via Neural Taylor Expansion'
   authors_html: Z. Wu, S. Wang, S. Zhang, <span class="cv-me">S. He</span>, et al.
