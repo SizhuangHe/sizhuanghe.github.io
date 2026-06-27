@@ -1,5 +1,20 @@
 # Publications data for automated CV generation
 main:
+  - title: "FLUX: Geometry-Aware Longitudinal Flow Matching with Mixture of Experts"
+    alt_title: "FLUX"
+    paper_id:
+    authors: Josue Ortega Caro, Yongxu Zhang, Hannah M Batchelor, <b><u>Sizhuang He</u></b>, Jessica Cardin and Shreya Saxena
+    date: May 2026
+    conference_short: Preprint
+    conference: Preprint
+    pdf: https://arxiv.org/pdf/2605.08648
+    bibtex: /assets/bibs/flux.txt
+    # image: /assets/img/flux.png
+    notes: Preprint
+    tags: ["Flow Matching", "Mixture of Experts", "Computational Biology", "Generative Modeling"]
+    selected: false
+    summary: "We introduce FLUX, a geometry-aware longitudinal flow-matching framework for joint transport modeling and unsupervised regime discovery from unpaired longitudinal snapshots. FLUX learns a data-dependent metric, constructs geometry-aware conditional paths, and decomposes the velocity field into sparse expert vector fields via a Straight-Through Gumbel-Softmax router, recovering interpretable regime structure across neuronal calcium imaging and single-cell differentiation."
+    full_abstract: "Many biological systems evolve through continuous local dynamics while switching between latent regimes defined by learning, stimulus context, internal state, or developmental stage. These processes are often observed only as unpaired longitudinal snapshots: the same cells, neurons, or animals are not tracked as matched trajectories, even though population states are sampled across successive stages. This creates two coupled challenges. First, trajectories must respect curved low-dimensional manifolds embedded in high-dimensional biological measurements. Second, the model must identify when the transport mechanism itself changes. We introduce FLUX (FLow matching for Unpaired longitudinal data with miXture-of-experts), a geometry-aware longitudinal flow-matching framework for joint transport modeling and unsupervised regime discovery. FLUX learns a data-dependent metric from pooled labeled and unlabeled observations, uses that metric to construct geometry-aware conditional paths between adjacent marginals, and decomposes the resulting velocity field into sparse expert vector fields selected by a Straight-Through Gumbel-Softmax router. Across manifold controls, a regime-switching Lorenz system, widefield cortical calcium imaging during associative learning, and embryoid body single-cell differentiation, FLUX reconstructs longitudinal transport while recovering interpretable regime structure. Ablations show that mixture-of-experts routing alone is insufficient: FLUX without geometric learning can fit local transport but fails or weakens regime discovery when regimes are encoded in local dynamics. These results suggest that geometry-aware velocity decomposition provides a general strategy for discovering latent biological state transitions from unpaired longitudinal snapshots."
   - title: Learning Permutation Distributions via Reflected Diffusion on Ranks
     alt_title: "Soft-Rank Diffusion"
     paper_id:

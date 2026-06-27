@@ -1,0 +1,9 @@
+@misc{caro2026fluxgeometryawarelongitudinalflow,
+      title={FLUX: Geometry-Aware Longitudinal Flow Matching with Mixture of Experts},
+      author={Josue Ortega Caro and Yongxu Zhang and Hannah M Batchelor and Sizhuang He and Jessica Cardin and Shreya Saxena},
+      year={2026},
+      eprint={2605.08648},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2605.08648},
+}
