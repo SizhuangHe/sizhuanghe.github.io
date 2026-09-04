@@ -3,57 +3,6 @@ import os
 import sys
 from datetime import datetime
 
-# Use existing data as fallback when scraping fails
-def load_existing_data():
-    """Load existing Google Scholar data when scraping fails"""
-    try:
-        # Try to load existing data from results directory
-        if os.path.exists('results/gs_data.json'):
-            print("📄 Loading existing data from results/gs_data.json...")
-            with open('results/gs_data.json', 'r', encoding='utf-8') as f:
-                data = json.load(f)
-                # Update the timestamp to show when we last tried to fetch
-                data['updated'] = datetime.now().isoformat() + "Z"
-                data['message'] = "Using cached data - Google Scholar was unavailable during last update"
-                print(f"✅ Loaded existing data with {data.get('citedby', 0)} citations")
-                return data
-        
-        # If no existing data, create minimal fallback
-        print("⚠️  No existing data found, creating minimal fallback...")
-        data = {
-            "name": "Sizhuang He",
-            "affiliation": "Yale University",
-            "email": "sizhuang.he@yale.edu",
-            "citedby": 0,
-            "citedby5y": 0,
-            "hindex": 0,
-            "hindex5y": 0,
-            "i10index": 0,
-            "i10index5y": 0,
-            "updated": datetime.now().isoformat() + "Z",
-            "publications": {},
-            "message": "Google Scholar data will be populated once publications are indexed"
-        }
-        return data
-        
-    except Exception as e:
-        print(f"❌ Error loading existing data: {e}")
-        # Return minimal fallback if we can't load existing data
-        return {
-            "name": "Sizhuang He",
-            "affiliation": "Yale University",
-            "email": "sizhuang.he@yale.edu",
-            "citedby": 0,
-            "citedby5y": 0,
-            "hindex": 0,
-            "hindex5y": 0,
-            "i10index": 0,
-            "i10index5y": 0,
-            "updated": datetime.now().isoformat() + "Z",
-            "publications": {},
-            "message": "Google Scholar data will be populated once publications are indexed"
-        }
-
 def main():
     print("🚀 Starting Google Scholar data fetch...")
     print("🔧 Environment check:")
@@ -106,15 +55,17 @@ def main():
             
         except Exception as e:
             print(f"❌ Error fetching from Google Scholar: {e}")
-            print("🔄 Using existing data as fallback...")
-            author = load_existing_data()
+            print("⏭️  No statistics files were written; the published data remains unchanged.")
+            sys.exit(1)
             
     except ImportError:
-        print("Scholarly library not available, using existing data as fallback")
-        author = load_existing_data()
+        print("❌ Scholarly library not available")
+        print("⏭️  No statistics files were written; the published data remains unchanged.")
+        sys.exit(1)
     except Exception as e:
         print(f"Unexpected error: {e}")
-        author = load_existing_data()
+        print("⏭️  No statistics files were written; the published data remains unchanged.")
+        sys.exit(1)
     
     # Save results
     print("💾 Saving data to files...")
