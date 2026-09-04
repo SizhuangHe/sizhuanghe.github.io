@@ -1,0 +1,9 @@
+@misc{li2026morsetaskorientedmultiagentsystem,
+      title={MoRSE: Task-Oriented Multi-Agent System with Mixture of Role-Subtask Experts},
+      author={Peiwen Li and Shiyang Zhang and Yangtian Zhang and Sizhuang He and David van Dijk and Rex Ying},
+      year={2026},
+      eprint={2608.09251},
+      archivePrefix={arXiv},
+      primaryClass={cs.MA},
+      url={https://arxiv.org/abs/2608.09251},
+}

@@ -1,5 +1,20 @@
 # Publications data for automated CV generation
 main:
+  - title: "MoRSE: Task-Oriented Multi-Agent System with Mixture of Role-Subtask Experts"
+    alt_title: "MoRSE"
+    paper_id:
+    authors: Peiwen Li, Shiyang Zhang, Yangtian Zhang, <b><u>Sizhuang He</u></b>, David van Dijk, and Rex Ying
+    date: Aug 2026
+    conference_short: Preprint
+    conference: arXiv preprint
+    pdf: https://arxiv.org/pdf/2608.09251
+    bibtex: /assets/bibs/morse.txt
+    notes: Preprint
+    tags: ["Large Language Models", "Multi-Agent Systems", "Mixture of Experts", "Post-training"]
+    selected: false
+    summary: "MoRSE makes multi-agent collaboration task-oriented by assigning agents specialized (role, subtask) responsibilities and dynamically adapting a shared LLM through a mixture of LoRA experts."
+    full_abstract: "Large language model-based multi-agent systems have recently shown strong potential for complex, long-horizon tasks. However, existing methods mainly rely on coarse prompt-level differentiation without parameter adaptation for diverse subtasks, resulting in insufficient inter-agent heterogeneity and limited specialized capability that bottleneck performance on tasks with complex requirements. To address this, we introduce a Task-Oriented Multi-Agent System with Mixture of Role-Subtask Experts (MoRSE) that distinguishes agents with (role, subtask)-conditional specialization at both the task structure and parameter levels. To make agents' responsibility explicit at the task structure level, we formulate a task-oriented multi-agent system that decomposes each task into a dependency-aware Directed Acyclic Graph of subtasks and assigns each agent a specific (role, subtask), introducing task-level specialization across collaborating agents. Additionally, to address the diverse role and subtask parameter adaptation demands, we propose a dynamic Mixture of (role, subtask) LoRA Experts module with a prototype-based semantic router for subtasks, augmenting agents with parameter-level specialization on a shared LLM substrate cost-effectively. Then, to co-optimize experts and router stably under sparse task rewards, we further propose a hierarchical group-relative policy optimization with two-layer credit assignment that isolates expert updates from the cross-route variance introduced by routing decisions, disentangling expert quality from routing quality. Experiments on code-generation benchmarks across three backbones demonstrate the effectiveness of our approach, with improvements in both whole-task and step-wise performance, and the gains from trained specialization generalize across held-out task categories and domains."
+
   - title: Learning Permutation Distributions via Reflected Diffusion on Ranks
     alt_title: "Soft-Rank Diffusion"
     paper_id:
