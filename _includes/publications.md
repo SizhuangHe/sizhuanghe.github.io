@@ -1,5 +1,5 @@
 <h2 id="publications" style="margin: 2px 0px -15px;">Complete Publication List</h2>
-<p style="font-size: 0.9em; margin-top: 15px; margin-bottom: -10px;"><i>(*: Equal Contribution; Last Updated: Jan 2026)</i></p>
+<p style="font-size: 0.9em; margin-top: 15px; margin-bottom: -10px;"><i>(*: Equal Contribution; Last Updated: {{ site.time | date: "%b %Y" }})</i></p>
 
 <!-- Tag Filtering System -->
 <div class="tag-filters">
@@ -47,7 +47,8 @@
     <h3 class="year-header" style="font-size: 1.1em; margin: 15px 0 10px 0; font-weight: normal; border-bottom: 1px solid #eee; padding-bottom: 5px;">{{ year }}</h3>
     {% endif %}
     <ol class="bibliography">
-    {% for link in site.data.publications.main %}
+    {% assign publications_by_status = site.data.publications.main | sort: 'status' %}
+    {% for link in publications_by_status %}
       {% assign pub_year = link.date | split: ' ' | last %}
       {% if pub_year == year %}
 

@@ -6,7 +6,8 @@ main:
     authors: Peiwen Li, Shiyang Zhang, Yangtian Zhang, <b><u>Sizhuang He</u></b>, David van Dijk, and Rex Ying
     date: Aug 2026
     conference_short: Preprint
-    conference: arXiv preprint
+    conference: Preprint
+    status: preprint
     pdf: https://arxiv.org/pdf/2608.09251
     bibtex: /assets/bibs/morse.txt
     notes: Preprint
@@ -22,6 +23,7 @@ main:
     date: Jan 2026
     conference_short: ICML
     conference: ICML 2026
+    status: accepted
     pdf: https://arxiv.org/pdf/2603.17353
     # poster: /assets/posters/CaDDi_NeurIPS_poster.pdf
     # code: https://github.com/MrGiovanni/ContinualLearning
@@ -39,6 +41,7 @@ main:
     date: Mar 2026
     conference_short: ICML
     conference: ICML 2026
+    status: accepted
     pdf: https://arxiv.org/pdf/2603.03573
     bibtex: /assets/bibs/stride.txt
     # image: /assets/img/stride.png
@@ -57,6 +60,7 @@ main:
     date: May 2026
     conference_short: Preprint
     conference: Preprint
+    status: preprint
     pdf: https://arxiv.org/pdf/2605.08648
     bibtex: /assets/bibs/flux.txt
     # image: /assets/img/flux.png
@@ -71,8 +75,9 @@ main:
     paper_id: "5biMMmIAAAAJ:u-x6o8ySG0sC"
     authors: Syed Rizvi<sup>*</sup>, Daniel Levine<sup>*</sup>, Aakash Patel<sup>*</sup>, Shiyang Zhang<sup>*</sup>, Eric Wang<sup>*</sup>, <b><u>Sizhuang He</u></b>, David Zhang, Cerise Tang, Zhuoyang Lyu, Rayyan Darji, Marlene Li, Emily Sun, David Jeong, Lawrence Zhao, Jennifer Kwan, David Braun, Brian Hafler, Jeffrey Ishizuka, Rahul Dhodapkar, Hattie Chung, Shekoofeh Azizi, Bryan Perozzi, and David van Dijk
     date: Apr 2025
-    conference_short: In Review
-    conference: In Review
+    conference_short: Preprint
+    conference: Preprint
+    status: preprint
     pdf: https://www.biorxiv.org/content/10.1101/2025.04.14.648850v1.full.pdf
     # code: https://github.com/MrGiovanni/ContinualLearning
     bibtex: /assets/bibs/c2s2.txt
@@ -94,6 +99,7 @@ main:
     date: Jan 2025
     conference_short: NeurIPS
     conference: NeurIPS 2025
+    status: accepted
     pdf: https://arxiv.org/pdf/2502.09767
     poster: /assets/posters/CaDDi_NeurIPS_poster.pdf
     # code: https://github.com/MrGiovanni/ContinualLearning
@@ -110,6 +116,7 @@ main:
     date: Jan 2025
     conference_short: JCP
     conference: Journal of Computational Physics
+    status: accepted
     pdf: https://arxiv.org/pdf/2502.08574
     # code: https://github.com/MrGiovanni/ContinualLearning
     bibtex: /assets/bibs/tante.txt
@@ -125,6 +132,7 @@ main:
     date: Jan 2025
     conference_short: AI4MATH
     conference: AI4MATH Workshop at ICML 2025
+    status: accepted
     pdf: https://openreview.net/pdf?id=cz99ALd3yv
     # code: https://github.com/MrGiovanni/ContinualLearning
     bibtex: /assets/bibs/coast.txt
@@ -141,6 +149,7 @@ main:
     date: Oct 2024
     conference_short: Preprint
     conference: Preprint
+    status: preprint
     pdf: https://arxiv.org/pdf/2410.05292
     # code: https://github.com/MrGiovanni/ContinualLearning
     bibtex: /assets/bibs/calmflow.txt
@@ -159,6 +168,7 @@ main:
     date: Oct 2024
     conference_short: ICLR
     conference: ICLR 2025
+    status: accepted
     pdf: https://arxiv.org/pdf/2410.02536
     # code: https://github.com/MrGiovanni/ContinualLearning
     bibtex: /assets/bibs/complexity.txt
@@ -175,6 +185,7 @@ main:
     date: Oct 2023
     conference_short: Preprint
     conference: Preprint
+    status: preprint
     pdf: https://arxiv.org/pdf/2310.01618
     # code: https://github.com/MrGiovanni/ContinualLearning
     bibtex: /assets/bibs/iterative_methods.txt
