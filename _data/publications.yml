@@ -5,12 +5,11 @@ main:
     paper_id:
     authors: Peiwen Li, Shiyang Zhang, Yangtian Zhang, <b><u>Sizhuang He</u></b>, David van Dijk, and Rex Ying
     date: Aug 2026
-    conference_short: Preprint
-    conference: Preprint
-    status: preprint
+    conference_short: NeurIPS
+    conference: NeurIPS 2026
+    status: accepted
     pdf: https://arxiv.org/pdf/2608.09251
     bibtex: /assets/bibs/morse.txt
-    notes: Preprint
     tags: ["Large Language Models", "Multi-Agent Systems", "Mixture of Experts", "Post-training"]
     selected: false
     summary: "MoRSE makes multi-agent collaboration task-oriented by assigning agents specialized (role, subtask) responsibilities and dynamically adapting a shared LLM through a mixture of LoRA experts."
@@ -58,13 +57,12 @@ main:
     paper_id:
     authors: Josue Ortega Caro, Yongxu Zhang, Hannah M Batchelor, <b><u>Sizhuang He</u></b>, Jessica Cardin and Shreya Saxena
     date: May 2026
-    conference_short: Preprint
-    conference: Preprint
-    status: preprint
+    conference_short: NeurIPS
+    conference: NeurIPS 2026
+    status: accepted
     pdf: https://arxiv.org/pdf/2605.08648
     bibtex: /assets/bibs/flux.txt
     # image: /assets/img/flux.png
-    notes: Preprint
     tags: ["Flow Matching", "Mixture of Experts", "Computational Biology", "Generative Modeling"]
     selected: false
     summary: "We introduce FLUX, a geometry-aware longitudinal flow-matching framework for joint transport modeling and unsupervised regime discovery from unpaired longitudinal snapshots. FLUX learns a data-dependent metric, constructs geometry-aware conditional paths, and decomposes the velocity field into sparse expert vector fields via a Straight-Through Gumbel-Softmax router, recovering interpretable regime structure across neuronal calcium imaging and single-cell differentiation."
