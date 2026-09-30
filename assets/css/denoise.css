@@ -120,8 +120,12 @@ main>.sec:first-child{margin-top:44px}
 .sum{margin:0 0 9px;font-size:16px;line-height:1.55}
 .pl{display:flex;flex-wrap:wrap;gap:4px 16px;margin:0;font:400 12px/1.7 var(--mono);letter-spacing:.04em}
 .abs-t,.bib-c{font:inherit;letter-spacing:inherit;border:0;cursor:pointer;padding:0 0 2px;background-color:transparent}
-.abs-t::after{content:" +";color:var(--graphite)}
-.abs-t[aria-expanded="true"]::after{content:" −"}
+/* +/− drawn as two 1px bars; the vertical one folds away as the block opens */
+.abs-t::after{content:"";display:inline-block;width:1ch;height:1ch;margin-left:1ch;vertical-align:-.02em;
+  background:linear-gradient(var(--graphite),var(--graphite)) 50% 50%/100% 1px no-repeat,linear-gradient(var(--graphite),var(--graphite)) 50% 50%/1px 100% no-repeat;
+  transition:background-size .26s cubic-bezier(.2,.8,.2,1)}
+.abs-t[aria-expanded="true"]::after{background-size:100% 1px,1px 0}
+@media (forced-colors:active){.abs-t::after{content:" +";display:inline;margin:0;background:none}.abs-t[aria-expanded="true"]::after{content:" −"}}
 html:not(.js) .abs-t{display:none}
 .abs{margin:12px 0 4px;padding-left:14px;border-left:1px solid var(--mask);font-size:15px;line-height:1.6}
 .abs p{margin:0}

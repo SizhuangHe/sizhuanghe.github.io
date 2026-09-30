@@ -48,8 +48,14 @@ chips.forEach(c=>c.addEventListener('click',()=>{const g=c.dataset.f;if(g===cur)
   list.offsetHeight;
   after.forEach((r,i)=>{r.style.transition=`transform 450ms cubic-bezier(.34,1.56,.64,1) ${i*25}ms`;r.style.transform=''})}));
 
-/* ---- abstract + bib toggles (.abs-t → its aria-controls block); bib copy ---- */
-D.addEventListener('click',e=>{const b=e.target.closest('.abs-t');if(!b)return;const o=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',o);D.getElementById(b.getAttribute('aria-controls')).classList.toggle('open',o)});
+/* ---- abstract + bib toggles (.abs-t → its aria-controls block): height, margins and opacity tween 260 ms; a click
+   mid-flight reverses from wherever the block is. Closed = display:none (out of tab order and a11y tree); inert while closing. ---- */
+D.addEventListener('click',e=>{const b=e.target.closest('.abs-t');if(!b)return;const o=b.getAttribute('aria-expanded')!=='true',el=D.getElementById(b.getAttribute('aria-controls'));
+  b.setAttribute('aria-expanded',o);el.inert=!o;if(RM||!el.animate){el.classList.toggle('open',o);return}
+  const run=el._an,cs=getComputedStyle(el),at=run&&{height:cs.height,marginTop:cs.marginTop,marginBottom:cs.marginBottom,opacity:cs.opacity};if(run)run.cancel();
+  el.classList.add('open');const full={height:el.offsetHeight+'px',marginTop:cs.marginTop,marginBottom:cs.marginBottom,opacity:1},zero={height:'0px',marginTop:'0px',marginBottom:'0px',opacity:0};
+  el.style.overflow='hidden';const an=el._an=el.animate([at||(o?zero:full),o?full:zero],{duration:260,easing:'cubic-bezier(.2,.8,.2,1)'});
+  an.onfinish=()=>{el._an=null;el.style.overflow='';if(!o)el.classList.remove('open')}});
 D.addEventListener('click',e=>{const c=e.target.closest('.bib-c');if(!c)return;const p=c.closest('.bib').querySelector('pre'),t=[...p.children].map(s=>s.textContent).join('\n'),ok=()=>{c.textContent='copied';setTimeout(()=>c.textContent='copy',1500)},
   sel=()=>{const r=D.createRange(),g=getSelection();r.selectNodeContents(p);g.removeAllRanges();g.addRange(r);try{if(D.execCommand('copy'))ok()}catch(x){}};
   navigator.clipboard?navigator.clipboard.writeText(t).then(ok,sel):sel()});
