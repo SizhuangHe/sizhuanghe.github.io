@@ -9,6 +9,27 @@ This is an academic personal homepage built on Jekyll using the [Minimal Light T
 **Live Site:** https://sizhuang.org
 **GitHub Pages:** Deploys from `main` branch at root
 
+## Current homepage: "Denoise" design (supersedes the theme notes below)
+
+The site is now a single page, `index.html` (layout `_layouts/denoise.html`, sections in
+`_includes/denoise/`, styles `assets/css/denoise.css`, behaviour `assets/js/denoise.js`).
+The old pages (`cv.md`, `publications.md`, `beyond.md`) and the `minimal-light` remote theme are
+no longer built; see `exclude:` in `_config.yml`. `/cv/` and `/publications/` are redirect stubs in
+`redirects/`. Content still comes from data, so routine edits never touch the design:
+
+- About text: `_includes/about.md` (Markdown). Hero thesis, position line, advisor: `_config.yml`.
+- News: `_data/news.yml` (newest first; the first 4 show, the rest fold under "N earlier").
+- Papers: `_data/publications.yml`. Homepage-only fields: `topics` (keys from `_data/topics.yml`,
+  drive the filter chips), `thumb` (animated thumbnail key from `_data/thumbnails.yml`; omit it and
+  the paper shows `image`), `image_size` (`WxH` of `image`), `tagline` (one-line summary shown in
+  § Selected), `venue` (optional display label; otherwise `conference`, or "Preprint YEAR").
+  `selected: true` puts a paper in § Selected. Full-list order: year of `date` (newest first),
+  accepted before preprints, then file order.
+- Service: `_data/service.yml`. Scholar numbers load live from the `google-scholar-stats` branch;
+  `_data/scholar.yml` is only the build-time fallback.
+- CV link: `/assets/files/cv.pdf` (`cv_pdf` in `_config.yml`). The HTML CV data
+  (`_data/cv_integrated.yml`) is hand-maintained; do not run `scripts/generate_cv.py`.
+
 ## Key Commands
 
 ### Local Development

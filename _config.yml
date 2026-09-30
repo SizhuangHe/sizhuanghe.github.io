@@ -53,9 +53,6 @@ font: "Serif" # or "Sans Serif"
 # Please remove this if you don't use Google Analytics
 # google_analytics: UA-111540567-4
 
-# Use this project as a remote theme for GitHub Pages
-# See the guide here: https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll
-remote_theme: yaoyao-liu/minimal-light
 
 # The following files will be removed from the generated website.
 exclude:
@@ -68,3 +65,20 @@ exclude:
   - LICENSE
   - minimal-light.gemspec
   - html_source_file/
+  # Retired with the Denoise redesign (sources kept in git; not built or published).
+  # /cv/ and /publications/ are served by the redirect stubs in redirects/.
+  - CLAUDE.md
+  - cv.md
+  - publications.md
+  - beyond.md
+  - assets/css/font.css
+  - assets/css/font_sans_serif.css
+  - assets/css/internship.css
+  - assets/css/publications.css
+  - assets/css/publications-no-dark-mode.css
+  - assets/css/style.scss
+  - assets/css/style-no-dark-mode.scss
+  - assets/js/scale.fix.js
+  - assets/js/favicon-switcher.js
+  - google_scholar_crawler/
+  - scripts/
