@@ -3,17 +3,25 @@ title: Sizhuang He
 position: Third-Year Ph.D. Student in Computer Science
 affiliation: Yale University
 email: sizhuang.he (at) yale.edu
+# Homepage hero (Denoise design). The thesis sentence is regenerated on every page
+# load by assets/js/denoise.js; the real sentence stays in the HTML for search
+# engines and screen readers. Words containing an em dash are kept unbroken.
+thesis: "I study generative models over discrete structures—tokens, permutations, and sequences—and build LLM-based multi-agent systems for automating scientific data curation at scale."
+hero_position: Third-year Ph.D. student in Computer Science
+advisor: David van Dijk
+advisor_link: https://www.vandijklab.org/
 
 # Search Engine Optimization (SEO)
 # The following information is used to improve the website traffic from search engines, e.g., Google.
 keywords: Sizhuang He, Yale, machine learning, reinforcement learning, discrete diffusion, computational biology
-description: Sizhuang He — Computer Science Ph.D. student at Yale University. Research on LLM post-training, agentic RL, discrete diffusion, and computational biology.
+description: Sizhuang He — Computer Science Ph.D. student at Yale University. Generative models over discrete structures and multi-agent LLM systems for scientific data curation.
 canonical: https://sizhuang.org/
 
 # Links
 # If you don't need one of them, you may delete the corresponding line.
 google_scholar: https://scholar.google.com/citations?hl=en&user=5biMMmIAAAAJ&view_op=list_works&gmla=AH8HC4w9PHnAcAf7bKCdnfwUTP-gOdHizFkhbBTcbl9KMusS_qOEFoZWRrT_ulxjNPXzT3HFQhDPvmDvo4lYUnwC
 cv_link: /cv/
+cv_pdf: /assets/files/cv.pdf
 publications_link: /publications/
 beyond_link: /beyond/
 github_link: https://github.com/SizhuangHe
@@ -23,6 +31,9 @@ twitter: https://x.com/sizhuang_
 # Images (e.g., your profile picture and your website's favicon) 
 # "favicon" and "favicon_dark" are used for the light and dark modes, respectively. 
 avatar: ./assets/img/avatar.png
+avatars:
+  - /assets/img/avatars/brooklyn_bridge.jpg
+  - /assets/img/avatars/kitty.jpg
 favicon: ./assets/img/favicon.png
 favicon_dark: ./assets/img/favicon-dark.png
 

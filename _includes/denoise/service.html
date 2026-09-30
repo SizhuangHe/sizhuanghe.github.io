@@ -1,0 +1,18 @@
+<section class="sec row" id="service" aria-labelledby="h-service">
+  <h2 class="lbl" id="h-service"><span class="t">Service</span></h2>
+  <div class="svc">
+    {%- for group in site.data.service.groups %}
+    <h3>{{ group.heading }}</h3>
+    <ul>
+      {%- for item in group.items %}
+      {%- assign parts = item | split: ', ' -%}{%- assign yr = parts | last -%}
+      {%- if parts.size > 1 and yr.size == 4 -%}{%- assign nn = parts.size | minus: 1 -%}{%- assign name = parts | slice: 0, nn | join: ', ' %}
+      <li><span>{{ name }}</span><span class="yr">{{ yr }}</span></li>
+      {%- else %}
+      <li><span>{{ item }}</span></li>
+      {%- endif -%}
+      {%- endfor %}
+    </ul>
+    {%- endfor %}
+  </div>
+</section>

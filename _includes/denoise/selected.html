@@ -1,0 +1,24 @@
+{%- assign pubs = site.data.publications.main -%}
+{%- assign sel = pubs | where: 'selected', true -%}
+<section class="sec row" id="selected" aria-labelledby="h-selected">
+  <h2 class="lbl" id="h-selected"><span class="t">Selected</span></h2>
+  <p class="legend">{{ sel.size }} of {{ pubs.size }} · * equal contribution<span class="snote">Thumbnails are schematic animations of each model; tokens and values are illustrative, not results. Hover or tap to replay.</span></p>
+  <ol class="sel">
+    {%- for p in sel %}
+    {%- include denoise/pub-vars.html pub=p %}
+    <li class="paper">
+      <div class="p-m"><span class="venue{{ pv_pre }}">{{ pv_venue }}</span><span class="alt">{{ pv_short }}</span></div>
+      <div class="p-main">
+        <h3 class="pt">{{ p.title }}</h3>
+        <p class="au">{{ pv_authors }}</p>
+        {%- if p.tagline %}
+        <p class="sum">{{ p.tagline }}</p>
+        {%- endif %}
+        {%- capture aid %}as{{ forloop.index }}{% endcapture %}
+        {% include denoise/pub-links.html pub=p aid=aid %}
+      </div>
+      {% include denoise/pub-fig.html pub=p selected=true %}
+    </li>
+    {%- endfor %}
+  </ol>
+</section>

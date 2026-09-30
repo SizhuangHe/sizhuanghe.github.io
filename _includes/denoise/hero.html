@@ -1,0 +1,40 @@
+<header class="hero row" id="top">
+  <div class="h-m">
+    <div class="noise" aria-hidden="true"></div>
+    <!-- avatar flips between the two photos -->
+    <button class="avatar" id="avatar" type="button" aria-pressed="false" aria-label="Flip photo of {{ site.title }}">
+      <span class="card">
+        <span class="face f1"><img src="{{ site.avatars[0] | relative_url }}" alt="" width="96" height="96"></span>
+        <span class="face f2"><img src="{{ site.avatars[1] | relative_url }}" alt="" width="96" height="96"></span>
+      </span>
+    </button>
+    <p class="avcap" id="avcap" aria-hidden="true">1 / 2 · flip</p>
+  </div>
+
+  <div class="h-main">
+    <!-- the real name is in the DOM at rest; JS masks and denoises it once per session -->
+    <h1 class="name" id="name">{{ site.title }}</h1>
+    <!-- the sentence below is data (site.thesis): every load re-generates it in place (CaDDi, Soft-Rank, or STRIDE style); click the readout to cycle styles -->
+    <p class="tcap"><button class="tcb" id="tcap" type="button" title="Generate the sentence again" aria-label="Generate the sentence again">t = <span class="tv">0</span> · <span class="tverb">sampled</span><span class="tvia"> via <span class="tmeth"></span></span></button></p>
+    <div class="thesis">
+      {% assign thesis_words = site.thesis | split: ' ' -%}
+      <p class="th" id="thesis">{% for w in thesis_words %}{% if w contains '—' %}<span class="nb">{{ w }}</span>{% else %}{{ w }}{% endif %}{% unless forloop.last %}{{ ' ' }}{% endunless %}{% endfor %}</p>
+    </div>
+    <p class="ident">{{ site.hero_position }}, {{ site.affiliation }} · advised by <a href="{{ site.advisor_link }}">{{ site.advisor }}</a></p>
+    <ul class="links">
+      <!-- Scholar numbers: last known values at build time; denoise.js swaps in the live ones from data-src -->
+      <li class="scholar" data-src="https://raw.githubusercontent.com/SizhuangHe/sizhuanghe.github.io/google-scholar-stats/gs_data.json"><a href="{{ site.google_scholar }}">Scholar</a><span class="sch"><b class="dg" data-k="citations" data-v="{{ site.data.scholar.citations }}">{{ site.data.scholar.citations }}</b> citations, h-index <b class="dg" data-k="h-index" data-v="{{ site.data.scholar.h_index }}">{{ site.data.scholar.h_index }}</b></span></li>
+      <li><a href="{{ site.cv_pdf | relative_url }}" target="_blank" rel="noopener" title="CV (PDF, opens in a new tab)">CV</a><span class="sch">pdf</span></li>
+      {%- if site.github_link %}
+      <li><a href="{{ site.github_link }}">GitHub</a></li>
+      {%- endif %}
+      {%- if site.linkedin %}
+      <li><a href="{{ site.linkedin }}">LinkedIn</a></li>
+      {%- endif %}
+      {%- if site.twitter %}
+      <li><a href="{{ site.twitter }}">X</a></li>
+      {%- endif %}
+    </ul>
+    <p class="email">{{ site.email }}</p>
+  </div>
+</header>

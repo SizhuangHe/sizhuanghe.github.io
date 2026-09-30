@@ -1,0 +1,20 @@
+{%- comment -%}
+  Thumbnail for include.pub: its animated scene if `thumb` names one in _data/thumbnails.yml
+  (the image, if any, is the no-JS fallback under the canvas); otherwise its image; otherwise
+  a lettered placeholder. include.selected = true for the larger § Selected figure.
+{%- endcomment -%}
+{%- assign pf = include.pub -%}
+{%- if pf.alt_title -%}{%- assign pf_short = pf.alt_title -%}{%- else -%}{%- assign pf_short = pf.title | split: ':' | first -%}{%- endif -%}
+{%- assign pf_cap = nil -%}{%- if pf.thumb -%}{%- assign pf_cap = site.data.thumbnails[pf.thumb] -%}{%- endif -%}
+{%- if pf.image_size -%}{%- assign pf_wh = pf.image_size | split: 'x' -%}{%- else -%}{%- assign pf_wh = nil -%}{%- endif -%}
+{%- capture pf_img -%}
+{%- if pf.image -%}<img src="{% if pf.image contains '://' %}{{ pf.image }}{% else %}{{ pf.image | relative_url }}{% endif %}" alt="Teaser figure for {{ pf_short }}"{% if pf_wh %} width="{{ pf_wh[0] }}" height="{{ pf_wh[1] }}"{% endif %} loading="lazy" decoding="async">
+{%- else -%}<div class="ph" aria-hidden="true">{% assign pf_letters = pf_short | split: '' %}{% for c in pf_letters %}{% assign pf_odd = forloop.index0 | modulo: 2 %}<span{% if pf_odd == 1 %} class="x"{% endif %}>{{ c }}</span>{% endfor %}</div>
+{%- endif -%}
+{%- endcapture -%}
+{%- if include.selected -%}{%- assign pf_tag = 'figure' -%}{%- else -%}{%- assign pf_tag = 'div' -%}{%- endif -%}
+{%- if pf_cap -%}
+<{{ pf_tag }} class="p-fig"><div class="tb" data-m="{{ pf.thumb }}"{% if include.selected %} style="aspect-ratio:{% if pf_wh %}{{ pf_wh[0] }}/{{ pf_wh[1] }}{% else %}16/9{% endif %}"{% endif %} role="button" tabindex="0" aria-label="Replay animation: {{ pf_cap }}">{{ pf_img }}<canvas aria-hidden="true"></canvas><span class="tbc" aria-hidden="true">{{ pf_cap }}</span></div></{{ pf_tag }}>
+{%- else -%}
+<{{ pf_tag }} class="p-fig">{{ pf_img }}</{{ pf_tag }}>
+{%- endif -%}

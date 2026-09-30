@@ -1,0 +1,48 @@
+{%- comment -%}
+  Full list: newest year first (year = last word of `date`); within a year, accepted papers
+  before preprints; otherwise the order of _data/publications.yml.
+{%- endcomment -%}
+{%- assign pubs = site.data.publications.main -%}
+{%- assign years = '' | split: '' -%}
+{%- for p in pubs -%}{%- assign y = p.date | split: ' ' | last -%}{%- unless years contains y -%}{%- assign years = years | push: y -%}{%- endunless -%}{%- endfor -%}
+{%- assign years = years | sort | reverse -%}
+{%- assign ordered = '' | split: '' -%}
+{%- for y in years -%}
+  {%- for p in pubs -%}{%- assign py = p.date | split: ' ' | last -%}{%- if py == y and p.status != 'preprint' -%}{%- assign ordered = ordered | push: p -%}{%- endif -%}{%- endfor -%}
+  {%- for p in pubs -%}{%- assign py = p.date | split: ' ' | last -%}{%- if py == y and p.status == 'preprint' -%}{%- assign ordered = ordered | push: p -%}{%- endif -%}{%- endfor -%}
+{%- endfor -%}
+<section class="sec row" id="publications" aria-labelledby="h-pubs">
+  <div class="m1">
+    <h2 class="lbl" id="h-pubs"><span class="t">Publications</span></h2>
+    <p class="count" id="count" aria-live="polite">{{ ordered.size }} papers</p>
+    <p class="snote">Schematic thumbnails · illustrative, not results</p>
+  </div>
+  <div class="filt">
+    <div class="chips" role="group" aria-label="Filter publications by topic">
+      <button class="chip" type="button" data-f="all" aria-pressed="true">All<span class="c">{{ ordered.size }}</span></button>
+      {%- for t in site.data.topics %}
+      {%- assign tn = 0 -%}{%- for p in pubs -%}{%- if p.topics contains t.key -%}{%- assign tn = tn | plus: 1 -%}{%- endif -%}{%- endfor %}
+      <button class="chip" type="button" data-f="{{ t.key }}" aria-pressed="false">{{ t.label | xml_escape }}<span class="c">{{ tn }}</span></button>
+      {%- endfor %}
+    </div>
+    <!-- the reorder applied by the last filter, in cycle notation, computed from the real before/after row order -->
+    <p class="sig" title="positions of the rows before → after the last filter">applied <output id="sigma">σ = id</output></p>
+  </div>
+  <ol class="pubs" id="pubs">
+    {%- for p in ordered %}
+    {%- include denoise/pub-vars.html pub=p %}
+    {%- capture num %}{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}{% endcapture %}
+    <li class="pub" data-g="{{ p.topics | join: ' ' }}">
+      <div class="p-m"><span class="num">{{ num }}</span><span class="venue{{ pv_pre }}">{{ pv_venue }}</span></div>
+      <div class="p-main">
+        <h3 class="pt">{{ p.title }}</h3>
+        <p class="au">{{ pv_authors }}</p>
+        {%- capture aid %}ab{{ num }}{% endcapture %}
+        {% include denoise/pub-links.html pub=p aid=aid %}
+        <p class="mk"><span class="bar" aria-hidden="true"></span>{{ pv_short }}</p>
+      </div>
+      {% include denoise/pub-fig.html pub=p %}
+    </li>
+    {%- endfor %}
+  </ol>
+</section>

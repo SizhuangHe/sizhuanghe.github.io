@@ -1,0 +1,19 @@
+{%- assign news = site.data.news -%}
+<section class="sec row" id="news" aria-labelledby="h-news">
+  <h2 class="lbl" id="h-news"><span class="t">News</span></h2>
+  <p class="legend">newest first · {{ news.size }} entries</p>
+  <ol class="news">
+    {%- for n in news limit:4 %}
+    {% include denoise/news-item.html n=n %}
+    {%- endfor %}
+  </ol>
+  {%- if news.size > 4 %}
+  <details class="nmore"><summary>{{ news.size | minus: 4 }} earlier</summary>
+  <ol class="news">
+    {%- for n in news offset:4 %}
+    {% include denoise/news-item.html n=n %}
+    {%- endfor %}
+  </ol>
+  </details>
+  {%- endif %}
+</section>

@@ -1,0 +1,6 @@
+<section class="sec row" id="about" aria-labelledby="h-about">
+  <h2 class="lbl" id="h-about"><span class="t">About</span></h2>
+  <div class="prose">
+    {% capture about_md %}{% include about.md %}{% endcapture %}{{ about_md | markdownify | strip }}
+  </div>
+</section>

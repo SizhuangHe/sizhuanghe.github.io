@@ -1,0 +1,1 @@
+<li><time datetime="{{ include.n.date | prepend: '1 ' | date: '%Y-%m' }}">{{ include.n.date }}{% if include.n.loc %}<span class="loc">{{ include.n.loc }}</span>{% endif %}</time><p>{{ include.n.text | markdownify | strip | remove: '<p>' | remove: '</p>' | replace: '<strong>', '<span class="v">' | replace: '</strong>', '</span>' | replace: '<em>', '<em class="v">' }}</p></li>

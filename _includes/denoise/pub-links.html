@@ -1,0 +1,14 @@
+{%- assign pl = include.pub -%}
+<p class="pl">
+{%- if pl.pdf %}<a href="{{ pl.pdf }}">pdf</a>{% endif -%}
+{%- if pl.bibtex %}<a href="{% if pl.bibtex contains '://' %}{{ pl.bibtex }}{% else %}{{ pl.bibtex | relative_url }}{% endif %}">bib</a>{% endif -%}
+{%- if pl.page %}<a href="{{ pl.page }}">page</a>{% endif -%}
+{%- if pl.blog %}<a href="{{ pl.blog }}">blog</a>{% endif -%}
+{%- if pl.blog2 %}<a href="{{ pl.blog2 }}">blog 2</a>{% endif -%}
+{%- if pl.code %}<a href="{{ pl.code }}">code</a>{% endif -%}
+{%- if pl.poster %}<a href="{% if pl.poster contains '://' %}{{ pl.poster }}{% else %}{{ pl.poster | relative_url }}{% endif %}">poster</a>{% endif -%}
+{%- if pl.full_abstract %}<button class="abs-t" type="button" aria-expanded="false" aria-controls="{{ include.aid }}">abstract</button>{% endif -%}
+</p>
+{%- if pl.full_abstract %}
+        <div class="abs" id="{{ include.aid }}">{{ pl.full_abstract | markdownify | strip | replace: '’', "'" | replace: '‘', "'" | replace: '“', '"' | replace: '”', '"' | replace: '&rsquo;', "'" | replace: '&lsquo;', "'" | replace: '&ldquo;', '"' | replace: '&rdquo;', '"' }}</div>
+{%- endif -%}

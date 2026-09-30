@@ -1,0 +1,9 @@
+{%- comment -%} Sets pv_venue, pv_pre, pv_short, pv_authors for include.pub (Liquid assigns are page-global). {%- endcomment -%}
+{%- assign pv = include.pub -%}
+{%- assign pv_year = pv.date | split: ' ' | last -%}
+{%- if pv.venue -%}{%- assign pv_venue = pv.venue -%}
+{%- elsif pv.status == 'preprint' -%}{%- assign pv_venue = 'Preprint ' | append: pv_year -%}
+{%- else -%}{%- assign pv_venue = pv.conference -%}{%- endif -%}
+{%- if pv.status == 'preprint' -%}{%- assign pv_pre = ' pre' -%}{%- else -%}{%- assign pv_pre = '' -%}{%- endif -%}
+{%- if pv.alt_title -%}{%- assign pv_short = pv.alt_title -%}{%- else -%}{%- assign pv_short = pv.title | split: ':' | first -%}{%- endif -%}
+{%- assign pv_authors = pv.authors | replace: '<b><u>', '<strong class="me">' | replace: '</u></b>', '</strong>' | replace: ' <sup>*</sup>', '*' | replace: '<sup>*</sup>', '*' -%}
