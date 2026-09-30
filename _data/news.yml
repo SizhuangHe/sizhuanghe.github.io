@@ -1,0 +1,28 @@
+# Homepage News, newest first. The homepage shows the first 4 entries; the rest
+# fold under "N earlier" (nothing is ever dropped).
+#   date: "Mon YYYY"            loc: optional place label
+#   text: Markdown. **bold** marks the venue/award (drawn in the ink + medium weight style),
+#         *italics* likewise but italic.
+- date: Sep 2026
+  loc: Australia
+  text: 2 papers accepted to **NeurIPS 2026**.
+- date: May 2026
+  loc: CA
+  text: I joined **Chan Zuckerberg Biohub, Inc** as an AI Research Scientist Intern for Summer 2026.
+- date: May 2026
+  text: 1 paper accepted to the **Journal of Computational Physics**.
+- date: Apr 2026
+  loc: Korea
+  text: 2 papers accepted to **ICML 2026**.
+- date: Sep 2025
+  loc: CA
+  text: 1 paper accepted to **NeurIPS 2025**.
+- date: Jul 2025
+  loc: BC
+  text: 1 paper accepted to **AI4MATH@ICML 2025**.
+- date: Jan 2025
+  loc: CT
+  text: I received the *Fan Family Fellowship* of Yale University.
+- date: Jan 2025
+  loc: Singapore
+  text: 1 paper accepted to **ICLR 2025**.

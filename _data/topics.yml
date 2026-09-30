@@ -1,0 +1,10 @@
+# Topic filter chips on the homepage Publications list, in display order.
+# A paper joins a topic by listing its key under `topics:` in publications.yml.
+- key: diff
+  label: Diffusion & Flows
+- key: llm
+  label: LLMs & Agents
+- key: bio
+  label: Biology
+- key: ops
+  label: Operators & Numerics

@@ -1,0 +1,15 @@
+# Animated paper thumbnails (drawn by assets/js/denoise.js, one scene per key).
+# A paper uses one by setting `thumb: <key>` in publications.yml; the caption is
+# shown on hover and read out as the replay button's label. A paper without a
+# `thumb` (or with a key not listed here) shows its `image` instead.
+morse: "MoRSE ▸ subtasks routed to LoRA experts"
+softrank: "Soft-Rank ▸ soft ranks diffuse, reflect, settle"
+stride: "STRIDE ▸ refinement as a chain of atomic edits"
+flux: "FLUX ▸ curved transport; experts switch with the regime"
+c2s: "C2S ▸ a cell, read as a sentence of genes"
+caddi: "CaDDi ▸ each step reads every earlier state, not just the last"
+tante: "TANTE ▸ Taylor steps sized to the dynamics"
+coast: "COAST ▸ predicts the next state and its own Δt"
+calmflow: "CaLMFlow ▸ each step attends to its whole path"
+eoc: "Edge of Chaos ▸ a sweet spot of data complexity"
+iter: "Iterative methods ▸ iterate the operator to its fixed point"

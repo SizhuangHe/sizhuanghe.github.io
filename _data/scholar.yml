@@ -1,0 +1,5 @@
+# Build-time fallback only. The homepage fetches the live numbers from
+# gs_data.json on the google-scholar-stats branch (refreshed weekly by
+# .github/workflows/update-scholar.yml) and replaces these on load.
+citations: 114
+h_index: 5

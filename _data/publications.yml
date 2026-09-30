@@ -11,6 +11,8 @@ main:
     pdf: https://arxiv.org/pdf/2608.09251
     bibtex: /assets/bibs/morse.txt
     tags: ["Large Language Models", "Multi-Agent Systems", "Mixture of Experts", "Post-training"]
+    topics: [llm]
+    thumb: morse
     selected: false
     summary: "MoRSE makes multi-agent collaboration task-oriented by assigning agents specialized (role, subtask) responsibilities and dynamically adapting a shared LLM through a mixture of LoRA experts."
     full_abstract: "Large language model-based multi-agent systems have recently shown strong potential for complex, long-horizon tasks. However, existing methods mainly rely on coarse prompt-level differentiation without parameter adaptation for diverse subtasks, resulting in insufficient inter-agent heterogeneity and limited specialized capability that bottleneck performance on tasks with complex requirements. To address this, we introduce a Task-Oriented Multi-Agent System with Mixture of Role-Subtask Experts (MoRSE) that distinguishes agents with (role, subtask)-conditional specialization at both the task structure and parameter levels. To make agents' responsibility explicit at the task structure level, we formulate a task-oriented multi-agent system that decomposes each task into a dependency-aware Directed Acyclic Graph of subtasks and assigns each agent a specific (role, subtask), introducing task-level specialization across collaborating agents. Additionally, to address the diverse role and subtask parameter adaptation demands, we propose a dynamic Mixture of (role, subtask) LoRA Experts module with a prototype-based semantic router for subtasks, augmenting agents with parameter-level specialization on a shared LLM substrate cost-effectively. Then, to co-optimize experts and router stably under sparse task rewards, we further propose a hierarchical group-relative policy optimization with two-layer credit assignment that isolates expert updates from the cross-route variance introduced by routing decisions, disentangling expert quality from routing quality. Experiments on code-generation benchmarks across three backbones demonstrate the effectiveness of our approach, with improvements in both whole-task and step-wise performance, and the gains from trained specialization generalize across held-out task categories and domains."
@@ -27,11 +29,15 @@ main:
     # poster: /assets/posters/CaDDi_NeurIPS_poster.pdf
     # code: https://github.com/MrGiovanni/ContinualLearning
     bibtex: /assets/bibs/soft_rank_diffusion.txt
-    image: /assets/img/soft_rank_diffusion.png
+    image: /assets/img/soft_rank_diffusion.jpg
+    image_size: 1100x566
     tags: ["Diffusion Models", "Discrete Diffusion", "Generative Modeling", "Learning Permutations"]
+    topics: [diff]
+    thumb: softrank
+    tagline: "A discrete diffusion framework for distributions over permutations on <i>S</i><sub><i>n</i></sub>: discrete ranks are relaxed into soft ranks for a smoother forward process, and contextualized generalized Plackett–Luce (cGPL) denoisers reverse it, with the largest gains on long sequences."
     selected: true
-    summary: "We propose Soft-Rank Diffusion, a discrete diffusion framework for learning distributions over permutations on $S_n$, using continuous relaxed ranks and contextualized generalized Plackett–Luce (cGPL) denoisers. Soft-Rank Diffusion consistently outperforms prior baselines, with especially strong gains on long sequences."
-    full_abstract: 'The finite symmetric group $S_n$ provides a natural domain for permutations, yet learning probability distributions on $S_n$ is challenging due to its factorially growing size and discrete, non-Euclidean structure. Recent permutation diffusion methods define forward noising via shuffle-based random walks (e.g., riffle shuffles) and learn reverse transitions with Plackett–Luce (PL) variants, but the resulting trajectories can be abrupt and increasingly hard to denoise as $n$ grows. We propose _Soft-Rank Diffusion_, a discrete diffusion framework that replaces shuffle-based corruption with a structured soft-rank forward process: we lift permutations to a continuous latent representation of order by relaxing discrete ranks into soft ranks, yielding smoother and more tractable trajectories. For the reverse process, we introduce _contextualized generalized Plackett--Luce (cGPL)_ denoisers that generalize prior PL-style parameterizations and improve expressivity for sequential decision structures. Experiments on sorting and combinatorial optimization benchmarks show that Soft-Rank Diffusion consistently outperforms prior diffusion baselines, with particularly strong gains in long-sequence and intrinsically sequential settings.'
+    summary: "We propose Soft-Rank Diffusion, a discrete diffusion framework for learning distributions over permutations on <i>S</i><sub><i>n</i></sub>, using continuous relaxed ranks and contextualized generalized Plackett–Luce (cGPL) denoisers. Soft-Rank Diffusion consistently outperforms prior baselines, with especially strong gains on long sequences."
+    full_abstract: 'The finite symmetric group <i>S</i><sub><i>n</i></sub> provides a natural domain for permutations, yet learning probability distributions on <i>S</i><sub><i>n</i></sub> is challenging due to its factorially growing size and discrete, non-Euclidean structure. Recent permutation diffusion methods define forward noising via shuffle-based random walks (e.g., riffle shuffles) and learn reverse transitions with Plackett–Luce (PL) variants, but the resulting trajectories can be abrupt and increasingly hard to denoise as <i>n</i> grows. We propose _Soft-Rank Diffusion_, a discrete diffusion framework that replaces shuffle-based corruption with a structured soft-rank forward process: we lift permutations to a continuous latent representation of order by relaxing discrete ranks into soft ranks, yielding smoother and more tractable trajectories. For the reverse process, we introduce _contextualized generalized Plackett--Luce (cGPL)_ denoisers that generalize prior PL-style parameterizations and improve expressivity for sequential decision structures. Experiments on sorting and combinatorial optimization benchmarks show that Soft-Rank Diffusion consistently outperforms prior diffusion baselines, with particularly strong gains in long-sequence and intrinsically sequential settings.'
   
   - title: "STRIDE: Post-Training LLMs to Reason and Refine Bio-Sequences via Edit Trajectories"
     alt_title: "STRIDE"
@@ -45,6 +51,8 @@ main:
     bibtex: /assets/bibs/stride.txt
     # image: /assets/img/stride.png
     tags: ["Protein Optimization", "Large Language Models", "Generative Modeling", "Post-training"]
+    topics: [llm, bio]
+    thumb: stride
     full_abstract: 'Discrete biological sequence optimization demands iterative refinement while satisfying strict syntactic constraints.
       Diffusion-based approaches provide strong progressive refinement but are not naturally aligned with discrete, grammar-constrained edit operations, whereas autoregressive LLMs readily produce valid sequences yet often lack explicit long-horizon planning.
       To close this gap, we introduce _STRIDE_ (_Sequence Trajectory Refinement via Internalized Denoising Emulation_), a post-training framework that recasts optimization as an intrinsic reasoning problem in edit space.
@@ -64,6 +72,8 @@ main:
     bibtex: /assets/bibs/flux.txt
     # image: /assets/img/flux.png
     tags: ["Flow Matching", "Mixture of Experts", "Computational Biology", "Generative Modeling"]
+    topics: [diff, bio]
+    thumb: flux
     selected: false
     summary: "We introduce FLUX, a geometry-aware longitudinal flow-matching framework for joint transport modeling and unsupervised regime discovery from unpaired longitudinal snapshots. FLUX learns a data-dependent metric, constructs geometry-aware conditional paths, and decomposes the velocity field into sparse expert vector fields via a Straight-Through Gumbel-Softmax router, recovering interpretable regime structure across neuronal calcium imaging and single-cell differentiation."
     full_abstract: "Many biological systems evolve through continuous local dynamics while switching between latent regimes defined by learning, stimulus context, internal state, or developmental stage. These processes are often observed only as unpaired longitudinal snapshots: the same cells, neurons, or animals are not tracked as matched trajectories, even though population states are sampled across successive stages. This creates two coupled challenges. First, trajectories must respect curved low-dimensional manifolds embedded in high-dimensional biological measurements. Second, the model must identify when the transport mechanism itself changes. We introduce FLUX (FLow matching for Unpaired longitudinal data with miXture-of-experts), a geometry-aware longitudinal flow-matching framework for joint transport modeling and unsupervised regime discovery. FLUX learns a data-dependent metric from pooled labeled and unlabeled observations, uses that metric to construct geometry-aware conditional paths between adjacent marginals, and decomposes the resulting velocity field into sparse expert vector fields selected by a Straight-Through Gumbel-Softmax router. Across manifold controls, a regime-switching Lorenz system, widefield cortical calcium imaging during associative learning, and embryoid body single-cell differentiation, FLUX reconstructs longitudinal transport while recovering interpretable regime structure. Ablations show that mixture-of-experts routing alone is insufficient: FLUX without geometric learning can fit local transport but fails or weakens regime discovery when regimes are encoded in local dynamics. These results suggest that geometry-aware velocity decomposition provides a general strategy for discovering latent biological state transitions from unpaired longitudinal snapshots."
@@ -79,19 +89,23 @@ main:
     pdf: https://www.biorxiv.org/content/10.1101/2025.04.14.648850v1.full.pdf
     # code: https://github.com/MrGiovanni/ContinualLearning
     bibtex: /assets/bibs/c2s2.txt
-    image: /assets/img/c2s2.png
+    image: /assets/img/c2s2.jpg
+    image_size: 1100x659
     # poster: /assets/posters/CaLMFlow_NYAS_Poster.pdf
     page: https://www.c2s.bio
     blog: https://research.google/blog/teaching-machines-the-language-of-biology-scaling-large-language-models-for-next-generation-single-cell-analysis/
     blog2: https://blog.google/technology/ai/google-gemma-ai-cancer-therapy-discovery/
     notes: Preprint
     tags: ["Large Language Models", "Computational Biology", "Single-Cell Analysis"]
+    topics: [llm, bio]
+    thumb: c2s
+    tagline: "Scales the Cell2Sentence framework to 27B-parameter LLMs trained on over a billion tokens of transcriptomic data, biological text, and metadata, reaching state-of-the-art predictive and generative performance on multicellular analyses."
     selected: true
     summary: "C2S-Scale scales this framework to 27 billion parameters trained on a billion-token multimodal corpus—achieving state-of-the-art predictive and generative performance for complex, multicellular analyses."
     full_abstract: "Single-cell RNA sequencing has transformed our understanding of cellular diversity, yet current single-cell foundation models (scFMs) remain limited in their scalability, flexibility across diverse tasks, and ability to natively integrate textual information. In this work, we build upon the Cell2Sentence (C2S) framework, which represents scRNA-seq profiles as textual 'cell sentences,' to train Large Language Models (LLMs) on a corpus comprising over one billion tokens of transcriptomic data, biological text, and metadata. By scaling model size to 27 billion parameters, we observe consistent improvements in predictive and generative capabilities, as well as the capacity for advanced downstream tasks requiring synthesis of information across multicellular contexts. Through targeted fine-tuning supported by modern reinforcement learning techniques, our approach excels in tasks such as perturbation response prediction, natural language interpretation, and complex biological reasoning. By unifying transcriptomic and textual data at unprecedented scales, this approach not only surpasses both specialized single-cell models and general-purpose LLMs, but also establishes a powerful platform for next-generation single-cell analysis, paving the way for the development of 'virtual cells.'"
   
   - title: Non-Markovian Discrete Diffusion with Causal Language Models
-    alt_title: "CaDDI"
+    alt_title: "CaDDi"
     paper_id: "5biMMmIAAAAJ:9yKSN-GCB0IC"
     authors: Yangtian Zhang <sup>*</sup>, <b><u>Sizhuang He<sup>*</sup></u></b>, Daniel Levine, Lawrence Zhao, David Zhang, Syed Rizvi, Emanuele Zappala, Rex Ying, and David van Dijk
     date: Jan 2025
@@ -102,13 +116,18 @@ main:
     poster: /assets/posters/CaDDi_NeurIPS_poster.pdf
     # code: https://github.com/MrGiovanni/ContinualLearning
     bibtex: /assets/bibs/caddi.txt
-    image: /assets/img/caddi.png
+    image: /assets/img/caddi.jpg
+    image_size: 1100x675
     tags: ["Diffusion Models", "Causal Language Models", "Generative Modeling", "Discrete Diffusion"]
+    topics: [diff]
+    thumb: caddi
+    tagline: "Lifts the Markov constraint in discrete diffusion by conditioning on the entire generative trajectory; causal language models become a special case, so pretrained LLM weights are reused with no architectural changes."
     selected: true
     summary: "We introduce a novel approach to discrete diffusion models that conditions on the entire generative trajectory, thereby lifting the Markov constraint and allowing the model to revisit and improve past states. CaDDi treats standard causal language models as a special case and permits the direct reuse of pretrained LLM weights with no architectural changes."
     full_abstract: "Discrete diffusion models offer a flexible, controllable approach to structured sequence generation, yet they still lag behind causal language models in expressive power. A key limitation lies in their reliance on the Markovian assumption, which restricts each step to condition only on the current state, leading to potential uncorrectable error accumulation. In this paper, we introduce CaDDi, a discrete diffusion model that conditions on the entire generative trajectory, thereby lifting the Markov constraint and allowing the model to revisit and improve past states. By unifying sequential (causal) and temporal (diffusion) reasoning in a single non-Markovian transformer, CaDDi also treats standard causal language models as a special case and permits the direct reuse of pretrained LLM weights with no architectural changes. Empirically, CaDDi outperforms state-of-the-art discrete diffusion baselines on natural-language benchmarks, substantially narrowing the remaining gap to large autoregressive transformers." 
 
   - title: "TANTE: Time-Adaptive Operator Learning via Neural Taylor Expansion"
+    alt_title: "TANTE"
     paper_id: "5biMMmIAAAAJ:u5HHmVD_uO8C"
     authors: Zhikai Wu, Sifan Wang, Shiyang Zhang, <b><u>Sizhuang He</u></b>, Min Zhu, Anran Jiao, Lu Lu, and David van Dijk
     date: Jan 2025
@@ -118,13 +137,18 @@ main:
     pdf: https://arxiv.org/pdf/2502.08574
     # code: https://github.com/MrGiovanni/ContinualLearning
     bibtex: /assets/bibs/tante.txt
-    image: /assets/img/tante.png
+    image: /assets/img/tante.jpg
+    image_size: 1100x417
     # poster: /assets/posters/CaLMFlow_NYAS_Poster.pdf
     # notes: Accepted to AI4MATH Workshop at ICML 2025 as a poster
     tags: ["Neural Operators", "Operator Learning"]
+    venue: JCP 2026
+    topics: [ops]
+    thumb: tante
     full_abstract: "Operator learning for time-dependent partial differential equations (PDEs) has seen rapid progress in recent years, enabling efficient approximation of complex spatiotemporal dynamics. However, most existing methods rely on fixed time step sizes during rollout, which limits their ability to adapt to varying temporal complexity and often leads to error accumulation. Here, we propose the Time-Adaptive Transformer with Neural Taylor Expansion (TANTE), a novel operator-learning framework that produces continuous-time predictions with adaptive step sizes. TANTE predicts future states by performing a Taylor expansion at the current state, where neural networks learn both the higher-order temporal derivatives and the local radius of convergence. This allows the model to dynamically adjust its rollout based on the local behavior of the solution, thereby reducing cumulative error and improving computational efficiency. We demonstrate the effectiveness of TANTE across a wide range of PDE benchmarks, achieving superior accuracy and adaptability compared to fixed-step baselines, delivering accuracy gains of 60–80% and speed-ups of 30–40% at inference time. The code is publicly available at https://github.com/zwu88/TANTE for transparency and reproducibility."
   
   - title: "COAST: Intelligent Time-Adaptive Neural Operators"
+    alt_title: "COAST"
     paper_id: "5biMMmIAAAAJ:Tyk-4Ss8FVUC"
     authors: Zhikai Wu, Shiyang Zhang, <b><u>Sizhuang He</u></b>, Sifan Wang, Min Zhu, Anran Jiao, Lu Lu, and David van Dijk
     date: Jan 2025
@@ -134,11 +158,15 @@ main:
     pdf: https://openreview.net/pdf?id=cz99ALd3yv
     # code: https://github.com/MrGiovanni/ContinualLearning
     bibtex: /assets/bibs/coast.txt
-    image: /assets/img/coast.png
+    image: /assets/img/coast.jpg
+    image_size: 1100x415
     # poster: /assets/posters/CaLMFlow_NYAS_Poster.pdf
     # notes: Accepted to AI4MATH Workshop at ICML 2025 as a poster
     tags: ["Neural Operators", "Operator Learning"]
-    full_abstract: "Operator learning for time-dependent partial differential equations (PDEs) has seen rapid progress in recent years, enabling efficient approximation of complex spatiotemporal dynamics. However, most existing methods rely on fixed time step sizes during rollout, which limits their ability to adapt to varying temporal complexity and often leads to error accumulation. To address this gap, we propose the Time-Adaptive Transformer with Neural Taylor Expansion (TANTE), a novel operator-learning framework that produces continuous-time predictions with adaptive step sizes. TANTE predicts future states by performing a Taylor expansion at the current state, where neural networks learn both the higher-order temporal derivatives and the local radius of convergence. This allows the model to dynamically adjust its rollout based on the local behavior of the solution, thereby reducing cumulative error and improving computational efficiency. We demonstrate the effectiveness of TANTE across a wide range of PDE benchmarks, achieving superior accuracy and adaptability compared to fixed-step baselines, delivering accuracy gains of 10-50% and speed‑ups of 30-80% at inference."
+    venue: AI4MATH@ICML 2025
+    topics: [ops]
+    thumb: coast
+    full_abstract: "We introduce Causal Operator with Adaptive Solver Transformer (COAST), a novel neural operator learning method that leverages a causal language model (CLM) framework to dynamically adapt time steps. Our method predicts both the evolution of a system and its optimal time step, intelligently balancing computational efficiency and accuracy. We find that COAST generates variable step sizes that correlate with the underlying system intrinsicities, both within and across dynamical systems. Within a single trajectory, smaller steps are taken in regions of high complexity, while larger steps are employed in simpler regions. Across different systems, more complex dynamics receive more granular time steps. Benchmarked on diverse systems with varied dynamics, COAST consistently outperforms state-of-the-art methods, achieving superior performance in both efficiency and accuracy. This work underscores the potential of CLM-based intelligent adaptive solvers for scalable operator learning of dynamical systems."
 
   - title: "CaLMFlow: Flow Matching using Causal Language Models"
     alt_title: "CaLMFlow"
@@ -151,16 +179,19 @@ main:
     pdf: https://arxiv.org/pdf/2410.05292
     # code: https://github.com/MrGiovanni/ContinualLearning
     bibtex: /assets/bibs/calmflow.txt
-    image: /assets/img/CaLMFlow.png
+    image: /assets/img/CaLMFlow.jpg
+    image_size: 1100x359
     # poster: /assets/posters/CaLMFlow_NYAS_Poster.pdf
     notes: Preprint
     tags: ["Flow Matching", "Causal Language Models", "Generative Modeling", "Integral Equations"]
+    topics: [diff, ops]
+    thumb: calmflow
     selected: false
     summary: "We present Volterra Flow Matching, a novel generative modeling framework that reformulates ODE-based flow matching frameworks with Volterra Integral Equations, hence avoiding a core challenge in ODE-based methods, known as stiffness. We show the connection between Volterra Integral Equations and causal transformers, the backbone of modern Large Language Models and hence demonstrates that causal language models can be naturally extended to generative modeling over continuous data domains through the lens of Volterra Flow Matching."
     full_abstract: "We introduce CaLMFlow, a novel framework that recasts flow matching as a Volterra integral equation (VIE) while leveraging causal language models (CLMs) for continuous data generation. Although integral equations have previously been studied for nonlocal operator learning, we are the first to apply them explicitly to flow matching. By discretizing both time and space, CaLMFlow transforms continuous trajectories into a sequence-based representation, allowing standard large language model architectures to capture long-range dependencies and flexibly incorporate textual prompts. In experiments on synthetic benchmarks and a single-cell perturbation response task, CaLMFlow demonstrates improved stability and scalability over ODE-based methods in high-dimensional regimes. These findings suggest that combining an integral-equation formulation with CLMs provides a promising, context-aware paradigm for generative modeling."
 
   - title: Intelligence at the Edge of Chaos
-    alt_title: "Intelligence at the Edge of Chaos"
+    alt_title: "Edge of Chaos"
     paper_id: "5biMMmIAAAAJ:qjMakFHDy7sC"
     authors: Shiyang Zhang<sup>*</sup>, Aakash Patel<sup>*</sup>, Syed Rizvi, Nianchen Liu, <b><u>Sizhuang He</u></b>, Amin Karbasi, Emanuele Zappala, and David van Dijk
     date: Oct 2024
@@ -170,14 +201,19 @@ main:
     pdf: https://arxiv.org/pdf/2410.02536
     # code: https://github.com/MrGiovanni/ContinualLearning
     bibtex: /assets/bibs/complexity.txt
-    image: /assets/img/complexity.png
+    image: /assets/img/complexity.jpg
+    image_size: 1100x451
     # notes: Accepted to ICLR 2025 as a poster
     tags: ["Large Language Models", "Complexity Theory", "Cellular Automata"]
+    topics: [llm]
+    thumb: eoc
+    tagline: "Training LLMs on elementary cellular automata of varying complexity reveals a sweet spot of data complexity that maximizes downstream reasoning and prediction."
     selected: true
     summary: "By training LLMs on elementary cellular automata rules of varying complexity, we pinpoint a 'sweet spot' of data complexity that maximizes downstream predictive and reasoning abilities. Our findings suggest that exposing models to appropriately complex patterns is key to unlocking emergent intelligence."
     full_abstract: "We explore the emergence of intelligent behavior in artificial systems by investigating how the complexity of rule-based systems influences the capabilities of models trained to predict these rules. Our study focuses on elementary cellular automata (ECA), simple yet powerful one-dimensional systems that generate behaviors ranging from trivial to highly complex. By training distinct Large Language Models (LLMs) on different ECAs, we evaluated the relationship between the complexity of the data generated by the rules and the models' ability to learn effective general representations, as reflected in their performance on downstream tasks. Our findings reveal that models trained on more complex data exhibit greater predictive ability, as demonstrated by their performance on reasoning and chess move prediction tasks. Both uniform and periodic systems, and often also highly chaotic systems, resulted in poorer downstream performance, highlighting a sweet spot of complexity conducive to intelligence. We conjecture that intelligence arises from the ability to predict complexity and that creating intelligence may require only exposure to complexity."
 
   - title: "Operator Learning Meets Numerical Analysis: Improving Neural Networks through Iterative Methods"
+    alt_title: "Iterative Methods"
     paper_id: "5biMMmIAAAAJ:2osOgNQ5qMEC"
     authors: Emanuele Zappala, Daniel Levine, <b><u>Sizhuang He</u></b>, Syed Rizvi, Sacha L&eacute;vy, and David van Dijk
     date: Oct 2023
@@ -187,7 +223,10 @@ main:
     pdf: https://arxiv.org/pdf/2310.01618
     # code: https://github.com/MrGiovanni/ContinualLearning
     bibtex: /assets/bibs/iterative_methods.txt
-    image: /assets/img/iterative_methods.png
+    image: /assets/img/iterative_methods.jpg
+    image_size: 1100x649
     notes: Preprint
     tags: ["Numerical Analysis", "Operator Learning", "Integral Equations"]
+    topics: [ops]
+    thumb: iter
     full_abstract: "Deep neural networks, despite their success in numerous applications, often function without established theoretical foundations. In this paper, we bridge this gap by drawing parallels between deep learning and classical numerical analysis. By framing neural networks as operators with fixed points representing desired solutions, we develop a theoretical framework grounded in iterative methods for operator equations. Under defined conditions, we present convergence proofs based on fixed point theory. We demonstrate that popular architectures, such as diffusion models and AlphaFold, inherently employ iterative operator learning. Empirical assessments highlight that performing iterations through network operators improves performance. We also introduce an iterative graph neural network, PIGN, that further demonstrates benefits of iterations. Our work aims to enhance the understanding of deep learning by merging insights from numerical analysis, potentially guiding the design of future networks with clearer theoretical underpinnings and improved performance."
