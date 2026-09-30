@@ -101,7 +101,10 @@ main>.sec:first-child{margin-top:44px}
 .news li{position:relative;display:grid;grid-template-columns:var(--cols);column-gap:var(--g);padding:7px 0;min-height:53px}
 .news li::before{content:"";position:absolute;top:calc(7px + .62em);left:calc(var(--m) + var(--g)/2 - 3px);width:7px;height:7px;border-radius:50%;background:var(--paper);border:1px solid var(--mask)}
 .news li:first-child::before{background:var(--hl);border-color:var(--hl)}
-.news time{grid-column:1;text-align:right;padding-top:3px;font:400 12px/1.5 var(--mono);letter-spacing:.04em;color:var(--ink)}
+.news time,.news .when{grid-column:1;text-align:right;padding-top:3px;font:400 12px/1.5 var(--mono);letter-spacing:.04em;color:var(--ink)}
+.news .when time{padding-top:0}
+/* § About reuses the News axis for education; the research prose follows it */
+.tl+.prose{margin-top:12px}
 .news .loc{display:block;color:var(--graphite)}
 .news p{grid-column:2;margin:0}
 .v{color:var(--ink);font-weight:500}
@@ -299,7 +302,7 @@ html:not(.js) .tbl{display:none}
   .h-main{grid-area:t;margin-top:26px}
   .th{font-size:20px}
   .sec{margin-top:56px;padding-top:18px}
-  .lbl,.legend,.prose,.m1,.filt,.svc,.news p,.news time,.p-m,.p-main,.p-fig{grid-column:1}
+  .lbl,.legend,.prose,.m1,.filt,.svc,.news p,.news time,.news .when,.p-m,.p-main,.p-fig{grid-column:1}
   /* single column: cap the measure, and keep teaser figures from filling a whole phone screen */
   .prose,.news p,.p-main,.svc{max-width:38em}
   .paper .p-fig{max-width:280px}
@@ -308,7 +311,8 @@ html:not(.js) .tbl{display:none}
   .news::before{left:4px;top:12px;bottom:12px}
   .news li{padding:6px 0 8px 24px;min-height:0}
   .news li::before{left:1px;top:calc(6px + .55em)}
-  .news time{text-align:left;padding-top:0}
+  .news time,.news .when{text-align:left;padding-top:0}
+  .tl+.prose{margin-top:14px}
   .news .loc{display:inline;margin-left:.6em}
   .p-m{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;margin-bottom:6px}
   .alt{margin-top:0}
