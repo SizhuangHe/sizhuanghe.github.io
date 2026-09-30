@@ -1,7 +1,16 @@
 {%- assign pl = include.pub -%}
+{%- comment -%}
+  A local `bibtex` file is embedded at build time and opens inline like the abstract (without JS
+  the plain link shows instead). include_relative resolves against the page's folder, so this
+  include must be used from a page at the site root (index.html). The file passes through
+  Liquid, so a .bib must not contain two opening braces in a row, or an opening brace followed by
+  a percent sign (put a space between them).
+{%- endcomment -%}
+{%- assign bib = false -%}
+{%- if pl.bibtex -%}{%- unless pl.bibtex contains '://' -%}{%- assign bib = pl.bibtex | remove_first: './' -%}{%- assign c0 = bib | slice: 0 -%}{%- if c0 == '/' -%}{%- assign bib = bib | remove_first: '/' -%}{%- endif -%}{%- endunless -%}{%- endif -%}
 <p class="pl">
 {%- if pl.pdf %}<a href="{{ pl.pdf }}">pdf</a>{% endif -%}
-{%- if pl.bibtex %}<a href="{% if pl.bibtex contains '://' %}{{ pl.bibtex }}{% else %}{{ pl.bibtex | relative_url }}{% endif %}">bib</a>{% endif -%}
+{%- if bib %}<a class="bib-a" href="{{ pl.bibtex | relative_url }}">bib</a><button class="abs-t" type="button" aria-expanded="false" aria-controls="{{ include.aid }}-bib">bib</button>{% elsif pl.bibtex %}<a href="{{ pl.bibtex }}">bib</a>{% endif -%}
 {%- if pl.page %}<a href="{{ pl.page }}">page</a>{% endif -%}
 {%- if pl.blog %}<a href="{{ pl.blog }}">blog</a>{% endif -%}
 {%- if pl.blog2 %}<a href="{{ pl.blog2 }}">blog 2</a>{% endif -%}
@@ -9,6 +18,13 @@
 {%- if pl.poster %}<a href="{% if pl.poster contains '://' %}{{ pl.poster }}{% else %}{{ pl.poster | relative_url }}{% endif %}">poster</a>{% endif -%}
 {%- if pl.full_abstract %}<button class="abs-t" type="button" aria-expanded="false" aria-controls="{{ include.aid }}">abstract</button>{% endif -%}
 </p>
+{%- if bib %}
+{%- capture bibsrc %}{% include_relative {{ bib }} %}{% endcapture -%}
+{%- capture nl %}
+{% endcapture -%}
+{%- assign bl = bibsrc | strip | split: nl %}
+        <div class="abs bib" id="{{ include.aid }}-bib"><pre>{% for ln in bl %}{% assign lt = ln | rstrip | replace: '	', '    ' %}{% assign lx = lt | lstrip %}{% assign li = lt.size | minus: lx.size %}<span>{% if li > 0 %}<i>{{ lt | slice: 0, li }}</i>{% endif %}{{ lx | xml_escape }}</span>{% endfor %}</pre><p class="bib-x"><button class="bib-c" type="button">copy</button><a href="{{ pl.bibtex | relative_url }}">raw .txt</a></p></div>
+{%- endif -%}
 {%- if pl.full_abstract %}
         <div class="abs" id="{{ include.aid }}">{{ pl.full_abstract | markdownify | strip | replace: '’', "'" | replace: '‘', "'" | replace: '“', '"' | replace: '”', '"' | replace: '&rsquo;', "'" | replace: '&lsquo;', "'" | replace: '&ldquo;', '"' | replace: '&rdquo;', '"' }}</div>
 {%- endif -%}

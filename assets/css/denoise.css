@@ -34,11 +34,11 @@ h1,h2,h3{font-weight:inherit}
 sub{font-size:.72em;line-height:0;vertical-align:-.25em}
 
 /* A3 · links: a row of mask-colored dots that denoise into a solid rule on hover */
-a,.abs-t{color:var(--accent);text-decoration:none;
+a,.abs-t,.bib-c{color:var(--accent);text-decoration:none;
   background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat,
              radial-gradient(circle at 1px 1px,var(--mask) .85px,transparent 1.1px) 0 100%/4px 2px repeat-x;
   padding-bottom:2px;transition:background-size .22s cubic-bezier(.2,.8,.2,1)}
-a:hover,.abs-t:hover,.abs-t[aria-expanded="true"]{background-size:100% 1px,4px 2px}
+a:hover,.abs-t:hover,.bib-c:hover,.abs-t[aria-expanded="true"]{background-size:100% 1px,4px 2px}
 
 .wrap{max-width:calc(var(--m) + var(--main) + var(--aside) + 2*var(--g) + 64px);margin:0 auto;padding:0 32px}
 .row{display:grid;grid-template-columns:var(--cols);column-gap:var(--g)}
@@ -119,7 +119,7 @@ main>.sec:first-child{margin-top:44px}
 .me{color:var(--ink);font-weight:600}
 .sum{margin:0 0 9px;font-size:16px;line-height:1.55}
 .pl{display:flex;flex-wrap:wrap;gap:4px 16px;margin:0;font:400 12px/1.7 var(--mono);letter-spacing:.04em}
-.abs-t{font:inherit;letter-spacing:inherit;border:0;cursor:pointer;padding:0 0 2px;background-color:transparent}
+.abs-t,.bib-c{font:inherit;letter-spacing:inherit;border:0;cursor:pointer;padding:0 0 2px;background-color:transparent}
 .abs-t::after{content:" +";color:var(--graphite)}
 .abs-t[aria-expanded="true"]::after{content:" −"}
 html:not(.js) .abs-t{display:none}
@@ -127,6 +127,11 @@ html:not(.js) .abs-t{display:none}
 .abs p{margin:0}
 .js .abs{display:none}
 .js .abs.open{display:block}
+.js .bib-a,html:not(.js) .bib{display:none}
+.bib pre{margin:0;font:400 12px/1.7 var(--mono);letter-spacing:.02em;color:var(--ink);white-space:pre-wrap;overflow-wrap:anywhere}
+.bib pre>span{display:block;min-height:1.7em;padding-left:var(--hang,8ch);text-indent:calc(-1*var(--hang,8ch))}
+.bib pre i{font-style:normal}
+.bib-x{display:flex;gap:16px;margin:6px 0 0;font:400 12px/1.7 var(--mono);letter-spacing:.04em}
 .p-fig{grid-column:3;margin:0}
 .p-fig img{display:block;width:100%;height:auto;background:var(--plate);border:1px solid var(--rule);border-radius:2px;filter:var(--img-filter)}
 
@@ -323,6 +328,7 @@ html:not(.js) .tbl{display:none}
   .m1 .snote{flex-basis:100%;margin-top:0}
 }
 @media (max-width:560px){
+  .bib pre{--hang:5ch}.bib pre i{font-size:.5em}
   .links{column-gap:18px}
   .links li::after{content:none!important}
 }

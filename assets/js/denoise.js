@@ -48,8 +48,11 @@ chips.forEach(c=>c.addEventListener('click',()=>{const g=c.dataset.f;if(g===cur)
   list.offsetHeight;
   after.forEach((r,i)=>{r.style.transition=`transform 450ms cubic-bezier(.34,1.56,.64,1) ${i*25}ms`;r.style.transform=''})}));
 
-/* ---- abstracts ---- */
+/* ---- abstract + bib toggles (.abs-t → its aria-controls block); bib copy ---- */
 D.addEventListener('click',e=>{const b=e.target.closest('.abs-t');if(!b)return;const o=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',o);D.getElementById(b.getAttribute('aria-controls')).classList.toggle('open',o)});
+D.addEventListener('click',e=>{const c=e.target.closest('.bib-c');if(!c)return;const p=c.closest('.bib').querySelector('pre'),t=[...p.children].map(s=>s.textContent).join('\n'),ok=()=>{c.textContent='copied';setTimeout(()=>c.textContent='copy',1500)},
+  sel=()=>{const r=D.createRange(),g=getSelection();r.selectNodeContents(p);g.removeAllRanges();g.addRange(r);try{if(D.execCommand('copy'))ok()}catch(x){}};
+  navigator.clipboard?navigator.clipboard.writeText(t).then(ok,sel):sel()});
 
 /* ================= Thumbnails: one small canvas per paper =================
    Each .tb holds a canvas that draws its paper's scene as a pure function of time t, so any
