@@ -103,8 +103,8 @@ main>.sec:first-child{margin-top:44px}
 .news li:first-child::before{background:var(--hl);border-color:var(--hl)}
 .news time,.news .when{grid-column:1;text-align:right;padding-top:3px;font:400 12px/1.5 var(--mono);letter-spacing:.04em;color:var(--ink)}
 .news .when time{padding-top:0}
-/* § About reuses the News axis for education; the research prose follows it */
-.tl+.prose{margin-top:12px}
+/* § About: research prose first, then the education timeline on the News axis */
+.prose+.tl{margin-top:14px}
 .news .loc{display:block;color:var(--graphite)}
 .news p{grid-column:2;margin:0}
 .v{color:var(--ink);font-weight:500}
@@ -312,7 +312,7 @@ html:not(.js) .tbl{display:none}
   .news li{padding:6px 0 8px 24px;min-height:0}
   .news li::before{left:1px;top:calc(6px + .55em)}
   .news time,.news .when{text-align:left;padding-top:0}
-  .tl+.prose{margin-top:14px}
+  .prose+.tl{margin-top:16px}
   .news .loc{display:inline;margin-left:.6em}
   .p-m{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;margin-bottom:6px}
   .alt{margin-top:0}

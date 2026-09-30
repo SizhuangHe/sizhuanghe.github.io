@@ -1,13 +1,12 @@
 {%- assign tl = site.data.about_timeline -%}
 <section class="sec row" id="about" aria-labelledby="h-about">
   <h2 class="lbl" id="h-about"><span class="t">About</span></h2>
-  <p class="legend">education · newest first</p>
-  <ol class="news tl">
-    {%- for e in tl %}
-    <li><span class="when"><time datetime="{{ e.from | prepend: '1 ' | date: '%Y-%m' }}">{{ e.from | replace: ' ', '&nbsp;' }}</time>&nbsp;– {% if e.to %}<time datetime="{{ e.to | prepend: '1 ' | date: '%Y-%m' }}">{{ e.to | replace: ' ', '&nbsp;' }}</time>{% else %}present{% endif %}</span><p>{{ e.text | markdownify | strip | remove: '<p>' | remove: '</p>' }}</p></li>
-    {%- endfor %}
-  </ol>
   <div class="prose">
     {% capture about_md %}{% include about.md %}{% endcapture %}{{ about_md | markdownify | strip }}
   </div>
+  <ol class="news tl">
+    {%- for e in tl %}
+    <li><span class="when">{% if e.at %}<time datetime="{{ e.at | prepend: '1 ' | date: '%Y-%m' }}">{{ e.at | replace: ' ', '&nbsp;' }}</time>{% else %}<time datetime="{{ e.from | prepend: '1 ' | date: '%Y-%m' }}">{{ e.from | replace: ' ', '&nbsp;' }}</time>&nbsp;– {% if e.to %}<time datetime="{{ e.to | prepend: '1 ' | date: '%Y-%m' }}">{{ e.to | replace: ' ', '&nbsp;' }}</time>{% else %}present{% endif %}{% endif %}</span><p>{{ e.text | markdownify | strip | remove: '<p>' | remove: '</p>' }}</p></li>
+    {%- endfor %}
+  </ol>
 </section>

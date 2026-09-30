@@ -1,8 +1,7 @@
 # § About timeline (education), newest first. Drawn with the same markup and styles as § News.
-#   from: "Mon YYYY"   to: "Mon YYYY", or omit for "present"
+#   from: "Mon YYYY"   to: "Mon YYYY", or omit for "present"; or a single date instead: at: "Mon YYYY"
 #   text: Markdown (links allowed).
 - from: Aug 2024
-  text: "[Ph.D. in Computer Science](https://cpsc.yale.edu/people/sizhuang-he), [Yale University](https://www.yale.edu/) · advised by Dr. [David van Dijk](https://www.vandijklab.org/)"
-- from: Sep 2019
-  to: May 2023
+  text: "Ph.D. in [Computer Science](https://cpsc.yale.edu/people/sizhuang-he), [Yale University](https://www.yale.edu/) · advised by Dr. [David van Dijk](https://www.vandijklab.org/)"
+- at: Apr 2023
   text: "B.S. in [Honors Mathematics](https://lsa.umich.edu/math), minor in [Computer Science](https://cse.engin.umich.edu/), [University of Michigan, Ann Arbor](https://umich.edu/)"
