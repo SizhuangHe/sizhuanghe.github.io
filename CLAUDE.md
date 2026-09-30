@@ -18,6 +18,7 @@ no longer built; see `exclude:` in `_config.yml`. `/cv/` and `/publications/` ar
 `redirects/`. Content still comes from data, so routine edits never touch the design:
 
 - About text: `_includes/about.md` (Markdown). Hero thesis, position line, advisor: `_config.yml`.
+  Hero method blurbs (under the "sampled via …" readout, one per generation style): `_data/hero_methods.yml`.
 - News: `_data/news.yml` (newest first; the first 4 show, the rest fold under "N earlier").
 - Papers: `_data/publications.yml`. Homepage-only fields: `topics` (keys from `_data/topics.yml`,
   drive the filter chips), `thumb` (animated thumbnail key from `_data/thumbnails.yml`; omit it and

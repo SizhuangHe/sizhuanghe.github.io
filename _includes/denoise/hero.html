@@ -16,6 +16,14 @@
     <h1 class="name" id="name">{{ site.title }}</h1>
     <!-- the sentence below is data (site.thesis): every load re-generates it in place (CaDDi, Soft-Rank, or STRIDE style); click the readout to cycle styles -->
     <p class="tcap"><button class="tcb" id="tcap" type="button" title="Generate the sentence again" aria-label="Generate the sentence again">t = <span class="tv">0</span> · <span class="tverb">sampled</span><span class="tvia"> via <span class="tmeth"></span></span></button></p>
+    <!-- method blurbs (_data/hero_methods.yml; venue + link from publications.yml): all share one grid cell, so the tallest reserves the height; JS shows the one for the running style -->
+    <div class="tbl" id="tbl">
+      {%- for hm in site.data.hero_methods %}
+      {%- assign hp = site.data.publications.main | where: 'alt_title', hm[1].paper | first %}
+      {%- if hp %}{% include denoise/pub-vars.html pub=hp %}{% endif %}
+      <p data-gen="{{ hm[0] }}">{{ hm[1].blurb }}{% if hp %} <span class="nb">({{ pv_venue }}){% if hp.pdf %} <a href="{{ hp.pdf }}">paper<span aria-hidden="true">&nbsp;→</span></a>{% endif %}</span>{% endif %}</p>
+      {%- endfor %}
+    </div>
     <div class="thesis">
       {% assign thesis_words = site.thesis | split: ' ' -%}
       <p class="th" id="thesis">{% for w in thesis_words %}{% if w contains '—' %}<span class="nb">{{ w }}</span>{% else %}{{ w }}{% endif %}{% unless forloop.last %}{{ ' ' }}{% endunless %}{% endfor %}</p>

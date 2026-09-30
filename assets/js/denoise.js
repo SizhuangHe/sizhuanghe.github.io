@@ -258,7 +258,7 @@ if(D.fonts&&D.fonts.ready)D.fonts.ready.then(()=>{TWc.clear();TH.forEach(b=>{if(
    (screen readers, copy, crawlers) and is only made transparent while an aria-hidden clone animates
    on top of it. Clone words are inline-blocks laid out exactly like the real text; every frame they
    are moved by transform relative to their own natural slot, so the page never reflows. */
-const TS=$('#thesis'),TCB=$('#tcap'),TV=$('.tv',TCB),TVB=$('.tverb',TCB),TM=$('.tmeth',TCB);/* readout: t counts down; the method name shows from the first frame */
+const TS=$('#thesis'),TCB=$('#tcap'),TV=$('.tv',TCB),TVB=$('.tverb',TCB),TM=$('.tmeth',TCB),TBL=$$('#tbl>p');/* readout: t counts down; the method name shows from the first frame */
 (function wrap(node){for(const ch of[...node.childNodes]){if(ch.nodeType===1){wrap(ch);continue}if(ch.nodeType!==3||!ch.textContent.trim())continue;
   const fr=D.createDocumentFragment();ch.textContent.split(/(\s+)/).forEach(p=>{if(!p)return;if(/^\s+$/.test(p))fr.appendChild(D.createTextNode(p));else{const s=D.createElement('span');s.className='w';s.textContent=p;fr.appendChild(s)}});ch.replaceWith(fr)}})(TS);
 /* plausible wrong first guesses; any word not listed borrows a similar-length word from the sentence */
@@ -276,7 +276,7 @@ function wrongFor(words,i,pool){const m=/^([A-Za-z-]+)([,.;:]?)$/.exec(words[i])
   let sub=SUB[lc];if(!sub){const nb=pool.filter(j=>j!==i).map(j=>words[j].replace(/[,.;:]$/,'')).find(x=>Math.abs(x.length-core.length)<=3&&x.toLowerCase()!==lc);sub=nb&&nb.toLowerCase()}
   if(!sub)return null;if(core[0]!==core[0].toLowerCase())sub=sub[0].toUpperCase()+sub.slice(1);return sub+m[2]}
 function gen(style){gStyle=style;cancelAnimationFrame(gRaf);const old=$('.gov',TS);if(old)old.remove();TS.classList.remove('gen');
-  const fin=()=>{TV.textContent='0.00';TVB.textContent='sampled';TM.textContent=GN[style]};TM.textContent=GN[style];if(RM){fin();return}TV.textContent='1.00';TVB.textContent='sampling';
+  const fin=()=>{TV.textContent='0.00';TVB.textContent='sampled';TM.textContent=GN[style]};TM.textContent=GN[style];TBL.forEach(p=>p.classList.toggle('on',p.dataset.gen===style));if(RM){fin();return}TV.textContent='1.00';TVB.textContent='sampling';
   const ov=D.createElement('div');ov.className='gov';ov.setAttribute('aria-hidden','true');ov.append(...[...TS.childNodes].map(c=>c.cloneNode(true)));TS.appendChild(ov);TS.classList.add('gen');
   const OW=$$('.w',ov),n=OW.length,words=OW.map(o=>o.textContent),t0=performance.now(),cls=OW.map(()=>''),set=(i,c)=>{if(cls[i]!==c){cls[i]=c;OW[i].className='w ow'+c}};
   const done=()=>{ov.remove();TS.classList.remove('gen');fin()};

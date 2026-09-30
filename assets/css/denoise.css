@@ -265,6 +265,13 @@ html:not(.js) .tb canvas,html:not(.js) .tbc{display:none}
 .tcb .tv{display:inline-block;min-width:calc(4ch + .3em)}
 .tcb .tverb{display:inline-block;min-width:calc(8ch + .55em)}
 html:not(.js) .tcb .tvia{display:none}
+/* method blurb under the readout: the blurbs share one grid cell (the tallest sets the height, so switching
+   style never moves the sentence); only the running style's is visible. No JS, no method: no blurb. */
+.js .tcap{margin-bottom:4px}
+.tbl{display:grid;max-width:47rem;margin:0 0 22px;font:400 12px/1.7 var(--mono);letter-spacing:.02em;color:var(--graphite)}
+.tbl>p{grid-area:1/1;margin:0;visibility:hidden}
+.tbl>p.on{visibility:visible}
+html:not(.js) .tbl{display:none}
 
 /* ---------- responsive ---------- */
 @media (max-width:1180px){

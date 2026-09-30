@@ -1,0 +1,13 @@
+# Hero method blurbs: one short line of context under the readout ("t = 0.00 · sampled via …").
+# Key = generation style in assets/js/denoise.js (also the ?gen=<key> deep link); the page shows the
+# blurb of whichever style is running. `paper` = that paper's alt_title in publications.yml: the blurb
+# ends with its venue in parentheses (same label as the paper list) and a "paper →" link to its `pdf`.
+caddi:
+  paper: CaDDi
+  blurb: "CaDDi is a discrete diffusion model that looks back at the entire denoising trajectory at every step, not just the current state, so it can revisit and fix earlier mistakes. Here, the sentence starts as noise and is denoised in parallel, with wrong guesses corrected along the way."
+softrank:
+  paper: Soft-Rank Diffusion
+  blurb: "Soft-Rank Diffusion generates permutations by relaxing discrete ranks into continuous soft ranks and learning to reverse their diffusion. Here, the words start out shuffled and are put back in order, one position at a time."
+stride:
+  paper: STRIDE
+  blurb: "STRIDE post-trains an LLM to refine a sequence by writing out a chain of atomic edits (insertions, deletions, substitutions) as its reasoning. Here, the sentence grows from a rough draft through exactly such edits."
