@@ -107,6 +107,27 @@ main>.sec:first-child{margin-top:44px}
 .prose+.tl{margin-top:14px}
 .news .loc{display:block;color:var(--graphite)}
 .news p{grid-column:2;margin:0}
+/* About timeline only (.tl; News keeps its own offsets). The open row is the present: its cell reads "Present" with
+   "since <start>" as a second .loc line; finished spans read "Jun – Aug 2026". A `sub` list (internships) is a dotted
+   branch inside the row: the site's link idiom (mask-coloured dots, 4px period) run as a rule; --sub-x = its x offset.
+   Alignment constants measured in headless Chrome: Newsreader 17px x-height centre .45px above its line-box centre,
+   Plex Mono 12px cap centre .19px above. Primary label cap-centre, dot centre and first text line x-centre share one y;
+   the second line never moves the dot (li::before sits at a fixed offset). */
+.vh{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.tl{--l17:27.54px;--l12:18px;--dy-x17:-.45px;--dy-cap:-.19px;--sub-dot:radial-gradient(circle at 1px 1px,var(--mask) .85px,transparent 1.1px)}
+.tl .sub{--sub-x:12px;grid-column:2;position:relative;list-style:none;margin:6px 0 2px;padding:0}
+.tl .sub::before{content:"";position:absolute;left:calc(-1*var(--g)/2);top:0;width:calc(var(--g)/2 + var(--sub-x) + 1px);height:2px;background:var(--sub-dot) 0 0/4px 2px repeat-x}
+.tl .sub::after{content:"";position:absolute;left:var(--sub-x);top:0;bottom:12px;width:2px;background:var(--sub-dot) 0 0/2px 4px repeat-y}
+.tl .sub li{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:.75em;min-height:0;padding:5px 0 5px calc(var(--sub-x) + 16px)}
+.tl .sub li::before,.tl .sub li:first-child::before{z-index:1;left:calc(var(--sub-x) - 1.5px);width:5px;height:5px;background:var(--paper);border-color:var(--mask)}
+.tl .sub p{grid-column:auto;flex:1 1 16em;min-width:0;margin:0;font-size:15px;line-height:1.5}
+.tl .sub-d{font:400 12px/1.5 var(--mono);letter-spacing:.04em;color:var(--graphite);font-variant-numeric:tabular-nums}
+.tl li{align-items:start}
+.tl .when{position:relative;font-variant-numeric:tabular-nums;padding-top:calc((var(--l17) - var(--l12))/2 + var(--dy-x17) - var(--dy-cap))}
+/* the two-line cell spans both grid rows so its second line sits beside the branch, not above it */
+.tl li.has-sub>.when{grid-row:1/span 2}
+/* dot centre on the first text line's x-centre; the same offset serves the branch dots (their row has 5px padding, so the 5px dot lands on the baseline) */
+.news.tl li::before{top:calc(7px + var(--l17)/2 + var(--dy-x17) - 3.5px)}
 .v{color:var(--ink);font-weight:500}
 
 /* papers — shared */
@@ -334,6 +355,15 @@ html:not(.js) .tbl{display:none}
   .noise{right:auto;width:190px}
   .m1{flex-wrap:wrap}
   .m1 .snote{flex-basis:100%;margin-top:0}
+}
+@media (max-width:860px){
+  /* About timeline on phones: branch hugs the single axis; second lines flow inline after the primary (the .loc rule) */
+  .tl .sub{--sub-x:4px;grid-column:1;margin:4px 0 0}
+  .tl .sub::before{left:-20px;width:calc(20px + var(--sub-x) + 1px)}
+  .tl .sub li{padding:4px 0 4px calc(var(--sub-x) + 16px)}
+  .tl .when{padding-top:0}
+  .tl li.has-sub>.when{grid-row:auto}
+  .news.tl li::before{top:calc(6px + var(--l12)/2 + var(--dy-cap) - 3.5px)}
 }
 @media (max-width:560px){
   .bib pre{--hang:5ch}.bib pre i{font-size:.5em}

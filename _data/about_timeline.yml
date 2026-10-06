@@ -1,7 +1,16 @@
 # § About timeline (education), newest first. Drawn with the same markup and styles as § News.
-#   from: "Mon YYYY"   to: "Mon YYYY", or omit for "present"; or a single date instead: at: "Mon YYYY"
+#   from: "Mon YYYY"   to: "Mon YYYY" → a finished span, "Jun – Aug 2026" (same year written once; "Dec 2025 – Jan 2026"
+#                      otherwise); omit `to` for an open span → "Present" on the dot line, "since Mon YYYY" beneath it.
+#   at:   "Mon YYYY"   a single date instead: "Apr 2023".
 #   text: Markdown (links allowed).
+#   sub:  optional list of the same shape (from/to or at, text), drawn as a dotted branch inside the row — e.g. internships
+#         during the Ph.D. `sub_label` names that nested list for screen readers.
 - from: Aug 2024
   text: "Ph.D. in [Computer Science](https://cpsc.yale.edu/people/sizhuang-he), [Yale University](https://www.yale.edu/) · advised by Dr. [David van Dijk](https://www.vandijklab.org/)"
+  sub_label: Internships during the Ph.D.
+  sub:
+    - from: Jun 2026
+      to: Aug 2026
+      text: "AI Research Scientist Intern, [Chan Zuckerberg Biohub](https://biohub.org/)"
 - at: Apr 2023
   text: "B.S. in [Honors Mathematics](https://lsa.umich.edu/math), minor in [Computer Science](https://cse.engin.umich.edu/), [University of Michigan, Ann Arbor](https://umich.edu/)"

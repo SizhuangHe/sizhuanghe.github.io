@@ -1,0 +1,17 @@
+{%- comment -%}
+One About-timeline date cell. include.e = the entry (at | from [+ to]); include.cls = "when" (main rows) | "sub-d" (branch rows).
+  at          → "Apr 2023"
+  from + to   → finished span "Jun – Aug 2026" (same year written once; "Dec 2025 – Jan 2026" otherwise) + hidden "Jun 2026 – Aug 2026"
+  from only   → open span: "Present" on the dot line, "since Aug 2024" as a .loc second line + hidden "Aug 2024 – present"
+{%- endcomment -%}
+{%- assign d = include.e -%}
+{%- if d.at -%}
+<span class="{{ include.cls }}"><time datetime="{{ d.at | prepend: '1 ' | date: '%Y-%m' }}">{{ d.at | replace: ' ', '&nbsp;' }}</time></span>
+{%- elsif d.to -%}
+{%- assign fy = d.from | split: ' ' | last -%}
+{%- assign ty = d.to | split: ' ' | last -%}
+{%- if fy == ty -%}{%- assign from_label = d.from | split: ' ' | first -%}{%- else -%}{%- assign from_label = d.from | replace: ' ', '&nbsp;' -%}{%- endif -%}
+<span class="{{ include.cls }}"><time datetime="{{ d.from | prepend: '1 ' | date: '%Y-%m' }}">{{ from_label }}</time> – <time datetime="{{ d.to | prepend: '1 ' | date: '%Y-%m' }}">{{ d.to | replace: ' ', '&nbsp;' }}</time><span class="vh">{{ d.from }} – {{ d.to }}</span></span>
+{%- else -%}
+<span class="{{ include.cls }}" title="{{ d.from }} – present">Present<span class="loc">since <time datetime="{{ d.from | prepend: '1 ' | date: '%Y-%m' }}">{{ d.from | replace: ' ', '&nbsp;' }}</time></span><span class="vh">{{ d.from }} – present</span></span>
+{%- endif -%}
