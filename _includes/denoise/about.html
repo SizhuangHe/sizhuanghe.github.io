@@ -13,7 +13,7 @@
       {%- if e.sub %}
       <ol class="sub"{% if e.sub_label %} aria-label="{{ e.sub_label }}"{% endif %}>
         {%- for s in e.sub %}
-        <li>{% include denoise/tl-date.html e=s cls="sub-d" %}<p>{{ s.text | markdownify | strip | remove: '<p>' | remove: '</p>' }}</p></li>
+        <li>{% include denoise/tl-date.html e=s cls="sub-d" %}<p>{{ s.text | markdownify | strip | remove: '<p>' | remove: '</p>' }}{% if s.note %}<span class="note">{{ s.note | markdownify | strip | remove: '<p>' | remove: '</p>' }}</span>{% endif %}</p></li>
         {%- endfor %}
       </ol>
       {%- endif %}

@@ -121,6 +121,7 @@ main>.sec:first-child{margin-top:44px}
 .tl .sub li{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:.75em;min-height:0;padding:5px 0 5px calc(var(--sub-x) + 16px)}
 .tl .sub li::before,.tl .sub li:first-child::before{z-index:1;left:calc(var(--sub-x) - 1.5px);width:5px;height:5px;background:var(--paper);border-color:var(--mask)}
 .tl .sub p{grid-column:auto;flex:1 1 16em;min-width:0;margin:0;font-size:15px;line-height:1.5}
+.tl .sub .note{display:block;font-size:14px;line-height:1.5;color:var(--graphite)}
 .tl .sub-d{font:400 12px/1.5 var(--mono);letter-spacing:.04em;color:var(--graphite);font-variant-numeric:tabular-nums}
 .tl li{align-items:start}
 .tl .when{position:relative;font-variant-numeric:tabular-nums;padding-top:calc((var(--l17) - var(--l12))/2 + var(--dy-x17) - var(--dy-cap))}
