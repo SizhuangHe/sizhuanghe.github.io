@@ -121,6 +121,7 @@ main:
     tags: ["Large Language Models", "Computational Biology", "Single-Cell Analysis"]
     topics: [llm, bio]
     thumb: c2s
+    venue: In review 2025
     tagline: "Scales the Cell2Sentence framework to 27B-parameter LLMs trained on over a billion tokens of transcriptomic data, biological text, and metadata, reaching state-of-the-art predictive and generative performance on multicellular analyses."
     selected: true
     summary: "C2S-Scale scales this framework to 27 billion parameters trained on a billion-token multimodal corpus—achieving state-of-the-art predictive and generative performance for complex, multicellular analyses."
