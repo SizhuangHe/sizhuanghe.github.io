@@ -78,10 +78,32 @@ main:
     summary: "We introduce FLUX, a geometry-aware longitudinal flow-matching framework for joint transport modeling and unsupervised regime discovery from unpaired longitudinal snapshots. FLUX learns a data-dependent metric, constructs geometry-aware conditional paths, and decomposes the velocity field into sparse expert vector fields via a Straight-Through Gumbel-Softmax router, recovering interpretable regime structure across neuronal calcium imaging and single-cell differentiation."
     full_abstract: "Many biological systems evolve through continuous local dynamics while switching between latent regimes defined by learning, stimulus context, internal state, or developmental stage. These processes are often observed only as unpaired longitudinal snapshots: the same cells, neurons, or animals are not tracked as matched trajectories, even though population states are sampled across successive stages. This creates two coupled challenges. First, trajectories must respect curved low-dimensional manifolds embedded in high-dimensional biological measurements. Second, the model must identify when the transport mechanism itself changes. We introduce FLUX (FLow matching for Unpaired longitudinal data with miXture-of-experts), a geometry-aware longitudinal flow-matching framework for joint transport modeling and unsupervised regime discovery. FLUX learns a data-dependent metric from pooled labeled and unlabeled observations, uses that metric to construct geometry-aware conditional paths between adjacent marginals, and decomposes the resulting velocity field into sparse expert vector fields selected by a Straight-Through Gumbel-Softmax router. Across manifold controls, a regime-switching Lorenz system, widefield cortical calcium imaging during associative learning, and embryoid body single-cell differentiation, FLUX reconstructs longitudinal transport while recovering interpretable regime structure. Ablations show that mixture-of-experts routing alone is insufficient: FLUX without geometric learning can fit local transport but fails or weakens regime discovery when regimes are encoded in local dynamics. These results suggest that geometry-aware velocity decomposition provides a general strategy for discovering latent biological state transitions from unpaired longitudinal snapshots."
 
+  - title: Non-Markovian Discrete Diffusion with Causal Language Models
+    alt_title: "CaDDi"
+    paper_id: "5biMMmIAAAAJ:9yKSN-GCB0IC"
+    authors: Yangtian Zhang <sup>*</sup>, <b><u>Sizhuang He<sup>*</sup></u></b>, Daniel Levine, Lawrence Zhao, David Zhang, Syed Rizvi, Emanuele Zappala, Rex Ying, and David van Dijk
+    date: Jan 2025
+    conference_short: NeurIPS
+    conference: NeurIPS 2025
+    status: accepted
+    pdf: https://arxiv.org/pdf/2502.09767
+    poster: /assets/posters/CaDDi_NeurIPS_poster.pdf
+    # code: https://github.com/MrGiovanni/ContinualLearning
+    bibtex: /assets/bibs/caddi.txt
+    image: /assets/img/caddi.jpg
+    image_size: 1100x675
+    tags: ["Diffusion Models", "Causal Language Models", "Generative Modeling", "Discrete Diffusion"]
+    topics: [diff]
+    thumb: caddi
+    tagline: "Lifts the Markov constraint in discrete diffusion by conditioning on the entire generative trajectory; causal language models become a special case, so pretrained LLM weights are reused with no architectural changes."
+    selected: true
+    summary: "We introduce a novel approach to discrete diffusion models that conditions on the entire generative trajectory, thereby lifting the Markov constraint and allowing the model to revisit and improve past states. CaDDi treats standard causal language models as a special case and permits the direct reuse of pretrained LLM weights with no architectural changes."
+    full_abstract: "Discrete diffusion models offer a flexible, controllable approach to structured sequence generation, yet they still lag behind causal language models in expressive power. A key limitation lies in their reliance on the Markovian assumption, which restricts each step to condition only on the current state, leading to potential uncorrectable error accumulation. In this paper, we introduce CaDDi, a discrete diffusion model that conditions on the entire generative trajectory, thereby lifting the Markov constraint and allowing the model to revisit and improve past states. By unifying sequential (causal) and temporal (diffusion) reasoning in a single non-Markovian transformer, CaDDi also treats standard causal language models as a special case and permits the direct reuse of pretrained LLM weights with no architectural changes. Empirically, CaDDi outperforms state-of-the-art discrete diffusion baselines on natural-language benchmarks, substantially narrowing the remaining gap to large autoregressive transformers."
+
   - title: Scaling Large Language Models for Next-Generation Single-Cell Analysis
     alt_title: "Cell2Sentence"
     paper_id: "5biMMmIAAAAJ:u-x6o8ySG0sC"
-    authors: Syed Rizvi<sup>*</sup>, Daniel Levine<sup>*</sup>, Aakash Patel<sup>*</sup>, Shiyang Zhang<sup>*</sup>, Eric Wang<sup>*</sup>, <b><u>Sizhuang He</u></b>, David Zhang, Cerise Tang, Zhuoyang Lyu, Rayyan Darji, Marlene Li, Emily Sun, David Jeong, Lawrence Zhao, Jennifer Kwan, David Braun, Brian Hafler, Jeffrey Ishizuka, Rahul Dhodapkar, Hattie Chung, Shekoofeh Azizi, Bryan Perozzi, and David van Dijk
+    authors: Syed Asad Rizvi<sup>*</sup>, Daniel Levine<sup>*</sup>, Aakash Patel<sup>*</sup>, Shiyang Zhang<sup>*</sup>, Eric Wang<sup>*</sup>, Curtis Jamison Perry<sup>*</sup>, Ivan Vrkic, Nicole Mayerli Constante, Zirui Fu, <b><u>Sizhuang He</u></b>, David Zhang, Cerise Tang, Zhuoyang Lyu, Rayyan Darji, Chang Li, Emily Sun, David Jeong, Lawrence Zhao, Jennifer Kwan, David Braun, Brian Hafler, Hattie Chung, Rahul M. Dhodapkar, Paul Jaeger, Bryan Perozzi, Jeffrey Ishizuka, Shekoofeh Azizi, and David van Dijk
     date: Apr 2025
     conference_short: Preprint
     conference: Preprint
@@ -104,28 +126,6 @@ main:
     summary: "C2S-Scale scales this framework to 27 billion parameters trained on a billion-token multimodal corpus—achieving state-of-the-art predictive and generative performance for complex, multicellular analyses."
     full_abstract: "Single-cell RNA sequencing has transformed our understanding of cellular diversity, yet current single-cell foundation models (scFMs) remain limited in their scalability, flexibility across diverse tasks, and ability to natively integrate textual information. In this work, we build upon the Cell2Sentence (C2S) framework, which represents scRNA-seq profiles as textual 'cell sentences,' to train Large Language Models (LLMs) on a corpus comprising over one billion tokens of transcriptomic data, biological text, and metadata. By scaling model size to 27 billion parameters, we observe consistent improvements in predictive and generative capabilities, as well as the capacity for advanced downstream tasks requiring synthesis of information across multicellular contexts. Through targeted fine-tuning supported by modern reinforcement learning techniques, our approach excels in tasks such as perturbation response prediction, natural language interpretation, and complex biological reasoning. By unifying transcriptomic and textual data at unprecedented scales, this approach not only surpasses both specialized single-cell models and general-purpose LLMs, but also establishes a powerful platform for next-generation single-cell analysis, paving the way for the development of 'virtual cells.'"
   
-  - title: Non-Markovian Discrete Diffusion with Causal Language Models
-    alt_title: "CaDDi"
-    paper_id: "5biMMmIAAAAJ:9yKSN-GCB0IC"
-    authors: Yangtian Zhang <sup>*</sup>, <b><u>Sizhuang He<sup>*</sup></u></b>, Daniel Levine, Lawrence Zhao, David Zhang, Syed Rizvi, Emanuele Zappala, Rex Ying, and David van Dijk
-    date: Jan 2025
-    conference_short: NeurIPS
-    conference: NeurIPS 2025
-    status: accepted
-    pdf: https://arxiv.org/pdf/2502.09767
-    poster: /assets/posters/CaDDi_NeurIPS_poster.pdf
-    # code: https://github.com/MrGiovanni/ContinualLearning
-    bibtex: /assets/bibs/caddi.txt
-    image: /assets/img/caddi.jpg
-    image_size: 1100x675
-    tags: ["Diffusion Models", "Causal Language Models", "Generative Modeling", "Discrete Diffusion"]
-    topics: [diff]
-    thumb: caddi
-    tagline: "Lifts the Markov constraint in discrete diffusion by conditioning on the entire generative trajectory; causal language models become a special case, so pretrained LLM weights are reused with no architectural changes."
-    selected: true
-    summary: "We introduce a novel approach to discrete diffusion models that conditions on the entire generative trajectory, thereby lifting the Markov constraint and allowing the model to revisit and improve past states. CaDDi treats standard causal language models as a special case and permits the direct reuse of pretrained LLM weights with no architectural changes."
-    full_abstract: "Discrete diffusion models offer a flexible, controllable approach to structured sequence generation, yet they still lag behind causal language models in expressive power. A key limitation lies in their reliance on the Markovian assumption, which restricts each step to condition only on the current state, leading to potential uncorrectable error accumulation. In this paper, we introduce CaDDi, a discrete diffusion model that conditions on the entire generative trajectory, thereby lifting the Markov constraint and allowing the model to revisit and improve past states. By unifying sequential (causal) and temporal (diffusion) reasoning in a single non-Markovian transformer, CaDDi also treats standard causal language models as a special case and permits the direct reuse of pretrained LLM weights with no architectural changes. Empirically, CaDDi outperforms state-of-the-art discrete diffusion baselines on natural-language benchmarks, substantially narrowing the remaining gap to large autoregressive transformers." 
-
   - title: "TANTE: Time-Adaptive Operator Learning via Neural Taylor Expansion"
     alt_title: "TANTE"
     paper_id: "5biMMmIAAAAJ:u5HHmVD_uO8C"

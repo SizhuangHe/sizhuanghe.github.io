@@ -1,5 +1,5 @@
 @article {Rizvi2025.04.14.648850,
-	author = {Rizvi, Syed Asad and Levine, Daniel and Patel, Aakash and Zhang, Shiyang and Wang, Eric and He, Sizhuang and Zhang, David and Tang, Cerise and Lyu, Zhuoyang and Darji, Rayyan and Li, Marlene and Sun, Emily and Jeong, David and Zhao, Lawrence and Kwan, Jennifer and Braun, David and Hafler, Brian and Ishizuka, Jeffrey and Dhodapkar, Rahul and Chung, Hattie and Azizi, Shekoofeh and Perozzi, Bryan and van Dijk, David},
+	author = {Rizvi, Syed Asad and Levine, Daniel and Patel, Aakash and Zhang, Shiyang and Wang, Eric and Perry, Curtis Jamison and Vrkic, Ivan and Constante, Nicole Mayerli and Fu, Zirui and He, Sizhuang and Zhang, David and Tang, Cerise and Lyu, Zhuoyang and Darji, Rayyan and Li, Chang and Sun, Emily and Jeong, David and Zhao, Lawrence and Kwan, Jennifer and Braun, David and Hafler, Brian and Chung, Hattie and Dhodapkar, Rahul M. and Jaeger, Paul and Perozzi, Bryan and Ishizuka, Jeffrey and Azizi, Shekoofeh and van Dijk, David},
 	title = {Scaling Large Language Models for Next-Generation Single-Cell Analysis},
 	elocation-id = {2025.04.14.648850},
 	year = {2025},
