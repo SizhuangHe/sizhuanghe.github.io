@@ -27,6 +27,7 @@ The site is a single page, `index.html` (layout `_layouts/denoise.html`, section
   § Selected), `venue` (optional display label; otherwise `conference`, or "Preprint YEAR").
   `selected: true` puts a paper in § Selected. Full-list order: year of `date` (newest first),
   accepted before preprints, then file order.
+- Open Source: `_data/projects.yml` (name, description, github; shown in file order).
 - Service: `_data/service.yml`. Scholar numbers load live from the `google-scholar-stats` branch;
   `_data/scholar.yml` is only the build-time fallback.
 - CV link: `/assets/files/cv.pdf` (`cv_pdf` in `_config.yml`). The HTML CV data

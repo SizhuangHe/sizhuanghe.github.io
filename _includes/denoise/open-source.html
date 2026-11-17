@@ -1,0 +1,15 @@
+{%- assign projects = site.data.projects.projects -%}
+<section class="sec row" id="open-source" aria-labelledby="h-oss">
+  <h2 class="lbl" id="h-oss"><span class="t">Open Source</span></h2>
+  <ul class="oss">
+    {%- for p in projects %}
+    <li><a href="{{ p.github }}">
+      <h3><span class="nm">{{ p.name }}</span></h3>
+      <p>{{ p.description }}</p>
+      {%- if p.tags %}
+      <span class="tg">{{ p.tags | join: ' · ' }}</span>
+      {%- endif %}
+    </a></li>
+    {%- endfor %}
+  </ul>
+</section>

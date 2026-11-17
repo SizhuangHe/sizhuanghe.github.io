@@ -2,7 +2,7 @@
 :root{
   color-scheme:light;
   --paper:#F7F8FA;--ink:#101828;--graphite:#5A6475;--mask:#C7D0DD;--rule:#E3E7ED;--yale:#00356B;--signal:#2F6FEB;
-  --plate:#FFFFFF;--img-filter:none;
+  --plate:#FFFFFF;--img-filter:none;--card:#FFFFFF;
   --accent:var(--yale);--hl:var(--signal);--line:var(--yale);--focus:var(--signal);
   --serif:Newsreader,"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
   --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
@@ -13,13 +13,13 @@
   :root:not([data-theme="light"]){
     color-scheme:dark;
     --paper:#0B1220;--ink:#E6EAF2;--graphite:#97A3B6;--mask:#2A3547;--rule:#1C2636;--yale:#8FB4E8;--signal:#5B8DEF;
-    --plate:#DCE2EA;--img-filter:brightness(.86) contrast(1.04);
+    --plate:#DCE2EA;--img-filter:brightness(.86) contrast(1.04);--card:#101A2B;
   }
 }
 :root[data-theme="dark"]{
   color-scheme:dark;
   --paper:#0B1220;--ink:#E6EAF2;--graphite:#97A3B6;--mask:#2A3547;--rule:#1C2636;--yale:#8FB4E8;--signal:#5B8DEF;
-  --plate:#DCE2EA;--img-filter:brightness(.86) contrast(1.04);
+  --plate:#DCE2EA;--img-filter:brightness(.86) contrast(1.04);--card:#101A2B;
 }
 
 /* ---------- base ---------- */
@@ -34,11 +34,11 @@ h1,h2,h3{font-weight:inherit}
 sub{font-size:.72em;line-height:0;vertical-align:-.25em}
 
 /* A3 · links: a row of mask-colored dots that denoise into a solid rule on hover */
-a,.abs-t,.bib-c{color:var(--accent);text-decoration:none;
+a,.abs-t,.bib-c,.oss .nm{color:var(--accent);text-decoration:none;
   background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat,
              radial-gradient(circle at 1px 1px,var(--mask) .85px,transparent 1.1px) 0 100%/4px 2px repeat-x;
   padding-bottom:2px;transition:background-size .22s cubic-bezier(.2,.8,.2,1)}
-a:hover,.abs-t:hover,.bib-c:hover,.abs-t[aria-expanded="true"]{background-size:100% 1px,4px 2px}
+a:hover,.abs-t:hover,.bib-c:hover,.abs-t[aria-expanded="true"],.oss a:hover .nm{background-size:100% 1px,4px 2px}
 
 .wrap{max-width:calc(var(--m) + var(--main) + var(--aside) + 2*var(--g) + 64px);margin:0 auto;padding:0 32px}
 .row{display:grid;grid-template-columns:var(--cols);column-gap:var(--g)}
@@ -213,6 +213,14 @@ html:not(.js) .abs-t{display:none}
 .svc li{display:flex;justify-content:space-between;gap:16px;padding:6px 0;border-bottom:1px solid var(--rule)}
 .yr{font:400 12px/1.9 var(--mono);color:var(--graphite)}
 
+/* open source: one card per project, the whole card is the link */
+.oss{grid-column:2;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.oss a{display:flex;flex-direction:column;height:100%;padding:16px 18px 14px;border:1px solid var(--rule);border-radius:4px;background:var(--card);color:var(--ink);transition:border-color .2s}
+.oss a:hover{border-color:var(--mask)}
+.oss h3{margin:0 0 6px;font-size:18px;line-height:1.3;font-weight:500}
+.oss p{margin:0 0 14px;font-size:15px;line-height:1.55;color:var(--graphite)}
+.oss .tg{margin-top:auto;font:400 11px/1.6 var(--mono);letter-spacing:.04em;color:var(--graphite)}
+
 /* footer */
 .foot{margin-top:96px;padding:26px 0 64px;border-top:1px solid var(--rule);font-size:14px;color:var(--graphite)}
 .f-m{grid-column:1;padding-top:2px;font:500 11px/1.6 var(--mono);letter-spacing:.14em;text-transform:uppercase}
@@ -324,9 +332,9 @@ html:not(.js) .tbl{display:none}
   .h-main{grid-area:t;margin-top:26px}
   .th{font-size:20px}
   .sec{margin-top:56px;padding-top:18px}
-  .lbl,.legend,.prose,.m1,.filt,.svc,.news p,.news time,.news .when,.p-m,.p-main,.p-fig{grid-column:1}
+  .lbl,.legend,.prose,.m1,.filt,.svc,.oss,.news p,.news time,.news .when,.p-m,.p-main,.p-fig{grid-column:1}
   /* single column: cap the measure, and keep teaser figures from filling a whole phone screen */
-  .prose,.news p,.p-main,.svc{max-width:38em}
+  .prose,.news p,.p-main,.svc,.oss{max-width:38em}
   .paper .p-fig{max-width:280px}
   .lbl{margin-bottom:12px}
   .legend{margin:-4px 0 14px;padding-top:0}

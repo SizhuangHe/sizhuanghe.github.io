@@ -1,12 +1,9 @@
 projects:
-- name: Academic Homepage Template
-  description: A modern Jekyll-based academic website featuring automated Google Scholar
-    integration, dynamic CV generation from structured data, and an interactive publication
-    filtering system with tag-based search.
-  github: https://github.com/SizhuangHe/sizhuanghe.github.io
+- name: Multitasker
+  description: A Paseo plugin that shows every agent session as a tree and gives agents
+    a queue to file what they need from you.
+  github: https://github.com/SizhuangHe/paseo-multitasker
   tags:
-  - Jekyll
-  - GitHub Actions
-  - Python
-  - Academic
-  stars: 4
+  - TypeScript
+  - Paseo
+  stars: 1
