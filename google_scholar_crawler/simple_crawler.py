@@ -58,8 +58,8 @@ def main():
             print("⏭️  No statistics files were written; the published data remains unchanged.")
             sys.exit(1)
             
-    except ImportError:
-        print("❌ Scholarly library not available")
+    except ImportError as e:
+        print(f"❌ Scholarly library not available: {e}")
         print("⏭️  No statistics files were written; the published data remains unchanged.")
         sys.exit(1)
     except Exception as e:
