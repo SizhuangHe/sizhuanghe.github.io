@@ -27,6 +27,12 @@ def main():
         print("🔧 Setting up free proxy to avoid rate limiting...")
         try:
             from scholarly import ProxyGenerator
+            from fp.fp import FreeProxy
+            # free-proxy-list.net now puts "ip:port" in its first column, so free-proxy 1.3.0
+            # joins two columns into entries like "ip:port:HTTP". Keep only "ip:port".
+            _get_proxy_list = FreeProxy.get_proxy_list
+            FreeProxy.get_proxy_list = lambda self, *a, **k: [
+                ':'.join(p.split(':')[:2]) for p in _get_proxy_list(self, *a, **k)]
             pg = ProxyGenerator()
             pg.FreeProxies()
             scholarly.use_proxy(pg)

@@ -48,7 +48,7 @@ bundle exec jekyll server
 ### Google Scholar Crawler (Local Testing)
 ```bash
 cd google_scholar_crawler
-conda create -n scholar-crawler python=3.9
+conda create -n scholar-crawler python=3.12
 conda activate scholar-crawler
 pip install -r requirements.txt
 GOOGLE_SCHOLAR_ID=5biMMmIAAAAJ python simple_crawler.py
