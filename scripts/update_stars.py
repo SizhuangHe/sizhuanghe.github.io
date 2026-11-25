@@ -22,7 +22,7 @@ def get_github_stars(repo_url, token=None):
 
     owner, repo = match.groups()
     # Remove .git suffix if present
-    repo = repo.rstrip('.git')
+    repo = repo.removesuffix('.git')
 
     api_url = f"https://api.github.com/repos/{owner}/{repo}"
 
